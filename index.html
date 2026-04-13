@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" id="html-root">
 
 <head>
   <meta charset="UTF-8">
@@ -56,17 +56,24 @@
       <!-- nav logo uses Syne via components.css .nav__logo rule -->
       <a href="#hero" class="nav__logo" id="nav-logo">E<span>G</span></a>
       <ul class="nav__links" id="nav-links">
-        <li><a href="#about" class="nav__link" data-section="about">About</a></li>
-        <li><a href="#portfolio" class="nav__link" data-section="portfolio">Projects</a></li>
-        <li><a href="#cv" class="nav__link" data-section="cv">CV & Stack</a></li>
-        <li><a href="#experience" class="nav__link" data-section="experience">Experience</a></li>
-        <li><a href="#contact" class="nav__link" data-section="contact">Contact</a></li>
+        <li><a href="#about" class="nav__link" data-section="about" data-i18n="nav_about">About</a></li>
+        <li><a href="#portfolio" class="nav__link" data-section="portfolio" data-i18n="nav_projects">Projects</a></li>
+        <li><a href="#cv" class="nav__link" data-section="cv" data-i18n="nav_cv">CV &amp; Stack</a></li>
+        <li><a href="#experience" class="nav__link" data-section="experience" data-i18n="nav_experience">Experience</a></li>
+        <li><a href="#contact" class="nav__link" data-section="contact" data-i18n="nav_contact">Contact</a></li>
       </ul>
-      <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
+      <div class="nav__controls">
+        <button class="lang-toggle" id="lang-toggle" aria-label="Cambiar a Español">
+          <span class="lang-toggle__active">EN</span>
+          <span class="lang-toggle__sep">|</span>
+          <span class="lang-toggle__other">ES</span>
+        </button>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Open menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
     </div>
     <div class="nav__overlay" id="nav-overlay"></div>
   </nav>
@@ -81,13 +88,30 @@
 
     <div class="container hero__content">
       <div class="hero__text">
-        <span class="hero__label">ENGINEER · BUILDER · PROBLEM SOLVER</span>
+        <span class="hero__label" data-i18n="hero_label">ENGINEER · BUILDER · PROBLEM SOLVER</span>
         <h1 class="hero__name">
           Elier <span class="gradient-text">Garcia</span>
         </h1>
-        <p class="hero__title">Electrical Engineer · AI/Data · Madrid</p>
-        <p class="hero__tagline">"Building real things — from data centers to AI products."</p>
+        <p class="hero__title" data-i18n="hero_title">Electrical Engineer · AI/Data · Madrid</p>
+        <p class="hero__tagline" data-i18n="hero_tagline">"Building real things — from data centers to AI products."</p>
 
+        <!-- Stat pills -->
+        <div class="hero__stats">
+          <div class="hero__stat">
+            <span class="hero__stat-number">3</span>
+            <span class="hero__stat-label" data-i18n="stat_apps">AI apps in prod.</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">60</span>
+            <span class="hero__stat-label" data-i18n="stat_people">people led</span>
+          </div>
+          <div class="hero__stat-divider"></div>
+          <div class="hero__stat">
+            <span class="hero__stat-number">#1</span>
+            <span class="hero__stat-label" data-i18n="stat_gpa">GPA · INESDI 2026</span>
+          </div>
+        </div>
         <div class="hero__actions">
           <a href="#contact" class="btn btn--primary" id="hero-cta">
             <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -95,7 +119,7 @@
               <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
               <polyline points="22,6 12,13 2,6" />
             </svg>
-            Contact
+            <span data-i18n="hero_cta">Contact</span>
           </a>
           <a href="https://www.linkedin.com/in/eliergv/" target="_blank" rel="noopener" class="btn btn--secondary"
             id="hero-linkedin">
@@ -123,7 +147,7 @@
             alt="Elier Garcia — Electrical Engineer and AI/Data professional based in Madrid" class="hero__photo"
             id="hero-photo" width="280" height="320" loading="eager" fetchpriority="high">
         </div>
-        <div class="hero__status">Available to work</div>
+        <div class="hero__status" data-i18n="hero_status">Available to work</div>
       </div>
     </div>
   </section>
@@ -132,28 +156,29 @@
   <section class="about section-padding" id="about">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">// about</span>
-        <h2 class="section-title">From Chihuahua to Madrid.<br>From field to code.</h2>
+        <span class="section-label" data-i18n="about_label">// about</span>
+        <h2 class="section-title" data-i18n="about_heading">From Chihuahua to Madrid.<br>From field to code.</h2>
       </div>
 
       <div class="about__content">
         <div class="about__text reveal">
-          <p>
+          <p data-i18n="about_p1">
             I'm <strong>Elier Garcia</strong>, an electrical engineer from Chihuahua, Mexico. I grew up solving real
-            problems with my hands — supervising the electrical installation of a <strong>Microsoft Data Center</strong>
-            and a full building at <strong>BMW Group's plant</strong>, managing subcontractors, materials, and real
-            deadlines in the field.
+            problems with my hands — supervising the electrical installation of a <strong>Microsoft Azure hyperscale
+            data center</strong> and a <strong>19,847 m² building at BMW Group's plant</strong>. In six months I went
+            from the newest hire on site to running the entire electrical front on my own, coordinating up to
+            <strong>60 people</strong> without a single supply stoppage.
           </p>
-          <p>
-            In 2025 I moved to <strong>Madrid</strong> to pursue an M.S. in Business Analytics & AI at INESDI. During
-            the program, I independently built three full-stack AI applications running in production: from a SaaS with
-            RAG to a nutrition app with data pipelines and analytics dashboards.
+          <p data-i18n="about_p2">
+            In 2025 I moved to <strong>Madrid</strong> to pursue an M.S. in Business Analytics &amp; AI at INESDI,
+            which I <strong>finished with the best academic record of my class</strong>. During the programme I
+            independently built three full-stack AI applications now running in production: a SaaS with RAG,
+            a nutrition app with data pipelines, and an AI cover-letter generator.
           </p>
-          <p>
+          <p data-i18n="about_p3">
             I didn't come to tech because it was trendy. I came from real engineering, where if something breaks,
-            everyone notices. <strong>That standard carries into every line of code I write.</strong> I'm looking for my
-            first position in Europe in Data, AI Engineering, or Electrical Engineering — with the same mindset I've
-            already applied to real-world projects.
+            everyone notices. <strong>That standard carries into every line of code I write.</strong> I'm looking for
+            my first role in Europe in Data, AI Engineering, or Electrical Engineering.
           </p>
         </div>
 
@@ -161,36 +186,36 @@
           <div class="about__highlight">
             <div class="about__highlight-icon">📍</div>
             <div class="about__highlight-content">
-              <span class="about__highlight-label">Location</span>
-              <span class="about__highlight-value">Madrid, Spain</span>
+              <span class="about__highlight-label" data-i18n="about_loc_label">Location</span>
+              <span class="about__highlight-value" data-i18n="about_loc_value">Madrid, Spain</span>
             </div>
           </div>
           <div class="about__highlight">
             <div class="about__highlight-icon">🎓</div>
             <div class="about__highlight-content">
-              <span class="about__highlight-label">Education</span>
-              <span class="about__highlight-value">M.S. Business Analytics & AI — INESDI (2026)</span>
+              <span class="about__highlight-label" data-i18n="about_edu_label">Education</span>
+              <span class="about__highlight-value" data-i18n="about_edu_value">M.S. Business Analytics &amp; AI — INESDI (2026)</span>
             </div>
           </div>
           <div class="about__highlight">
             <div class="about__highlight-icon">⚡</div>
             <div class="about__highlight-content">
-              <span class="about__highlight-label">Background</span>
-              <span class="about__highlight-value">B.S. Electrical Engineering — TECNM Chihuahua (9.27/10)</span>
+              <span class="about__highlight-label" data-i18n="about_bg_label">Background</span>
+              <span class="about__highlight-value" data-i18n="about_bg_value">B.S. Electrical Engineering — TECNM Chihuahua (9.27/10)</span>
             </div>
           </div>
           <div class="about__highlight">
             <div class="about__highlight-icon">🌍</div>
             <div class="about__highlight-content">
-              <span class="about__highlight-label">Languages</span>
-              <span class="about__highlight-value">Spanish (native) · English B2 · German (basic)</span>
+              <span class="about__highlight-label" data-i18n="about_lang_label">Languages</span>
+              <span class="about__highlight-value" data-i18n="about_lang_value">Spanish (native) · English B2 · German (basic)</span>
             </div>
           </div>
           <div class="about__highlight">
             <div class="about__highlight-icon">🟢</div>
             <div class="about__highlight-content">
-              <span class="about__highlight-label">Availability</span>
-              <span class="about__highlight-value">Immediate</span>
+              <span class="about__highlight-label" data-i18n="about_avail_label">Availability</span>
+              <span class="about__highlight-value" data-i18n="about_avail_value">Immediate</span>
             </div>
           </div>
         </div>
@@ -202,9 +227,9 @@
   <section class="portfolio section-padding" id="portfolio">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">// projects</span>
-        <h2 class="section-title">What I've built</h2>
-        <p class="section-subtitle">Three full-stack AI applications running in production. My own code, no tutorials.
+        <span class="section-label" data-i18n="port_label">// projects</span>
+        <h2 class="section-title" data-i18n="port_heading">What I've built</h2>
+        <p class="section-subtitle" data-i18n="port_subtitle">Three full-stack AI applications running in production. My own code, no tutorials.
         </p>
       </div>
 
@@ -214,25 +239,28 @@
           <div class="card__icon">🥗</div>
           <h3 class="card__title"><a href="https://bocado-ai.vercel.app" target="_blank" rel="noopener">Bocado AI</a>
           </h3>
-          <span class="card__subtitle">Personalized nutrition app with AI</span>
-          <p class="card__description">
-            Production full-stack setup: React 19 + TypeScript + Firebase on the backend, Gemini AI for personalized
-            meal plans. Firestore → BigQuery pipeline with Looker Studio dashboards. E2E tests with Playwright, CI/CD
-            via GitHub Actions, error monitoring with Sentry.
+          <span class="card__subtitle" data-i18n="bocado_sub">Personalized nutrition app with AI</span>
+          <p class="card__description" data-i18n="bocado_desc">
+            Full-stack PWA: Next.js 16 + React 19 + TypeScript + Firebase. Gemini 2.5 Flash for personalized meal plans,
+            Google Places API to verify real restaurants, Service Worker for offline mode and push notifications.
+            Firestore → BigQuery pipeline with Looker Studio dashboards. <strong>-98% Cloud Function calls,
+            -85% network requests</strong> after optimization. Operational cost: <strong>&lt;€0.50/month</strong>.
           </p>
           <div class="card__footer">
             <div class="badges-wrap">
-              <span class="badge">React 19</span>
-              <span class="badge">TypeScript</span>
+              <span class="badge badge--accent">Next.js 16</span>
+              <span class="badge badge--accent">React 19</span>
+              <span class="badge badge--accent">TypeScript</span>
               <span class="badge">Firebase</span>
               <span class="badge">BigQuery</span>
-              <span class="badge badge--accent">Gemini AI</span>
-              <span class="badge">Looker Studio</span>
-              <span class="badge">n8n</span>
+              <span class="badge badge--accent">Gemini 2.5 Flash</span>
+              <span class="badge">Google Places API</span>
+              <span class="badge">PWA</span>
+              <span class="badge">FCM</span>
               <span class="badge">CI/CD</span>
             </div>
             <a href="https://bocado-ai.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              View demo
+              <span data-i18n="bocado_link">View demo</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7" />
@@ -247,23 +275,25 @@
           <div class="card__icon">✍️</div>
           <h3 class="card__title"><a href="https://coverletter2.vercel.app" target="_blank"
               rel="noopener">CoverCraft</a></h3>
-          <span class="card__subtitle">SaaS — AI cover letter generator</span>
-          <p class="card__description">
-            End-to-end SaaS: user uploads CV, n8n orchestrates AI via webhook, generates a letter persisted in Supabase
-            and exported as PDF. Multi-language support (ES/EN/FR/NL) with next-intl. SSR security via custom
-            middleware.
+          <span class="card__subtitle" data-i18n="cover_sub">SaaS — AI cover letter generator</span>
+          <p class="card__description" data-i18n="cover_desc">
+            End-to-end SaaS: user uploads CV, n8n orchestrates AI via webhook, custom JS parser detects sections in
+            4 languages (ES/EN/FR/NL). Gemini generates ATS-calibrated letters, persisted in Supabase with Row Level
+            Security. Editable in TipTap, exported as PDF. Authenticated routes on both frontend and backend.
           </p>
           <div class="card__footer">
             <div class="badges-wrap">
-              <span class="badge">Next.js 15</span>
-              <span class="badge">TypeScript</span>
-              <span class="badge">Supabase</span>
+              <span class="badge badge--accent">Next.js 16</span>
+              <span class="badge badge--accent">TypeScript</span>
+              <span class="badge badge--violet">Supabase (RLS)</span>
               <span class="badge">n8n</span>
               <span class="badge badge--accent">next-intl</span>
-              <span class="badge">PDF Export</span>
+              <span class="badge">TipTap</span>
+              <span class="badge">html2pdf.js</span>
+              <span class="badge">Docker</span>
             </div>
             <a href="https://coverletter2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              View demo
+              <span data-i18n="cover_link">View demo</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7" />
@@ -278,15 +308,16 @@
           <div class="card__icon">📄</div>
           <h3 class="card__title"><a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener">PDF
               Technical Assistant</a></h3>
-          <span class="card__subtitle">RAG chatbot for technical documents</span>
-          <p class="card__description">
-            Full RAG pipeline: PDF extraction, intelligent chunking, embeddings with Gemini (text-embedding-004),
-            semantic search in Supabase pgvector. Serverless Cloud Functions for automatic ingestion and persistent chat
-            history.
+          <span class="card__subtitle" data-i18n="pdf_sub">RAG chatbot for technical documents</span>
+          <p class="card__description" data-i18n="pdf_desc">
+            Full RAG pipeline: PDF extraction, semantic chunking, Gemini embeddings (text-embedding-004) and
+            sub-second vector search in Supabase pgvector. Temperature 0.1 for deterministic answers
+            with strict document grounding. Two Cloud Functions in production: auto-ingestion and persistent chat.
           </p>
           <div class="card__footer">
             <div class="badges-wrap">
               <span class="badge">React 18</span>
+              <span class="badge">TypeScript</span>
               <span class="badge">Firebase Functions</span>
               <span class="badge badge--violet">Supabase pgvector</span>
               <span class="badge badge--accent">Gemini AI</span>
@@ -294,7 +325,7 @@
               <span class="badge">Vitest</span>
             </div>
             <a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              View demo
+              <span data-i18n="pdf_link">View demo</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                 stroke-linejoin="round">
                 <line x1="7" y1="17" x2="17" y2="7" />
@@ -344,7 +375,7 @@
       <!-- Tech Stack -->
       <div class="reveal">
         <div class="cv__stack-section">
-          <div class="cv__stack-label">Frontend</div>
+          <div class="cv__stack-label" data-i18n="stack_frontend">Frontend</div>
           <div class="badges-wrap">
             <span class="badge badge--accent">React</span>
             <span class="badge badge--accent">Next.js</span>
@@ -359,7 +390,7 @@
         </div>
 
         <div class="cv__stack-section">
-          <div class="cv__stack-label">Backend & Cloud</div>
+          <div class="cv__stack-label" data-i18n="stack_backend">Backend &amp; Cloud</div>
           <div class="badges-wrap">
             <span class="badge badge--violet">Firebase</span>
             <span class="badge badge--violet">Supabase</span>
@@ -372,7 +403,7 @@
         </div>
 
         <div class="cv__stack-section">
-          <div class="cv__stack-label">AI / ML & Data</div>
+          <div class="cv__stack-label" data-i18n="stack_ai">AI / ML &amp; Data</div>
           <div class="badges-wrap">
             <span class="badge badge--accent">Gemini AI</span>
             <span class="badge badge--accent">RAG</span>
@@ -388,7 +419,7 @@
         </div>
 
         <div class="cv__stack-section">
-          <div class="cv__stack-label">DevOps & Tooling</div>
+          <div class="cv__stack-label" data-i18n="stack_devops">DevOps &amp; Tooling</div>
           <div class="badges-wrap">
             <span class="badge">CI/CD</span>
             <span class="badge">GitHub Actions</span>
@@ -403,7 +434,7 @@
         </div>
 
         <div class="cv__stack-section">
-          <div class="cv__stack-label">Electrical Engineering</div>
+          <div class="cv__stack-label" data-i18n="stack_electrical">Electrical Engineering</div>
           <div class="badges-wrap">
             <span class="badge badge--success">AutoCAD</span>
             <span class="badge badge--success">OPUS</span>
@@ -418,12 +449,58 @@
     </div>
   </section>
 
-  <!-- ============ EXPERIENCE ============ -->
+  <!-- ============ CERTIFICATIONS ============ -->
+  <section class="certs section-padding" id="certs">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label" data-i18n="certs_label">// certifications</span>
+        <h2 class="section-title" data-i18n="certs_heading">Awards &amp; Certifications</h2>
+      </div>
+      <div class="certs__grid reveal">
+        <!-- Featured: Best GPA -->
+        <div class="cert-card cert-card--featured">
+          <div class="cert-card__icon">🏆</div>
+          <div class="cert-card__content">
+            <div class="cert-card__title" data-i18n="cert1_title">Top Academic Record — M.S. Business Analytics &amp; AI</div>
+            <div class="cert-card__issuer" data-i18n="cert1_issuer">INESDI Business TechSchool · Madrid</div>
+            <div class="cert-card__date" data-i18n="cert1_date">March 2026</div>
+          </div>
+        </div>
+        <!-- Digital Leadership -->
+        <div class="cert-card">
+          <div class="cert-card__icon">📊</div>
+          <div class="cert-card__content">
+            <div class="cert-card__title" data-i18n="cert2_title">Ciclo Digital Leadership</div>
+            <div class="cert-card__issuer" data-i18n="cert2_issuer">INESDI Business TechSchool</div>
+            <div class="cert-card__date" data-i18n="cert2_date">April 2025</div>
+          </div>
+        </div>
+        <!-- Electric Power Systems -->
+        <div class="cert-card">
+          <div class="cert-card__icon">⚡</div>
+          <div class="cert-card__content">
+            <div class="cert-card__title" data-i18n="cert3_title">Electric Power Systems</div>
+            <div class="cert-card__issuer" data-i18n="cert3_issuer">University at Buffalo — SUNY / Coursera</div>
+            <div class="cert-card__date" data-i18n="cert3_date">February 2023</div>
+          </div>
+        </div>
+        <!-- PVC Conduit -->
+        <div class="cert-card">
+          <div class="cert-card__icon">🔧</div>
+          <div class="cert-card__content">
+            <div class="cert-card__title" data-i18n="cert4_title">PVC-Coated Conduit Installer</div>
+            <div class="cert-card__issuer" data-i18n="cert4_issuer">Plasti-Bond</div>
+            <div class="cert-card__date" data-i18n="cert4_date">April 2024</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="experience section-padding" id="experience">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">// experience</span>
-        <h2 class="section-title">Work history</h2>
+        <span class="section-label" data-i18n="exp_label">// experience</span>
+        <h2 class="section-title" data-i18n="exp_heading">Work history</h2>
       </div>
 
       <div class="experience__content">
@@ -431,9 +508,9 @@
           <!-- Job 1 -->
           <div class="timeline__item reveal">
             <div class="timeline__dot"></div>
-            <span class="timeline__date">Jan 2024 — Feb 2025</span>
-            <h3 class="timeline__title">Electrical Construction Resident</h3>
-            <p class="timeline__company">DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, Mexico</p>
+            <span class="timeline__date" data-i18n="job1_date">Jan 2024 — Feb 2025</span>
+            <h3 class="timeline__title" data-i18n="job1_title">Electrical Construction Resident</h3>
+            <p class="timeline__company" data-i18n="job1_company">DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, Mexico</p>
             <div class="timeline__tags">
               <span class="badge badge--accent">Medium Voltage</span>
               <span class="badge">LV Outdoor</span>
@@ -442,22 +519,24 @@
               <span class="badge badge--success">BMW Group</span>
             </div>
             <ul class="timeline__description">
-              <li>Managed procurement and material tracking across three concurrent electrical fronts at
-                <strong>Microsoft's Querétaro Data Center</strong> — zero supply stoppages over 14 months.
+              <li data-i18n="job1_li1">Led the full electrical front at <strong>Microsoft's Azure hyperscale Data Center</strong>
+                in Querétaro (~3 football fields) — escalated from newest hire to sole front lead in 6 months,
+                coordinating up to <strong>60 people</strong> with zero supply stoppages over 9 months.
               </li>
-              <li>Supervised full electrical installation of a building at <strong>BMW Group's plant</strong> (San Luis
-                Potosí) — coordinating subcontractors and serving as technical point of contact with the client.</li>
-              <li>Verified compliance with technical specs and safety standards on-site throughout the full project
-                lifecycle for both sites.</li>
+              <li data-i18n="job1_li2">Supervised the electrical installation of a <strong>19,847 m² building at BMW Group's plant</strong>
+                (San Luis Potosí, EV manufacturing from 2027) — developed a custom material tracking system
+                and managed procurement across nearly all 8 sections of the building.</li>
+              <li data-i18n="job1_li3">Verified compliance with NEC/IEC/NOM technical specs and safety standards on-site throughout
+                the full project lifecycle for both sites.</li>
             </ul>
           </div>
 
           <!-- Job 2 -->
           <div class="timeline__item reveal reveal-delay-2">
             <div class="timeline__dot"></div>
-            <span class="timeline__date">Jan 2023 — Jan 2024</span>
-            <h3 class="timeline__title">Electrical Budget Analyst</h3>
-            <p class="timeline__company">DEMEK S.A. de C.V. · Chihuahua, Mexico</p>
+            <span class="timeline__date" data-i18n="job2_date">Jan 2023 — Jan 2024</span>
+            <h3 class="timeline__title" data-i18n="job2_title">Electrical Budget Analyst</h3>
+            <p class="timeline__company" data-i18n="job2_company">DEMEK S.A. de C.V. · Chihuahua, Mexico</p>
             <div class="timeline__tags">
               <span class="badge">AutoCAD</span>
               <span class="badge">OPUS</span>
@@ -465,12 +544,13 @@
               <span class="badge">Vendor quotes</span>
             </div>
             <ul class="timeline__description">
-              <li>Ran the full estimating cycle: AutoCAD drawing takeoffs, material quantification, OPUS pricing, vendor
-                quotes, overhead application, and client delivery — winning the Terex project in Nuevo León.</li>
-              <li>Built and presented financial proposals in PowerPoint to non-technical clients, covering scope, line
-                items, and post-review adjustments.</li>
-              <li>Managed vendor relationships to secure best material pricing, integrated directly into OPUS for budget
-                close-out.</li>
+              <li data-i18n="job2_li1">Ran the full estimating cycle — AutoCAD takeoffs, OPUS pricing, vendor quotes, and client delivery.
+                Won the <strong>Terex project in Nuevo León</strong>, presenting directly to the client in English
+                through Copachisa.</li>
+              <li data-i18n="job2_li2">Built and presented financial proposals in PowerPoint to non-technical clients, covering
+                scope, line items, and post-review adjustments.</li>
+              <li data-i18n="job2_li3">Managed vendor relationships to secure best material pricing, integrated directly into
+                OPUS for budget close-out.</li>
             </ul>
           </div>
         </div>
@@ -482,14 +562,14 @@
   <section class="contact section-padding" id="contact">
     <div class="container">
       <div class="section-header reveal">
-        <span class="section-label">// contact</span>
-        <h2 class="section-title">Let's talk</h2>
+        <span class="section-label" data-i18n="contact_label">// contact</span>
+        <h2 class="section-title" data-i18n="contact_heading">Let's talk</h2>
       </div>
 
       <div class="contact__content reveal">
         <p class="contact__message">
-          Available for opportunities in <strong>Data, AI Engineering</strong> or <strong>Electrical
-            Engineering</strong> in Spain. If you think I'm a fit for your team, reach out.
+          <span data-i18n="contact_msg">Available for opportunities in <strong>Data, AI Engineering</strong> or <strong>Electrical
+            Engineering</strong> in Spain. If you think I'm a fit for your team, reach out.</span>
         </p>
 
         <div class="contact__actions">
@@ -534,7 +614,7 @@
               <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
             </svg>
-            <span>Immediate availability</span>
+            <span data-i18n="contact_avail">Immediate availability</span>
           </div>
         </div>
       </div>
@@ -545,7 +625,7 @@
   <footer class="footer">
     <div class="container footer__inner">
       <p class="footer__text">
-        © <span id="footer-year"></span> Elier Garcia · Designed and built by hand ⚡
+        © <span id="footer-year"></span> Elier Garcia · <span data-i18n="footer_text">Designed and built by hand ⚡</span>
       </p>
       <div class="social-links">
         <a href="https://www.linkedin.com/in/eliergv/" target="_blank" rel="noopener" class="social-link"
@@ -572,6 +652,7 @@
     </div>
   </footer>
 
+  <script src="scripts/i18n.js"></script>
   <script src="scripts/main.js"></script>
 </body>
 

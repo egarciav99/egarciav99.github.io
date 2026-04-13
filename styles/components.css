@@ -72,6 +72,51 @@
   font-weight: var(--fw-semibold);
 }
 
+/* ---- Language Toggle ---- */
+.nav__controls {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-wide);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--duration-fast) var(--ease-out);
+  white-space: nowrap;
+}
+
+.lang-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.lang-toggle__active {
+  color: var(--accent);
+  font-weight: var(--fw-bold);
+}
+
+.lang-toggle__sep {
+  color: var(--text-tertiary);
+  font-weight: var(--fw-normal);
+}
+
+.lang-toggle__other {
+  color: var(--text-secondary);
+}
+
 /* Hamburger */
 .nav__hamburger {
   display: none;
