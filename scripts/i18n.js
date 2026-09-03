@@ -11,33 +11,24 @@ const TRANSLATIONS = {
     nav_experience: 'Experience',
     nav_contact:    'Contact',
 
-    /* ── HERO ── */
-    hero_label:   'ENGINEER · BUILDER · PROBLEM SOLVER',
-    hero_title:   'Electrical Engineer · AI/Data · Madrid',
-    hero_tagline: '"Building real things — from data centers to AI products."',
-    hero_cta:     'Contact',
+  /* ── HERO ── */
+    hero_label:   'ELECTRICAL ENGINEER · AI & DATA · BUILDER',
+    hero_title:   'Electrical Engineer & AI Developer · Madrid',
+    hero_tagline: '"From industrial field engineering to full-stack AI products in production."',
+    hero_cta:     'Get in touch',
     hero_status:  'Available to work',
-    stat_apps:    'AI apps in prod.',
-    stat_people:  'people led',
-    stat_gpa:     'GPA · INESDI 2026',
+    stat_apps:    'AI apps in production',
+    stat_people:  'people coordinated',
+    stat_gpa:     'top of class · INESDI 2026',
 
-    /* ── ABOUT ── */
-    about_label:    '// about',
-    about_heading:  'From Chihuahua to Madrid.<br>From field to code.',
-    about_p1: `I'm <strong>Elier Garcia</strong>, an electrical engineer from Chihuahua, Mexico. I grew up solving real
-      problems with my hands — supervising the electrical installation of a <strong>Microsoft Azure hyperscale
-      data center</strong> and a <strong>19,847 m² building at BMW Group's plant</strong>. In six months I went
-      from the newest hire on site to running the entire electrical front on my own, coordinating up to
-      <strong>60 people</strong> without a single supply stoppage.`,
-    about_p2: `In 2025 I moved to <strong>Madrid</strong> to pursue an M.S. in Business Analytics &amp; AI at INESDI,
-      which I <strong>finished with the best academic record of my class</strong>. During the programme I
-      independently built three full-stack AI applications now running in production: a SaaS with RAG,
-      a nutrition app with data pipelines, and an AI cover-letter generator.`,
-    about_p3: `I didn't come to tech because it was trendy. I came from real engineering, where if something breaks,
-      everyone notices. <strong>That standard carries into every line of code I write.</strong> I'm looking for
-      my first role in Europe in Data, AI Engineering, or Electrical Engineering.`,
+  /* ── ABOUT ── */
+    about_label:    '// profile',
+    about_heading:  'From Chihuahua to Madrid.<br>From job site to code.',
+    about_p1: `I'm <strong>Elier Garcia</strong>, an electrical engineer from Chihuahua, Mexico. I built my foundation tackling high-stakes field challenges: supervising electrical infrastructure for <strong>Microsoft's Azure hyperscale data center</strong> and a <strong>19,847 m² industrial facility for BMW Group</strong>. Within six months, I stepped up from new hire to running the exterior electrical front solo, managing up to <strong>60 workers</strong> with zero supply stoppages.`,
+    about_p2: `In 2025, I moved to <strong>Madrid</strong> for an M.S. in Business Analytics & AI at INESDI, graduating with the <strong>top academic record of my cohort</strong>. Alongside coursework, I built and launched real full-stack AI systems independently, featuring RAG pipelines, serverless workflows, and live production users.`,
+    about_p3: `I didn't transition into tech just to chase buzzwords. I come from industrial engineering where failures have immediate operational impact. That same discipline shapes how I write code, structure pipelines, and manage cloud workloads today.`,
     about_loc_label:  'Location',
-    about_loc_value:  'Madrid, Spain',
+     about_loc_value:  'Madrid, Spain',
     about_edu_label:  'Education',
     about_edu_value:  'M.S. Business Analytics &amp; AI — INESDI (2026)',
     about_bg_label:   'Background',
@@ -50,7 +41,7 @@ const TRANSLATIONS = {
     /* ── PORTFOLIO ── */
     port_label:    '// projects',
     port_heading:  "What I've built",
-    port_subtitle: 'Three full-stack AI applications running in production. My own code, no tutorials.',
+    port_subtitle: 'Full-stack applications and AI systems running in production and enterprise development.',
     bocado_sub:    'Personalized nutrition app with AI',
     bocado_desc:   `Full-stack PWA: Next.js 16 + React 19 + TypeScript + Firebase. Gemini 2.5 Flash for personalized meal plans,
       Google Places API to verify real restaurants, Service Worker for offline mode and push notifications.
@@ -68,6 +59,20 @@ const TRANSLATIONS = {
       with strict document grounding. Two Cloud Functions in production: auto-ingestion and persistent chat.`,
     pdf_link:      'View demo',
 
+     /* Project 4: Enterprise Automation Hub */
+    coreit_title:   'Enterprise AI Automation Hub (POS Style)',
+    coreit_sub:     'Corporate one-touch terminal for AI & n8n workflows',
+    coreit_desc:    `Modular hub with a POS-terminal UI enabling non-technical staff to trigger complex workflows with a single tap. Features an isolated JS execution sandbox, an OCR + dual-LLM cross-validation extraction pipeline, and dynamic Excel generation with formula audits.`,
+    coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
+    coreit_status:  'Internal Deployment / Confidential',
+
+    /* Project 5: Digital Loyalty & Gamification Platform */
+    loyalty_title:  'Digital Loyalty & Gamification Platform',
+    loyalty_sub:    'Omnichannel PWA integrated with Apple & Google Wallet',
+    loyalty_desc:   `Web-based rewards platform with a two-step receipt validation flow (automated + on-site staff verification). Features a real-time synchronized triple wallet ecosystem, voucher fingerprinting for fraud prevention, and an operational analytics dashboard.`,
+    loyalty_tag:    'React · Apple Wallet · Google Wallet · OTP Auth · Fraud Prevention',
+    loyalty_status: 'MVP Stage / Confidential',
+
     /* ── CV & STACK ── */
     cv_label:    '// cv & tech stack',
     cv_heading:  'Tools & Résumé',
@@ -84,21 +89,22 @@ const TRANSLATIONS = {
     stack_devops:     'DevOps & Tooling',
     stack_electrical: 'Electrical Engineering',
 
-    /* ── CERTIFICATIONS ── */
-    certs_label:   '// certifications',
-    certs_heading: 'Awards & Certifications',
+    /* ── CERTIFICACIONES ── */
     cert1_title:   'Top Academic Record — M.S. Business Analytics & AI',
-    cert1_issuer:  'INESDI Business TechSchool · Madrid',
+    cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date:    'March 2026',
     cert2_title:   'Digital Leadership Programme',
     cert2_issuer:  'INESDI Business TechSchool',
     cert2_date:    'April 2025',
-    cert3_title:   'Electric Power Systems',
-    cert3_issuer:  'University at Buffalo — SUNY / Coursera',
-    cert3_date:    'February 2023',
-    cert4_title:   'PVC-Coated Conduit Installer',
-    cert4_issuer:  'Plasti-Bond',
-    cert4_date:    'April 2024',
+    cert3_title:   'Artificial Intelligence — Principles & Applications',
+    cert3_issuer:  'Universidad del Valle de México',
+    cert3_date:    'August 2026',
+    cert4_title:   'Electric Power Systems',
+    cert4_issuer:  'University at Buffalo — SUNY',
+    cert4_date:    'February 2023',
+    cert5_title:   'PVC-Coated Conduit Installer',
+    cert5_issuer:  'Plasti-Bond',
+    cert5_date:    'April 2024',
 
     /* ── EXPERIENCE ── */
     exp_label:   '// experience',
@@ -141,30 +147,21 @@ const TRANSLATIONS = {
     nav_contact:    'Contacto',
 
     /* ── HERO ── */
-    hero_label:   'INGENIERO · CONSTRUCTOR · RESOLVEDOR DE PROBLEMAS',
-    hero_title:   'Ingeniero Eléctrico · AI/Data · Madrid',
-    hero_tagline: '"Construyendo cosas reales — desde centros de datos hasta productos de IA."',
-    hero_cta:     'Contacto',
+    hero_label:   'INGENIERO ELÉCTRICO · AI & DATA · BUILDER',
+    hero_title:   'Ingeniero Eléctrico & Desarrollador IA · Madrid',
+    hero_tagline: '"Del rigor técnico en obra industrial a productos reales de IA en producción."',
+    hero_cta:     'Contactar',
     hero_status:  'Disponible para trabajar',
-    stat_apps:    'apps de IA en prod.',
-    stat_people:  'personas lideradas',
-    stat_gpa:     'expediente · INESDI 2026',
-
+    stat_apps:    'apps de IA en producción',
+    stat_people:  'personas coordinadas',
+    stat_gpa:     'mejor expediente · INESDI 2026',
+     
     /* ── ABOUT ── */
-    about_label:    '// sobre mí',
-    about_heading:  'De Chihuahua a Madrid.<br>Del campo al código.',
-    about_p1: `Soy <strong>Elier Garcia</strong>, ingeniero eléctrico de Chihuahua, México. Crecí resolviendo problemas
-      reales con mis manos — supervisando la instalación eléctrica de un <strong>Data Center Azure de hiperescala
-      de Microsoft</strong> y un <strong>edificio de 19,847 m² en la planta de BMW Group</strong>. En seis meses pasé
-      de ser el trabajador más nuevo en obra a llevar solo el frente eléctrico completo, coordinando hasta
-      <strong>60 personas</strong> sin un solo paro de suministro.`,
-    about_p2: `En 2025 me mudé a <strong>Madrid</strong> para cursar un Máster en Business Analytics &amp; AI en INESDI,
-      que terminé con <strong>el mejor expediente académico de mi promoción</strong>. Durante el programa construí
-      de forma independiente tres aplicaciones de IA full-stack en producción: un SaaS con RAG,
-      una app de nutrición con pipelines de datos y un generador de cartas de presentación con IA.`,
-    about_p3: `No llegué a la tecnología porque estuviera de moda. Vengo de la ingeniería real, donde si algo falla,
-      todo el mundo se entera. <strong>Ese estándar lo aplico a cada línea de código que escribo.</strong>
-      Busco mi primer rol en Europa en Data, Ingeniería de IA o Ingeniería Eléctrica.`,
+    about_label:    '// perfil',
+    about_heading:  'De Chihuahua a Madrid.<br>De la obra al código.',
+    about_p1: `Soy <strong>Elier Garcia</strong>, ingeniero eléctrico de Chihuahua, México. Me formé resolviendo problemas reales en terreno: supervisé la infraestructura eléctrica del <strong>Data Center Azure de hiperescala de Microsoft</strong> y la nave de <strong>19,847 m² para BMW Group</strong>. En seis meses pasé de integrarme al equipo a liderar de forma autónoma el frente exterior, coordinando hasta <strong>60 personas</strong> sin un solo día de paro de suministro.`,
+    about_p2: `En 2025 me trasladé a <strong>Madrid</strong> para cursar el Máster en Business Analytics & IA en INESDI, donde obtuve el <strong>mejor expediente de la promoción (8.94/10)</strong>. Durante el máster no me quedé en teoría: desarrollé y desplegué de forma independiente proyectos completos con RAG, flujos serverless y SaaS con usuarios reales.`,
+    about_p3: `No entré al desarrollo por subirme a una tendencia. Vengo de la ingeniería de campo donde un error cuesta paradas críticas o problemas de seguridad; ese mismo rigor lo mantengo al diseñar arquitecturas, escribir código y optimizar costos en la nube.`,
     about_loc_label:  'Ubicación',
     about_loc_value:  'Madrid, España',
     about_edu_label:  'Educación',
@@ -179,7 +176,7 @@ const TRANSLATIONS = {
     /* ── PORTFOLIO ── */
     port_label:    '// proyectos',
     port_heading:  'Lo que he construido',
-    port_subtitle: 'Tres aplicaciones de IA full-stack en producción. Mi propio código, sin tutoriales.',
+   port_subtitle: 'Aplicaciones full-stack y sistemas de IA en producción y desarrollo corporativo.',
     bocado_sub:    'App de nutrición personalizada con IA',
     bocado_desc:   `PWA full-stack: Next.js 16 + React 19 + TypeScript + Firebase. Gemini 2.5 Flash para planes de comida
       personalizados, Google Places API para verificar restaurantes reales, Service Worker para modo offline y
@@ -198,6 +195,20 @@ const TRANSLATIONS = {
       grounding estricto al documento. Dos Cloud Functions en producción: ingestión automática y chat persistente.`,
     pdf_link:      'Ver demo',
 
+   /* Proyecto 4: Terminal POS de Automatización */
+    coreit_title:   'Plataforma de Automatización Empresarial (Estilo POS)',
+    coreit_sub:     'Terminal corporativo de IA y flujos n8n',
+    coreit_desc:    `Hub modular con interfaz táctil tipo terminal POS para ejecutar automatizaciones complejas en un toque. Incluye entorno sandbox aislado en JS, pipeline de extracción OCR + validación cruzada con doble LLM y generación dinámica de hojas Excel protegidas con fórmulas auditadas.`,
+    coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
+    coreit_status:  'Despliegue interno / Confidencial',
+
+    /* Proyecto 5: Fidelización y Gamificación Digital */
+    loyalty_title:  'Plataforma de Fidelización & Gamificación Digital',
+    loyalty_sub:    'PWA omnicanal con integración a Apple y Google Wallet',
+    loyalty_desc:   `Plataforma web de fidelización con validación de tickets en dos fases (IA + confirmación de personal en sitio). Cuenta con arquitectura de triple billetera sincronizada en tiempo real, sistema antifraude por huella digital de comprobante y panel de analítica operativa.`,
+    loyalty_tag:    'React · Apple Wallet · Google Wallet · OTP Auth · Antifraude',
+    loyalty_status: 'Fase MVP / Confidencial',
+
     /* ── CV & STACK ── */
     cv_label:    '// cv & tech stack',
     cv_heading:  'Herramientas & Currículum',
@@ -214,21 +225,22 @@ const TRANSLATIONS = {
     stack_devops:     'DevOps & Herramientas',
     stack_electrical: 'Ingeniería Eléctrica',
 
-    /* ── CERTIFICATIONS ── */
-    certs_label:   '// certificaciones',
-    certs_heading: 'Premios & Certificaciones',
+ /* ── CERTIFICACIONES (agrega cert5) ── */
     cert1_title:   'Mejor Expediente Académico — Máster en Business Analytics & IA',
-    cert1_issuer:  'INESDI Business TechSchool · Madrid',
+    cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date:    'Marzo 2026',
     cert2_title:   'Ciclo Digital Leadership',
     cert2_issuer:  'INESDI Business TechSchool',
     cert2_date:    'Abril 2025',
-    cert3_title:   'Electric Power Systems',
-    cert3_issuer:  'University at Buffalo — SUNY / Coursera',
-    cert3_date:    'Febrero 2023',
-    cert4_title:   'Instalador de Conducto Recubierto (PVC)',
-    cert4_issuer:  'Plasti-Bond',
-    cert4_date:    'Abril 2024',
+    cert3_title:   'Inteligencia Artificial — Principios y Aplicaciones',
+    cert3_issuer:  'Universidad del Valle de México',
+    cert3_date:    'Agosto 2026',
+    cert4_title:   'Electric Power Systems',
+    cert4_issuer:  'University at Buffalo — SUNY',
+    cert4_date:    'Febrero 2023',
+    cert5_title:   'Instalador Certificado de Tubería Recubierta (PVC)',
+    cert5_issuer:  'Plasti-Bond',
+    cert5_date:    'Abril 2024',
 
     /* ── EXPERIENCE ── */
     exp_label:   '// experiencia',
