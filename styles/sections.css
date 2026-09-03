@@ -23,7 +23,7 @@
 .hero__grid {
   position: absolute;
   inset: -50%;
-  background-image: radial-gradient(rgba(14, 165, 160, 0.1) 1px, transparent 1px);
+  background-image: radial-gradient(rgba(37, 99, 235, 0.12) 1px, transparent 1px);
   background-size: 30px 30px;
   animation: gridPulse 6s ease-in-out infinite;
 }
@@ -47,7 +47,7 @@
 .hero__glow--2 {
   bottom: -200px;
   left: -100px;
-  background: var(--accent-secondary);
+  background: var(--gold-secondary);
   opacity: 0.06;
 }
 
@@ -198,7 +198,7 @@
 }
 
 .cert-card:hover {
-  border-color: rgba(14, 165, 160, 0.3);
+  border-color: rgba(37, 99, 235, 0.35);
   background: var(--bg-card-hover);
   transform: translateY(-2px);
 }
@@ -208,8 +208,8 @@
 }
 
 .cert-card--featured {
-  border-color: rgba(14, 165, 160, 0.25);
-  background: linear-gradient(135deg, rgba(14, 165, 160, 0.06), var(--bg-card));
+  border-color: rgba(212, 175, 55, 0.4);
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), var(--bg-card));
 }
 
 .cert-card__icon {
@@ -277,7 +277,7 @@
   position: absolute;
   inset: -12px;
   border-radius: calc(var(--radius-xl) + 12px);
-  border: 1px solid rgba(14, 165, 160, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.3); /* Toque dorado tenue */
   animation: pulse 3s ease-in-out infinite;
 }
 
@@ -422,20 +422,18 @@
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 160, 0.04) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.08) 0%, transparent 70%);
   pointer-events: none;
 }
 
 .portfolio__grid {
   display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  grid-template-rows: auto auto;
+  grid-template-columns: repeat(2, 1fr);
   gap: var(--space-xl);
 }
 
-/* Primer proyecto ocupa toda la altura izquierda */
 .portfolio__grid .project-card:first-child {
-  grid-row: span 2;
+  grid-column: 1 / -1;
 }
 
 .project-card {
@@ -454,6 +452,16 @@
 
 .project-card .card__title a:hover {
   color: var(--accent);
+}
+
+.project-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--warning);
+  margin-top: auto;
 }
 
 .project-card__link {
@@ -551,7 +559,7 @@
 }
 
 .cv__stack-section:hover {
-  border-color: rgba(14, 165, 160, 0.2);
+  border-color: rgba(37, 99, 235, 0.25);
   background: var(--bg-card-hover);
   transform: translateY(-2px);
 }
@@ -588,7 +596,7 @@
 
 /* ---- CONTACT — fondo con toque de acento ---- */
 .contact {
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(14, 165, 160, 0.06) 100%);
+  background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(37, 99, 235, 0.06) 100%);
   position: relative;
 }
 
@@ -601,7 +609,7 @@
   width: 500px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(14, 165, 160, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.06) 0%, transparent 70%);
   pointer-events: none;
 }
 
@@ -698,14 +706,13 @@
     grid-template-columns: 1fr;
   }
 
-  /* Portfolio vuelve a columna única en tablet */
+  /* Para pantallas medianas, 1 sola columna para que no se apriete el texto */
   .portfolio__grid {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
   }
 
   .portfolio__grid .project-card:first-child {
-    grid-row: span 1;
+    grid-column: auto;
   }
 }
 
