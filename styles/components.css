@@ -267,8 +267,8 @@
 
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(14, 165, 160, 0.3);
-  box-shadow: 0 0 0 1px rgba(14, 165, 160, 0.08), var(--shadow-lg);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1), var(--shadow-lg);
   transform: translateY(-3px);
 }
 
@@ -342,8 +342,24 @@
 
 .badge--accent {
   color: var(--accent);
-  border-color: rgba(14, 165, 160, 0.25);
-  background: rgba(14, 165, 160, 0.08);
+  border-color: rgba(37, 99, 235, 0.3);
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 4px;
+}
+
+/* Badge Dorado: Para distinciones académicas y premios */
+.badge--gold {
+  color: var(--gold, #d4af37);
+  border-color: rgba(212, 175, 55, 0.35);
+  background: rgba(212, 175, 55, 0.1);
+  border-radius: 4px;
+}
+
+/* Badge Warning/Confidencial: Para proyectos en fase MVP o sin demo pública */
+.badge--warning {
+  color: var(--warning, #f59e0b);
+  border-color: rgba(245, 158, 11, 0.35);
+  background: rgba(245, 158, 11, 0.1);
   border-radius: 4px;
 }
 
@@ -380,7 +396,7 @@
   top: 8px;
   bottom: 8px;
   width: 2px;
-  background: linear-gradient(180deg, var(--accent), var(--accent-secondary), transparent);
+  background: linear-gradient(180deg, var(--accent), rgba(37, 99, 235, 0.3), transparent);
   border-radius: var(--radius-full);
 }
 
