@@ -267,13 +267,8 @@
 
 .card:hover {
   background: var(--bg-card-hover);
-<<<<<<< HEAD
   border-color: rgba(201, 162, 75, 0.3);
   box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.08), var(--shadow-lg);
-=======
-  border-color: rgba(37, 99, 235, 0.35);
-  box-shadow: 0 0 0 1px rgba(37, 99, 235, 0.1), var(--shadow-lg);
->>>>>>> c5e91d0064e37364db516764288e21281601123f
   transform: translateY(-3px);
 }
 
@@ -347,29 +342,8 @@
 
 .badge--accent {
   color: var(--accent);
-<<<<<<< HEAD
   border-color: rgba(201, 162, 75, 0.25);
   background: rgba(201, 162, 75, 0.08);
-=======
-  border-color: rgba(37, 99, 235, 0.3);
-  background: rgba(37, 99, 235, 0.1);
-  border-radius: 4px;
-}
-
-/* Badge Dorado: Para distinciones académicas y premios */
-.badge--gold {
-  color: var(--gold, #d4af37);
-  border-color: rgba(212, 175, 55, 0.35);
-  background: rgba(212, 175, 55, 0.1);
-  border-radius: 4px;
-}
-
-/* Badge Warning/Confidencial: Para proyectos en fase MVP o sin demo pública */
-.badge--warning {
-  color: var(--warning, #f59e0b);
-  border-color: rgba(245, 158, 11, 0.35);
-  background: rgba(245, 158, 11, 0.1);
->>>>>>> c5e91d0064e37364db516764288e21281601123f
   border-radius: 4px;
 }
 

@@ -12,11 +12,7 @@ const TRANSLATIONS = {
     nav_contact:    'Contact',
 
   /* ── HERO ── */
-<<<<<<< HEAD
     hero_label:   'Electrical engineer, AI builder',
-=======
-    hero_label:   'ELECTRICAL ENGINEER · AI & DATA · BUILDER',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     hero_title:   'Electrical Engineer & AI Developer · Madrid',
     hero_tagline: '"From industrial field engineering to full-stack AI products in production."',
     hero_cta:     'Get in touch',
@@ -26,11 +22,7 @@ const TRANSLATIONS = {
     stat_gpa:     'top of class · INESDI 2026',
 
   /* ── ABOUT ── */
-<<<<<<< HEAD
     about_label:    'Profile',
-=======
-    about_label:    '// profile',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     about_heading:  'From Chihuahua to Madrid.<br>From job site to code.',
     about_p1: `I'm <strong>Elier Garcia</strong>, an electrical engineer from Chihuahua, Mexico. I built my foundation tackling high-stakes field challenges: supervising electrical infrastructure for <strong>Microsoft's Azure hyperscale data center</strong> and a <strong>19,847 m² industrial facility for BMW Group</strong>. Within six months, I stepped up from new hire to running the exterior electrical front solo, managing up to <strong>60 workers</strong> with zero supply stoppages.`,
     about_p2: `In 2025, I moved to <strong>Madrid</strong> for an M.S. in Business Analytics & AI at INESDI, graduating with the <strong>top academic record of my cohort</strong>. Alongside coursework, I built and launched real full-stack AI systems independently, featuring RAG pipelines, serverless workflows, and live production users.`,
@@ -68,13 +60,8 @@ const TRANSLATIONS = {
     pdf_link:      'View demo',
 
      /* Project 4: Enterprise Automation Hub */
-<<<<<<< HEAD
     coreit_title:   'CoreIT Automatización',
     coreit_sub:     'Enterprise automation hub with a one-touch, POS-style interface',
-=======
-    coreit_title:   'Enterprise AI Automation Hub (POS Style)',
-    coreit_sub:     'Corporate one-touch terminal for AI & n8n workflows',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     coreit_desc:    `Modular hub with a POS-terminal UI enabling non-technical staff to trigger complex workflows with a single tap. Features an isolated JS execution sandbox, an OCR + dual-LLM cross-validation extraction pipeline, and dynamic Excel generation with formula audits.`,
     coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
     coreit_status:  'Internal Deployment / Confidential',
@@ -102,13 +89,9 @@ const TRANSLATIONS = {
     stack_devops:     'DevOps & Tooling',
     stack_electrical: 'Electrical Engineering',
 
-<<<<<<< HEAD
     /* ── CERTIFICATIONS ── */
     certs_label:   'Certifications',
     certs_heading: 'Awards & Certifications',
-=======
-    /* ── CERTIFICACIONES ── */
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     cert1_title:   'Top Academic Record — M.S. Business Analytics & AI',
     cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date:    'March 2026',
@@ -166,11 +149,7 @@ const TRANSLATIONS = {
     nav_contact:    'Contacto',
 
     /* ── HERO ── */
-<<<<<<< HEAD
     hero_label:   'Ingeniero eléctrico, constructor de IA',
-=======
-    hero_label:   'INGENIERO ELÉCTRICO · AI & DATA · BUILDER',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     hero_title:   'Ingeniero Eléctrico & Desarrollador IA · Madrid',
     hero_tagline: '"Del rigor técnico en obra industrial a productos reales de IA en producción."',
     hero_cta:     'Contactar',
@@ -180,11 +159,7 @@ const TRANSLATIONS = {
     stat_gpa:     'mejor expediente · INESDI 2026',
      
     /* ── ABOUT ── */
-<<<<<<< HEAD
     about_label:    'Perfil',
-=======
-    about_label:    '// perfil',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     about_heading:  'De Chihuahua a Madrid.<br>De la obra al código.',
     about_p1: `Soy <strong>Elier Garcia</strong>, ingeniero eléctrico de Chihuahua, México. Me formé resolviendo problemas reales en terreno: supervisé la infraestructura eléctrica del <strong>Data Center Azure de hiperescala de Microsoft</strong> y la nave de <strong>19,847 m² para BMW Group</strong>. En seis meses pasé de integrarme al equipo a liderar de forma autónoma el frente exterior, coordinando hasta <strong>60 personas</strong> sin un solo día de paro de suministro.`,
     about_p2: `En 2025 me trasladé a <strong>Madrid</strong> para cursar el Máster en Business Analytics & IA en INESDI, donde obtuve el <strong>mejor expediente de la promoción (8.94/10)</strong>. Durante el máster no me quedé en teoría: desarrollé y desplegué de forma independiente proyectos completos con RAG, flujos serverless y SaaS con usuarios reales.`,
@@ -223,13 +198,8 @@ const TRANSLATIONS = {
     pdf_link:      'Ver demo',
 
    /* Proyecto 4: Terminal POS de Automatización */
-<<<<<<< HEAD
     coreit_title:   'CoreIT Automatización',
     coreit_sub:     'Hub de automatización empresarial con interfaz táctil estilo POS',
-=======
-    coreit_title:   'Plataforma de Automatización Empresarial (Estilo POS)',
-    coreit_sub:     'Terminal corporativo de IA y flujos n8n',
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     coreit_desc:    `Hub modular con interfaz táctil tipo terminal POS para ejecutar automatizaciones complejas en un toque. Incluye entorno sandbox aislado en JS, pipeline de extracción OCR + validación cruzada con doble LLM y generación dinámica de hojas Excel protegidas con fórmulas auditadas.`,
     coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
     coreit_status:  'Despliegue interno / Confidencial',
@@ -257,13 +227,9 @@ const TRANSLATIONS = {
     stack_devops:     'DevOps & Herramientas',
     stack_electrical: 'Ingeniería Eléctrica',
 
-<<<<<<< HEAD
  /* ── CERTIFICACIONES ── */
     certs_label:   'Certificaciones',
     certs_heading: 'Premios y Certificaciones',
-=======
- /* ── CERTIFICACIONES (agrega cert5) ── */
->>>>>>> c5e91d0064e37364db516764288e21281601123f
     cert1_title:   'Mejor Expediente Académico — Máster en Business Analytics & IA',
     cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date:    'Marzo 2026',
