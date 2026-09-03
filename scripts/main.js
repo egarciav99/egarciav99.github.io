@@ -255,10 +255,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- Console easter egg ----
   console.log(
     '%c⚡ Elier Garcia — Portfolio',
-    'color: #0ea5a0; font-size: 16px; font-weight: bold;'
+    'color: #2563eb; font-size: 16px; font-weight: bold;'
   );
   console.log(
     '%cBuilt from scratch. No templates, no shortcuts.',
-    'color: #7b7b96; font-size: 12px;'
+    'color: #94a3b8; font-size: 12px;'
   );
 });

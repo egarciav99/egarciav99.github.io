@@ -155,13 +155,13 @@
 }
 
 .section-label {
-  font-family: var(--font-mono);
-  font-size: var(--fs-xs);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: var(--fs-md);
   font-weight: var(--fw-medium);
   color: var(--accent);
-  letter-spacing: var(--ls-wider);
-  text-transform: uppercase;
-  margin-bottom: var(--space-md);
+  letter-spacing: var(--ls-normal);
+  margin-bottom: var(--space-sm);
   display: block;
 }
 
@@ -267,8 +267,8 @@
 
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(14, 165, 160, 0.3);
-  box-shadow: 0 0 0 1px rgba(14, 165, 160, 0.08), var(--shadow-lg);
+  border-color: rgba(201, 162, 75, 0.3);
+  box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.08), var(--shadow-lg);
   transform: translateY(-3px);
 }
 
@@ -342,15 +342,15 @@
 
 .badge--accent {
   color: var(--accent);
-  border-color: rgba(14, 165, 160, 0.25);
-  background: rgba(14, 165, 160, 0.08);
+  border-color: rgba(201, 162, 75, 0.25);
+  background: rgba(201, 162, 75, 0.08);
   border-radius: 4px;
 }
 
 .badge--violet {
-  color: #a78bfa;
-  border-color: rgba(167, 139, 250, 0.25);
-  background: rgba(167, 139, 250, 0.08);
+  color: #7f9bf0;
+  border-color: rgba(37, 66, 168, 0.35);
+  background: rgba(37, 66, 168, 0.14);
   border-radius: 4px;
 }
 
@@ -359,6 +359,17 @@
   border-color: rgba(52, 211, 153, 0.25);
   background: rgba(52, 211, 153, 0.08);
   border-radius: 4px;
+}
+
+.badge--warning {
+  color: var(--warning);
+  border-color: rgba(236, 207, 141, 0.3);
+  background: rgba(236, 207, 141, 0.1);
+  border-radius: 4px;
+}
+
+.project-card__status {
+  margin-top: var(--space-sm);
 }
 
 .badges-wrap {

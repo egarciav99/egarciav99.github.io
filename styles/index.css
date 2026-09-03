@@ -3,43 +3,47 @@
    ============================================ */
 
 /* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 /* ---- Custom Properties ---- */
 :root {
-  /* Colors */
-  --bg-primary: #08080d;
-  --bg-secondary: #0d0d14;
-  --bg-tertiary: #14142a;
-  --bg-card: rgba(16, 16, 26, 0.6);
-  --bg-card-hover: rgba(20, 20, 34, 0.8);
+  /* Colors — near-black ink, royal blue structure, gold as the one accent */
+  --bg-primary: #06070f;
+  --bg-secondary: #0a0c1c;
+  --bg-tertiary: #10122a;
+  --bg-card: rgba(20, 24, 48, 0.55);
+  --bg-card-hover: rgba(26, 30, 60, 0.75);
 
-  --text-primary: #e8e8ed;
-  --text-secondary: #7b7b96;
-  --text-tertiary: #52526a;
+  --text-primary: #f3f3ef;
+  --text-secondary: #9aa0bd;
+  --text-tertiary: #5c6182;
 
-  /* Teal accent — técnico, diferente, conecta con ingeniería */
-  --accent: #0ea5a0;
-  --accent-hover: #14bdb8;
-  --accent-glow: rgba(14, 165, 160, 0.12);
-  --accent-glow-strong: rgba(14, 165, 160, 0.25);
-  --accent-secondary: #5eead4;
-  --accent-secondary-glow: rgba(94, 234, 212, 0.12);
+  /* Royal blue + gold — professional, not techy-teal */
+  --royal: #2542a8;
+  --royal-hover: #3454c4;
+  --royal-glow: rgba(37, 66, 168, 0.16);
 
-  --gradient-primary: linear-gradient(135deg, #0ea5a0 0%, #5eead4 100%);
-  --gradient-text: linear-gradient(135deg, #0ea5a0 0%, #5eead4 50%, #0ea5a0 100%);
-  --gradient-subtle: linear-gradient(135deg, rgba(14, 165, 160, 0.07) 0%, rgba(94, 234, 212, 0.07) 100%);
-  --gradient-border: linear-gradient(135deg, rgba(14, 165, 160, 0.25), rgba(94, 234, 212, 0.2));
+  --accent: #c9a24b;
+  --accent-hover: #ddb968;
+  --accent-glow: rgba(201, 162, 75, 0.14);
+  --accent-glow-strong: rgba(201, 162, 75, 0.28);
+  --accent-secondary: #2542a8;
+  --accent-secondary-glow: rgba(37, 66, 168, 0.14);
 
-  --border-color: rgba(255, 255, 255, 0.06);
-  --border-color-hover: rgba(255, 255, 255, 0.11);
+  --gradient-primary: linear-gradient(135deg, #2542a8 0%, #c9a24b 100%);
+  --gradient-text: linear-gradient(135deg, #c9a24b 0%, #eccf8d 50%, #c9a24b 100%);
+  --gradient-subtle: linear-gradient(135deg, rgba(37, 66, 168, 0.10) 0%, rgba(201, 162, 75, 0.10) 100%);
+  --gradient-border: linear-gradient(135deg, rgba(201, 162, 75, 0.3), rgba(37, 66, 168, 0.25));
 
-  --success: #34d399;
-  --warning: #fbbf24;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-color-hover: rgba(255, 255, 255, 0.13);
 
-  /* Typography — Syne para títulos, DM Sans para cuerpo */
+  --success: #4ade80;
+  --warning: #eccf8d;
+
+  /* Typography — Fraunces (serif, editorial) para títulos, DM Sans para cuerpo */
   --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Syne', 'DM Sans', sans-serif;
+  --font-display: 'Fraunces', 'DM Sans', serif;
   --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
   --fs-xs: 0.75rem;
@@ -138,7 +142,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Syne para todos los headings */
+/* Fraunces para todos los headings */
 h1,
 h2,
 h3,
