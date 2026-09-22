@@ -313,7 +313,7 @@ function applyTranslations(lang) {
 
   const btn = document.getElementById('lang-toggle');
   if (btn) {
-    btn.setAttribute('aria-label', lang === 'en' ? 'Cambiar a Español' : 'Switch to English');
+    btn.setAttribute('title', lang === 'en' ? 'Cambiar a Español' : 'Switch to English');
     const active = btn.querySelector('.lang-toggle__active');
     const other = btn.querySelector('.lang-toggle__other');
     if (active) active.textContent = lang.toUpperCase();
@@ -347,7 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (currentLang === 'en') {
     document.documentElement.lang = 'en';
     if (btn) {
-      btn.setAttribute('aria-label', 'Cambiar a Español');
+      btn.setAttribute('title', 'Cambiar a Español');
       const active = btn.querySelector('.lang-toggle__active');
       const other = btn.querySelector('.lang-toggle__other');
       if (active) active.textContent = 'EN';
