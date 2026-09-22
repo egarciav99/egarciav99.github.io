@@ -4,286 +4,297 @@
 
 const TRANSLATIONS = {
   en: {
-    /* ── NAV ── */
-    nav_about:      'About',
-    nav_projects:   'Projects',
-    nav_cv:         'CV & Stack',
+    meta_title: 'Elier Garcia — Electrical Engineer · AI & Automation · Madrid',
+    meta_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
+    og_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
+    twitter_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
+    nav_about: 'About',
+    nav_projects: 'Projects',
+    nav_cv: 'CV & Stack',
     nav_experience: 'Experience',
-    nav_contact:    'Contact',
-
-  /* ── HERO ── */
-    hero_label:   'Electrical engineer, AI builder',
-    hero_title:   'Electrical Engineer & AI Developer · Madrid',
-    hero_tagline: '"From industrial field engineering to full-stack AI products in production."',
-    hero_cta:     'Get in touch',
-    hero_status:  'Available to work',
-    stat_apps:    'AI apps in production',
-    stat_people:  'people coordinated',
-    stat_gpa:     'top of class · INESDI 2026',
-
-  /* ── ABOUT ── */
-    about_label:    'Profile',
-    about_heading:  'From Chihuahua to Madrid.<br>From job site to code.',
+    nav_contact: 'Contact',
+    nav_hamburger_label: 'Open menu',
+    hero_label: 'Electrical engineer, AI builder',
+    hero_title: 'Electrical Engineer · AI & Automation · Madrid',
+    hero_tagline: '"From industrial field engineering to building AI systems."',
+    hero_cta: 'Get in touch',
+    hero_status: 'Available to work',
+    stat_apps: 'AI projects built',
+    stat_people: 'people coordinated',
+    stat_gpa: 'top of class · INESDI 2026',
+    about_label: 'Profile',
+    about_heading: 'From Chihuahua to Madrid.<br>From field to code.',
     about_p1: `I'm <strong>Elier Garcia</strong>, an electrical engineer from Chihuahua, Mexico. I built my foundation tackling high-stakes field challenges: supervising electrical infrastructure for <strong>Microsoft's Azure hyperscale data center</strong> and a <strong>19,847 m² industrial facility for BMW Group</strong>. Within six months, I stepped up from new hire to running the exterior electrical front solo, managing up to <strong>60 workers</strong> with zero supply stoppages.`,
-    about_p2: `In 2025, I moved to <strong>Madrid</strong> for an M.S. in Business Analytics & AI at INESDI, graduating with the <strong>top academic record of my cohort</strong>. Alongside coursework, I built and launched real full-stack AI systems independently, featuring RAG pipelines, serverless workflows, and live production users.`,
+    about_p2: `In 2025 I moved to <strong>Madrid</strong> for an M.S. in Business Analytics & AI at INESDI, graduating with the <strong>top academic record of my cohort (8.94/10)</strong>. Alongside the programme I started building AI systems: a RAG assistant for technical documents, an AI cover-letter tool and, as part of a team, a nutrition app whose MVP reached 200 real users. In 2026 I founded EG Solutions, where I build AI automations and platforms for businesses.`,
     about_p3: `I didn't transition into tech just to chase buzzwords. I come from industrial engineering where failures have immediate operational impact. That same discipline shapes how I write code, structure pipelines, and manage cloud workloads today.`,
-    about_loc_label:  'Location',
-     about_loc_value:  'Madrid, Spain',
-    about_edu_label:  'Education',
-    about_edu_value:  'M.S. Business Analytics &amp; AI — INESDI (2026)',
-    about_bg_label:   'Background',
-    about_bg_value:   'B.S. Electrical Engineering — TECNM Chihuahua (9.27/10)',
+    about_loc_label: 'Location',
+    about_loc_value: 'Madrid, Spain',
+    about_edu_label: 'Education',
+    about_edu_value: 'M.S. Business Analytics &amp; AI — INESDI (2026)',
+    about_bg_label: 'Background',
+    about_bg_value: 'B.S. Electrical Engineering — TECNM Chihuahua (9.27/10)',
     about_lang_label: 'Languages',
     about_lang_value: 'Spanish (native) · English B2 · German (basic)',
     about_avail_label: 'Availability',
     about_avail_value: 'Immediate',
-
-    /* ── PORTFOLIO ── */
-    port_label:    'Projects',
-    port_heading:  "What I've built",
-    port_subtitle: 'Full-stack applications and AI systems running in production and enterprise development.',
-    bocado_sub:    'Personalized nutrition app with AI',
-    bocado_desc:   `Full-stack PWA: Next.js 16 + React 19 + TypeScript + Firebase. Gemini 2.5 Flash for personalized meal plans,
-      Google Places API to verify real restaurants, Service Worker for offline mode and push notifications.
-      Firestore → BigQuery pipeline with Looker Studio dashboards. <strong>-98% Cloud Function calls,
-      -85% network requests</strong> after optimization. Operational cost: <strong>&lt;€0.50/month</strong>.`,
-    bocado_link:   'View demo',
-    cover_sub:     'SaaS — AI cover letter generator',
-    cover_desc:    `End-to-end SaaS: user uploads CV, n8n orchestrates AI via webhook, custom JS parser detects sections in
-      4 languages (ES/EN/FR/NL). Gemini generates ATS-calibrated letters, persisted in Supabase with Row Level
-      Security. Editable in TipTap, exported as PDF. Authenticated routes on both frontend and backend.`,
-    cover_link:    'View demo',
-    pdf_sub:       'RAG chatbot for technical documents',
-    pdf_desc:      `Full RAG pipeline: PDF extraction, semantic chunking, Gemini embeddings (text-embedding-004) and
-      sub-second vector search in Supabase pgvector. Temperature 0.1 for deterministic answers
-      with strict document grounding. Two Supabase Edge Functions in production: auto-ingestion and persistent chat.`,
-    pdf_link:      'View demo',
-
-     /* Project 4: Enterprise Automation Hub */
-    coreit_title:   'CoreIT Automatización',
-    coreit_sub:     'Enterprise automation hub with a one-touch, POS-style interface',
-    coreit_desc:    `Modular hub with a POS-terminal UI enabling non-technical staff to trigger complex workflows with a single tap. Features an isolated JS execution sandbox, an OCR + dual-LLM cross-validation extraction pipeline, and dynamic Excel generation with formula audits.`,
-    coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
-    coreit_status:  'Internal Deployment / Confidential',
-
-    /* Project 5: Digital Loyalty & Gamification Platform */
-    loyalty_title:  'Digital Loyalty & Gamification Platform',
-    loyalty_sub:    'Omnichannel PWA integrated with Apple & Google Wallet',
-    loyalty_desc:   `Web-based rewards platform with a two-step receipt validation flow (automated + on-site staff verification). Features a real-time synchronized triple wallet ecosystem, voucher fingerprinting for fraud prevention, and an operational analytics dashboard.`,
-    loyalty_tag:    'React · Apple Wallet · Google Wallet · OTP Auth · Fraud Prevention',
-    loyalty_status: 'MVP Stage / Confidential',
-
-    /* ── CV & STACK ── */
-    cv_label:    'CV & tech stack',
-    cv_heading:  'Tools & Résumé',
+    port_label: 'Projects',
+    port_heading: "What I've built",
+    port_subtitle: 'Each project with its real status: in use, in development, MVP or demo.',
+    bocado_sub: 'AI nutrition app · Team project',
+    bocado_desc: `<strong>Problem:</strong> planning meals that fit your goals and knowing where to eat out.
+      <strong>What we built:</strong> a PWA with personalized plans generated by Gemini and restaurants verified through Google Places.
+      <strong>Technical decisions:</strong> Next.js + Firebase, a Firestore → BigQuery pipeline with Looker Studio dashboards, offline mode and push notifications.
+      <strong>Result:</strong> MVP born from a master's thesis, reaching 200 real users; running cost under €0.50/month.`,
+    bocado_status: 'Working demo · Official launch pending',
+    bocado_link: 'View demo (preview)',
+    cover_sub: 'AI cover letter generator',
+    cover_desc: `<strong>Problem:</strong> tailoring a cover letter to every job posting takes time.
+      <strong>What I built:</strong> upload your CV and get an ATS-calibrated letter, editable and exportable to PDF.
+      <strong>Technical decisions:</strong> n8n orchestration via webhook, a custom parser that detects CV sections in 4 languages, and Supabase persistence with Row Level Security.
+      <strong>Result:</strong> in real use.`,
+    cover_status: 'In real use · Personal project',
+    cover_link: 'View demo',
+    pdf_sub: 'RAG assistant for electrical engineering documentation',
+    pdf_desc: `<strong>Problem:</strong> technical documentation is fragmented across PDFs, site notes and vendor specs, making it hard to find the exact answer quickly.
+      <strong>What I built:</strong> a chatbot that answers only from what the uploaded technical document says.
+      <strong>Technical decisions:</strong> semantic chunking, Gemini embeddings and vector search in pgvector; temperature 0.1 for strict grounding; migrated from an n8n workflow to Supabase Edge Functions.
+      <strong>Result:</strong> active development continues to improve accuracy and integrations.`,
+    pdf_status: 'In active development',
+    pdf_link: 'View demo',
+    coreit_title: 'CoreIT Automatización',
+    coreit_sub: 'Enterprise automation hub with a one-touch, POS-style interface',
+    coreit_desc: `<strong>Problem:</strong> moving data from technical PDF documents into Excel was slow and error-prone.
+      <strong>What I built:</strong> a POS-style hub where any staff member triggers automations with one tap, with a two-step extraction pipeline.
+      <strong>Technical decisions:</strong> parallel deterministic and AI extraction, an auditor model that compares both outputs, and human validation before generating the Excel file with protected cells and completeness checks.
+      <strong>Result:</strong> the workflow is being validated in a confidential client project.`,
+    coreit_status: 'MVP in development · Confidential',
+    loyalty_title: 'Technical proposal and working demo · PWA with Apple & Google Wallet',
+    loyalty_sub: 'Technical proposal and working demo · PWA with Apple & Google Wallet',
+    loyalty_desc: `<strong>Problem:</strong> validating real purchases in a loyalty campaign without opening the door to fraud.
+      <strong>What I built:</strong> I designed the technical proposal and developed a working demo of the rewards platform.
+      <strong>Technical decisions:</strong> two-step receipt validation (automated + on-site staff), fraud prevention through receipt fingerprinting, a synchronized triple wallet (web, Apple Wallet, Google Wallet) and an analytics dashboard.`,
+    loyalty_status: 'Working demo · Confidential',
+    cv_label: 'CV & tech stack',
+    cv_heading: 'Tools & Résumé',
     cv_subtitle: 'Download my CV in the profile you need and explore my technical stack.',
-    cv_dl_es_title:  'CV Data & AI — Spanish',
-    cv_dl_es_sub:    'PDF · Business Analytics & AI',
-    cv_dl_en_title:  'CV Data & AI — English',
-    cv_dl_en_sub:    'PDF · Business Analytics & AI',
-    cv_dl_el_title:  'CV Electrical Engineering',
-    cv_dl_el_sub:    'PDF · Industrial installations',
-    stack_frontend:   'Frontend',
-    stack_backend:    'Backend & Cloud',
-    stack_ai:         'AI / ML & Data',
-    stack_devops:     'DevOps & Tooling',
+    cv_dl_es_title: 'CV Data & AI — Spanish',
+    cv_dl_es_sub: 'PDF · Business Analytics & IA',
+    cv_dl_en_title: 'CV Data & AI — English',
+    cv_dl_en_sub: 'PDF · Business Analytics & AI',
+    cv_dl_el_title: 'CV Electrical Engineering',
+    cv_dl_el_sub: 'PDF · Industrial installations',
+    stack_frontend: 'Frontend',
+    stack_backend: 'Backend & Cloud',
+    stack_ai: 'AI / ML & Data',
+    stack_devops: 'DevOps & Tooling',
     stack_electrical: 'Electrical Engineering',
-
-    /* ── CERTIFICATIONS ── */
-    certs_label:   'Certifications',
+    certs_label: 'Certifications',
     certs_heading: 'Awards & Certifications',
-    cert1_title:   'Top Academic Record — M.S. Business Analytics & AI',
-    cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
-    cert1_date:    'March 2026',
-    cert2_title:   'Digital Leadership Programme',
-    cert2_issuer:  'INESDI Business TechSchool',
-    cert2_date:    'April 2025',
-    cert3_title:   'Artificial Intelligence — Principles & Applications',
-    cert3_issuer:  'Universidad del Valle de México',
-    cert3_date:    'August 2026',
-    cert4_title:   'Electric Power Systems',
-    cert4_issuer:  'University at Buffalo — SUNY',
-    cert4_date:    'February 2023',
-    cert5_title:   'PVC-Coated Conduit Installer',
-    cert5_issuer:  'Plasti-Bond',
-    cert5_date:    'April 2024',
-
-    /* ── EXPERIENCE ── */
-    exp_label:   'Experience',
+    cert1_title: 'Top Academic Record — M.S. Business Analytics & AI',
+    cert1_issuer: 'INESDI Business TechSchool · Madrid (UNIE)',
+    cert1_date: 'March 2026',
+    cert2_title: 'Digital Leadership Programme',
+    cert2_issuer: 'INESDI Business TechSchool',
+    cert2_date: 'April 2025',
+    cert3_title: 'Artificial Intelligence — Principles & Applications',
+    cert3_issuer: 'Universidad del Valle de México',
+    cert3_date: 'August 2026',
+    cert4_title: 'Electric Power Systems',
+    cert4_issuer: 'University at Buffalo — SUNY',
+    cert4_date: 'February 2023',
+    cert5_title: 'PVC-Coated Conduit Installer',
+    cert5_issuer: 'Plasti-Bond',
+    cert5_date: 'April 2024',
+    exp_label: 'Experience',
     exp_heading: 'Work history',
-    job1_date:   'Jan 2024 — Feb 2025',
-    job1_title:  'Electrical Construction Resident',
-    job1_company:'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, Mexico',
-    job1_li1:    `Led the full electrical front at <strong>Microsoft's Azure hyperscale Data Center</strong>
-      in Querétaro (~3 football fields) — escalated from newest hire to sole front lead in 6 months,
-      coordinating up to <strong>60 people</strong> with zero supply stoppages over 9 months.`,
-    job1_li2:    `Supervised the electrical installation of a <strong>19,847 m² building at BMW Group's plant</strong>
-      (San Luis Potosí, EV manufacturing from 2027) — developed a custom material tracking system
-      and managed procurement across nearly all 8 sections of the building.`,
-    job1_li3:    'Verified compliance with NEC/IEC/NOM technical specs and safety standards on-site throughout the full project lifecycle for both sites.',
-    job2_date:   'Jan 2023 — Jan 2024',
-    job2_title:  'Electrical Budget Analyst',
-    job2_company:'DEMEK S.A. de C.V. · Chihuahua, Mexico',
-    job2_li1:    `Ran the full estimating cycle — AutoCAD takeoffs, OPUS pricing, vendor quotes, and client delivery.
-      Won the <strong>Terex project in Nuevo León</strong>, presenting directly to the client in English through Copachisa.`,
-    job2_li2:    'Built and presented financial proposals in PowerPoint to non-technical clients, covering scope, line items, and post-review adjustments.',
-    job2_li3:    'Managed vendor relationships to secure best material pricing, integrated directly into OPUS for budget close-out.',
-
-    /* ── CONTACT ── */
-    contact_label:   'Contact',
+    job0_date: '2026 — present',
+    job0_title: 'Founder · AI & Automation Engineer',
+    job0_company: 'EG Solutions · Madrid (remote)',
+    job0_li1: 'Design and development of web platforms, n8n automations and AI agents for businesses.',
+    job0_li2: 'Technical PDF-to-Excel extraction pipeline: parallel regex and LLM extraction (Gemini via n8n), a second model that audits and normalizes both outputs, and human validation before export.',
+    job0_li3: 'Technical proposal and working demo of a loyalty platform: two-step receipt validation, fraud prevention through receipt fingerprinting, and Apple Wallet and Google Wallet integration.',
+    job1_date: 'Jan 2024 — Feb 2025',
+    job1_title: 'Electrical Construction Resident',
+    job1_company: 'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, Mexico',
+    job1_li1: `Led the full electrical front at <strong>Microsoft's Azure hyperscale Data Center</strong> in Querétaro (~3 football fields) — escalated from newest hire to sole front lead in 6 months, coordinating up to <strong>60 people</strong> with zero supply stoppages over 9 months.`,
+    job1_li2: `Supervised the electrical installation of a <strong>19,847 m² building at BMW Group's plant</strong> (San Luis Potosí, EV manufacturing from 2027) — developed a custom material tracking system and managed procurement across nearly all 8 sections of the building.`,
+    job1_li3: 'Verified compliance with NEC/IEC/NOM technical specs and safety standards on-site throughout the full project lifecycle for both sites.',
+    job2_date: 'Jan 2023 — Jan 2024',
+    job2_title: 'Electrical Budget Analyst',
+    job2_company: 'DEMEK S.A. de C.V. · Chihuahua, Mexico',
+    job2_li1: `Ran the full estimating cycle — AutoCAD takeoffs, OPUS pricing, vendor quotes, and client delivery. Won the <strong>Terex project in Nuevo León</strong>, presenting directly to the client in English through Copachisa.`,
+    job2_li2: 'Built and presented financial proposals in PowerPoint to non-technical clients, covering scope, line items, and post-review adjustments.',
+    job2_li3: 'Managed vendor relationships to secure best material pricing, integrated directly into OPUS for budget close-out.',
+    contact_label: 'Contact',
     contact_heading: "Let's talk",
-    contact_msg:     `Available for opportunities in <strong>Data, AI Engineering</strong> or <strong>Electrical
-      Engineering</strong> in Spain. If you think I'm a fit for your team, reach out.`,
-    contact_avail:   'Immediate availability',
-
-    /* ── FOOTER ── */
+    contact_msg: `Available for opportunities in <strong>Data, AI Engineering</strong> or <strong>Electrical Engineering</strong> in Spain. If you think I'm a fit for your team, reach out.`,
+    contact_avail: 'Immediate availability',
     footer_text: 'Designed and built by hand ⚡',
+    tag_medium_voltage: 'Medium Voltage',
+    tag_lv_outdoor: 'LV Outdoor',
+    tag_electrical_rooms: 'Electrical Rooms',
+    tag_vendor_quotes: 'Vendor quotes',
+    tag_site_supervision: 'Site supervision',
+    tag_subcontractor_management: 'Subcontractor management',
+    tag_microsoft_data_center: 'Microsoft Data Center',
+    tag_bmw_group: 'BMW Group',
+    tag_autocad: 'AutoCAD',
+    tag_opus: 'OPUS',
+    tag_excel: 'Excel',
+    tag_n8n: 'n8n',
+    tag_gemini: 'Gemini',
+    tag_react: 'React',
+    tag_supabase: 'Supabase',
+    tag_ocr: 'OCR'
   },
-
   es: {
-    /* ── NAV ── */
-    nav_about:      'Sobre mí',
-    nav_projects:   'Proyectos',
-    nav_cv:         'CV & Stack',
+    meta_title: 'Elier Garcia — Ingeniero Eléctrico · IA & Automatización · Madrid',
+    meta_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
+    og_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
+    twitter_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
+    nav_about: 'Sobre mí',
+    nav_projects: 'Proyectos',
+    nav_cv: 'CV & Stack',
     nav_experience: 'Experiencia',
-    nav_contact:    'Contacto',
-
-    /* ── HERO ── */
-    hero_label:   'Ingeniero eléctrico, constructor de IA',
-    hero_title:   'Ingeniero Eléctrico & Desarrollador IA · Madrid',
-    hero_tagline: '"Del rigor técnico en obra industrial a productos reales de IA en producción."',
-    hero_cta:     'Contactar',
-    hero_status:  'Disponible para trabajar',
-    stat_apps:    'apps de IA en producción',
-    stat_people:  'personas coordinadas',
-    stat_gpa:     'mejor expediente · INESDI 2026',
-     
-    /* ── ABOUT ── */
-    about_label:    'Perfil',
-    about_heading:  'De Chihuahua a Madrid.<br>De la obra al código.',
-    about_p1: `Soy <strong>Elier Garcia</strong>, ingeniero eléctrico de Chihuahua, México. Me formé resolviendo problemas reales en terreno: supervisé la infraestructura eléctrica del <strong>Data Center Azure de hiperescala de Microsoft</strong> y la nave de <strong>19,847 m² para BMW Group</strong>. En seis meses pasé de integrarme al equipo a liderar de forma autónoma el frente exterior, coordinando hasta <strong>60 personas</strong> sin un solo día de paro de suministro.`,
-    about_p2: `En 2025 me trasladé a <strong>Madrid</strong> para cursar el Máster en Business Analytics & IA en INESDI, donde obtuve el <strong>mejor expediente de la promoción (8.94/10)</strong>. Durante el máster no me quedé en teoría: desarrollé y desplegué de forma independiente proyectos completos con RAG, flujos serverless y SaaS con usuarios reales.`,
+    nav_contact: 'Contacto',
+    nav_hamburger_label: 'Abrir menú',
+    hero_label: 'Ingeniero eléctrico, constructor de IA',
+    hero_title: 'Ingeniero Eléctrico · IA & Automatización · Madrid',
+    hero_tagline: '"Del rigor técnico en obra industrial a construir sistemas de IA."',
+    hero_cta: 'Contactar',
+    hero_status: 'Disponible para trabajar',
+    stat_apps: 'proyectos de IA construidos',
+    stat_people: 'personas coordinadas',
+    stat_gpa: 'mejor expediente · INESDI 2026',
+    about_label: 'Perfil',
+    about_heading: 'De Chihuahua a Madrid.<br>De la obra al código.',
+    about_p1: `Soy <strong>Elier Garcia</strong>, ingeniero eléctrico de Chihuahua, México. Me formé resolviendo problemas reales en terreno: supervisé la infraestructura eléctrica del <strong>Data Center Azure de hiperescala de Microsoft</strong> y la nave de <strong>19.847 m² para BMW Group</strong>. En seis meses pasé de integrarme al equipo a liderar de forma autónoma el frente exterior, coordinando hasta <strong>60 personas</strong> sin un solo día de paro de suministro.`,
+    about_p2: `En 2025 me trasladé a <strong>Madrid</strong> para cursar el Máster en Business Analytics & IA en INESDI, donde obtuve el <strong>mejor expediente de la promoción (8,94/10)</strong>. En paralelo empecé a construir sistemas de IA: un asistente RAG para documentación técnica, una herramienta de cartas de presentación con IA y, en equipo, una app de nutrición cuyo MVP llegó a 200 usuarios reales. En 2026 fundé EG Solutions, donde desarrollo automatizaciones y plataformas con IA para empresas.`,
     about_p3: `No entré al desarrollo por subirme a una tendencia. Vengo de la ingeniería de campo donde un error cuesta paradas críticas o problemas de seguridad; ese mismo rigor lo mantengo al diseñar arquitecturas, escribir código y optimizar costos en la nube.`,
-    about_loc_label:  'Ubicación',
-    about_loc_value:  'Madrid, España',
-    about_edu_label:  'Educación',
-    about_edu_value:  'Máster en Business Analytics &amp; AI — INESDI (2026)',
-    about_bg_label:   'Formación',
-    about_bg_value:   'Ingeniería Eléctrica — TECNM Chihuahua (9.27/10)',
+    about_loc_label: 'Ubicación',
+    about_loc_value: 'Madrid, España',
+    about_edu_label: 'Educación',
+    about_edu_value: 'Máster en Business Analytics &amp; AI — INESDI (2026)',
+    about_bg_label: 'Formación',
+    about_bg_value: 'Ingeniería Eléctrica — TECNM Chihuahua (9.27/10)',
     about_lang_label: 'Idiomas',
     about_lang_value: 'Español (nativo) · Inglés B2 · Alemán (básico)',
     about_avail_label: 'Disponibilidad',
     about_avail_value: 'Inmediata',
-
-    /* ── PORTFOLIO ── */
-    port_label:    'Proyectos',
-    port_heading:  'Lo que he construido',
-   port_subtitle: 'Aplicaciones full-stack y sistemas de IA en producción y desarrollo corporativo.',
-    bocado_sub:    'App de nutrición personalizada con IA',
-    bocado_desc:   `PWA full-stack: Next.js 16 + React 19 + TypeScript + Firebase. Gemini 2.5 Flash para planes de comida
-      personalizados, Google Places API para verificar restaurantes reales, Service Worker para modo offline y
-      notificaciones push. Pipeline Firestore → BigQuery con dashboards en Looker Studio.
-      <strong>-98% invocaciones de Cloud Functions, -85% requests de red</strong> tras optimización.
-      Costo operativo: <strong>&lt;€0.50/mes</strong>.`,
-    bocado_link:   'Ver demo',
-    cover_sub:     'SaaS — Generador de cartas de presentación con IA',
-    cover_desc:    `SaaS end-to-end: el usuario sube su CV, n8n orquesta la IA vía webhook, un parser JS propio detecta
-      secciones en 4 idiomas (ES/EN/FR/NL). Gemini genera cartas calibradas para ATS, persistidas en Supabase con
-      Row Level Security. Editables en TipTap, exportadas como PDF. Rutas autenticadas en frontend y backend.`,
-    cover_link:    'Ver demo',
-    pdf_sub:       'Chatbot RAG para documentos técnicos',
-    pdf_desc:      `Pipeline RAG completo: extracción de PDF, chunking semántico, embeddings con Gemini (text-embedding-004)
-      y búsqueda vectorial sub-segundo en Supabase pgvector. Temperature 0.1 para respuestas deterministas con
-      grounding estricto al documento. Dos Supabase Edge Functions en producción: ingestión automática y chat persistente.`,
-    pdf_link:      'Ver demo',
-
-   /* Proyecto 4: Terminal POS de Automatización */
-    coreit_title:   'CoreIT Automatización',
-    coreit_sub:     'Hub de automatización empresarial con interfaz táctil estilo POS',
-    coreit_desc:    `Hub modular con interfaz táctil tipo terminal POS para ejecutar automatizaciones complejas en un toque. Incluye entorno sandbox aislado en JS, pipeline de extracción OCR + validación cruzada con doble LLM y generación dinámica de hojas Excel protegidas con fórmulas auditadas.`,
-    coreit_tag:     'React 19 · n8n Self-hosted · LLM Chain · ExcelJS',
-    coreit_status:  'Despliegue interno / Confidencial',
-
-    /* Proyecto 5: Fidelización y Gamificación Digital */
-    loyalty_title:  'Plataforma de Fidelización & Gamificación Digital',
-    loyalty_sub:    'PWA omnicanal con integración a Apple y Google Wallet',
-    loyalty_desc:   `Plataforma web de fidelización con validación de tickets en dos fases (IA + confirmación de personal en sitio). Cuenta con arquitectura de triple billetera sincronizada en tiempo real, sistema antifraude por huella digital de comprobante y panel de analítica operativa.`,
-    loyalty_tag:    'React · Apple Wallet · Google Wallet · OTP Auth · Antifraude',
-    loyalty_status: 'Fase MVP / Confidencial',
-
-    /* ── CV & STACK ── */
-    cv_label:    'CV y stack técnico',
-    cv_heading:  'Herramientas & Currículum',
+    port_label: 'Proyectos',
+    port_heading: 'Lo que he construido',
+    port_subtitle: 'Cada proyecto con su estado real: en uso, en desarrollo, MVP o demo.',
+    bocado_sub: 'App de nutrición con IA · Proyecto en equipo',
+    bocado_desc: `<strong>Problema:</strong> planificar comidas acordes a tus objetivos y saber dónde comer fuera.
+      <strong>Qué construimos:</strong> PWA con planes personalizados generados con Gemini y restaurantes verificados vía Google Places.
+      <strong>Decisiones técnicas:</strong> Next.js + Firebase, pipeline Firestore → BigQuery con dashboards en Looker Studio, modo offline y notificaciones push.
+      <strong>Resultado:</strong> MVP surgido de un TFM con 200 usuarios reales; coste operativo inferior a 0,50 €/mes.`,
+    bocado_status: 'Demo funcional · Lanzamiento oficial pendiente',
+    bocado_link: 'Ver demo (versión previa)',
+    cover_sub: 'Generador de cartas de presentación con IA',
+    cover_desc: `<strong>Problema:</strong> adaptar una carta de presentación a cada oferta lleva tiempo.
+      <strong>Qué construí:</strong> subes tu CV y obtienes una carta calibrada para ATS, editable y exportable a PDF.
+      <strong>Decisiones técnicas:</strong> orquestación con n8n vía webhook, parser propio que detecta secciones del CV en 4 idiomas y persistencia en Supabase con Row Level Security.
+      <strong>Resultado:</strong> en uso real.`,
+    cover_status: 'En uso real · Proyecto personal',
+    cover_link: 'Ver demo',
+    pdf_sub: 'Asistente RAG para documentación de ingeniería eléctrica',
+    pdf_desc: `<strong>Problema:</strong> la documentación técnica está repartida entre PDFs, apuntes de obra y especificaciones del proveedor, y no siempre es fácil localizar la respuesta exacta en segundos.
+      <strong>Qué construí:</strong> un chatbot que responde solo con lo que dice el documento técnico cargado.
+      <strong>Decisiones técnicas:</strong> chunking semántico, embeddings de Gemini y búsqueda vectorial en pgvector; temperatura 0,1 para un grounding estricto; migrado de un workflow de n8n a Supabase Edge Functions.
+      <strong>Resultado:</strong> sigo desarrollándolo para aumentar precisión e integraciones.`,
+    pdf_status: 'En desarrollo activo',
+    pdf_link: 'Ver demo',
+    coreit_title: 'CoreIT Automatización',
+    coreit_sub: 'Hub de automatización empresarial con interfaz táctil estilo POS',
+    coreit_desc: `<strong>Problema:</strong> extraer datos de documentos técnicos en PDF a Excel era lento y propenso a errores.
+      <strong>Qué construí:</strong> un hub tipo terminal POS donde cualquier colaborador lanza automatizaciones con un toque, con un pipeline de extracción en dos pasos.
+      <strong>Decisiones técnicas:</strong> extracción paralela determinista y por IA, un modelo auditor que compara ambas salidas y validación humana antes de generar el Excel con celdas protegidas y control de llenado.
+      <strong>Resultado:</strong> el flujo se está validando en un proyecto confidencial con cliente.`,
+    coreit_status: 'MVP en desarrollo · Confidencial',
+    loyalty_title: 'Propuesta técnica y demo funcional · PWA con Apple y Google Wallet',
+    loyalty_sub: 'Propuesta técnica y demo funcional · PWA con Apple y Google Wallet',
+    loyalty_desc: `<strong>Problema:</strong> validar compras reales en una campaña de fidelización sin abrir la puerta al fraude.
+      <strong>Qué construí:</strong> diseñé la propuesta técnica y desarrollé una demo funcional de la plataforma de recompensas.
+      <strong>Decisiones técnicas:</strong> validación de tickets en dos pasos (automática + personal en sitio), antifraude por huella digital del ticket, triple billetera sincronizada (web, Apple Wallet, Google Wallet) y panel de analítica.`,
+    loyalty_status: 'Demo funcional · Confidencial',
+    cv_label: 'CV y stack técnico',
+    cv_heading: 'Herramientas & Currículum',
     cv_subtitle: 'Descarga mi CV según el perfil que necesites y explora mi stack técnico.',
-    cv_dl_es_title:  'CV Data & AI — Español',
-    cv_dl_es_sub:    'PDF · Business Analytics & IA',
-    cv_dl_en_title:  'CV Data & AI — Inglés',
-    cv_dl_en_sub:    'PDF · Business Analytics & AI',
-    cv_dl_el_title:  'CV Ingeniería Eléctrica',
-    cv_dl_el_sub:    'PDF · Instalaciones industriales',
-    stack_frontend:   'Frontend',
-    stack_backend:    'Backend & Cloud',
-    stack_ai:         'IA / ML & Datos',
-    stack_devops:     'DevOps & Herramientas',
+    cv_dl_es_title: 'CV Data & AI — Español',
+    cv_dl_es_sub: 'PDF · Business Analytics & IA',
+    cv_dl_en_title: 'CV Data & AI — Inglés',
+    cv_dl_en_sub: 'PDF · Business Analytics & AI',
+    cv_dl_el_title: 'CV Ingeniería Eléctrica',
+    cv_dl_el_sub: 'PDF · Instalaciones industriales',
+    stack_frontend: 'Frontend',
+    stack_backend: 'Backend & Cloud',
+    stack_ai: 'IA / ML & Datos',
+    stack_devops: 'DevOps & Herramientas',
     stack_electrical: 'Ingeniería Eléctrica',
-
- /* ── CERTIFICACIONES ── */
-    certs_label:   'Certificaciones',
+    certs_label: 'Certificaciones',
     certs_heading: 'Premios y Certificaciones',
-    cert1_title:   'Mejor Expediente Académico — Máster en Business Analytics & IA',
-    cert1_issuer:  'INESDI Business TechSchool · Madrid (UNIE)',
-    cert1_date:    'Marzo 2026',
-    cert2_title:   'Ciclo Digital Leadership',
-    cert2_issuer:  'INESDI Business TechSchool',
-    cert2_date:    'Abril 2025',
-    cert3_title:   'Inteligencia Artificial — Principios y Aplicaciones',
-    cert3_issuer:  'Universidad del Valle de México',
-    cert3_date:    'Agosto 2026',
-    cert4_title:   'Electric Power Systems',
-    cert4_issuer:  'University at Buffalo — SUNY',
-    cert4_date:    'Febrero 2023',
-    cert5_title:   'Instalador Certificado de Tubería Recubierta (PVC)',
-    cert5_issuer:  'Plasti-Bond',
-    cert5_date:    'Abril 2024',
-
-    /* ── EXPERIENCE ── */
-    exp_label:   'Experiencia',
+    cert1_title: 'Mejor expediente académico — Máster en Business Analytics & IA',
+    cert1_issuer: 'INESDI Business TechSchool · Madrid (UNIE)',
+    cert1_date: 'Marzo 2026',
+    cert2_title: 'Digital Leadership Programme',
+    cert2_issuer: 'INESDI Business TechSchool',
+    cert2_date: 'Abril 2025',
+    cert3_title: 'Inteligencia Artificial — Principios y Aplicaciones',
+    cert3_issuer: 'Universidad del Valle de México',
+    cert3_date: 'Agosto 2026',
+    cert4_title: 'Electric Power Systems',
+    cert4_issuer: 'University at Buffalo — SUNY',
+    cert4_date: 'Febrero 2023',
+    cert5_title: 'Instalador Certificado de Tubería Recubierta (PVC)',
+    cert5_issuer: 'Plasti-Bond',
+    cert5_date: 'Abril 2024',
+    exp_label: 'Experiencia',
     exp_heading: 'Experiencia laboral',
-    job1_date:   'Ene 2024 — Feb 2025',
-    job1_title:  'Residente de Construcción Eléctrica',
-    job1_company:'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, México',
-    job1_li1:    `Lideré el frente eléctrico completo en el <strong>Data Center Azure de hiperescala de Microsoft</strong>
-      en Querétaro (~3 canchas de fútbol) — escalé de ser el más nuevo en el equipo a encargado único del frente en 6 meses,
-      coordinando hasta <strong>60 personas</strong> sin un solo paro de suministro en 9 meses.`,
-    job1_li2:    `Supervisé la instalación eléctrica de un <strong>edificio de 19,847 m² en la planta de BMW Group</strong>
-      (San Luis Potosí, fabricación de EV desde 2027) — desarrollé un sistema propio de tracking de materiales
-      y gestioné la compra en casi las 8 secciones del edificio.`,
-    job1_li3:    'Verifiqué el cumplimiento de especificaciones técnicas NEC/IEC/NOM y estándares de seguridad en obra durante todo el ciclo de vida del proyecto en ambas obras.',
-    job2_date:   'Ene 2023 — Ene 2024',
-    job2_title:  'Analista de Presupuestos Eléctricos',
-    job2_company:'DEMEK S.A. de C.V. · Chihuahua, México',
-    job2_li1:    `Ejecuté el ciclo completo de presupuestación — mediciones en AutoCAD, precios en OPUS, cotizaciones
-      con proveedores y entrega al cliente. Gané el <strong>proyecto Terex en Nuevo León</strong>, presentando
-      directamente al cliente en inglés a través de Copachisa.`,
-    job2_li2:    'Elaboré y presenté propuestas económicas en PowerPoint a clientes no técnicos, cubriendo alcance, partidas y ajustes post-revisión.',
-    job2_li3:    'Gestioné relaciones con proveedores para obtener los mejores precios de materiales, integrados directamente en OPUS para el cierre de presupuesto.',
-
-    /* ── CONTACT ── */
-    contact_label:   'Contacto',
+    job0_date: '2026 — hoy',
+    job0_title: 'Fundador · Ingeniero de IA y Automatización',
+    job0_company: 'EG Solutions · Madrid (remoto)',
+    job0_li1: 'Diseño y desarrollo de plataformas web, automatizaciones con n8n y agentes de IA para empresas.',
+    job0_li2: 'Pipeline de extracción de PDFs técnicos a Excel: extracción paralela por regex y por LLM (Gemini vía n8n), un segundo modelo que audita y normaliza ambas salidas, y validación humana antes de exportar.',
+    job0_li3: 'Propuesta técnica y demo funcional de una plataforma de fidelización: validación de tickets en dos pasos, antifraude por huella digital del ticket e integración con Apple Wallet y Google Wallet.',
+    job1_date: 'Ene 2024 — Feb 2025',
+    job1_title: 'Residente de Construcción Eléctrica',
+    job1_company: 'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, México',
+    job1_li1: `Lideré el frente eléctrico completo en el <strong>Data Center Azure de hiperescala de Microsoft</strong> en Querétaro (~3 canchas de fútbol) — escalé de ser el más nuevo en el equipo a encargado único del frente en 6 meses, coordinando hasta <strong>60 personas</strong> sin un solo paro de suministro en 9 meses.`,
+    job1_li2: `Supervisé la instalación eléctrica de un <strong>edificio de 19.847 m² en la planta de BMW Group</strong> (San Luis Potosí, fabricación de EV desde 2027) — desarrollé un sistema propio de tracking de materiales y gestioné la compra en casi las 8 secciones del edificio.`,
+    job1_li3: 'Verifiqué el cumplimiento de especificaciones técnicas NEC/IEC/NOM y estándares de seguridad en obra durante todo el ciclo de vida del proyecto en ambas obras.',
+    job2_date: 'Ene 2023 — Ene 2024',
+    job2_title: 'Analista de Presupuestos Eléctricos',
+    job2_company: 'DEMEK S.A. de C.V. · Chihuahua, México',
+    job2_li1: `Ejecuté el ciclo completo de presupuestación — mediciones en AutoCAD, precios en OPUS, cotizaciones con proveedores y entrega al cliente. Gané el <strong>proyecto Terex en Nuevo León</strong>, presentando directamente al cliente en inglés a través de Copachisa.`,
+    job2_li2: 'Elaboré y presenté propuestas económicas en PowerPoint a clientes no técnicos, cubriendo alcance, partidas y ajustes post-revisión.',
+    job2_li3: 'Gestioné relaciones con proveedores para obtener los mejores precios de materiales, integrados directamente en OPUS para el cierre de presupuesto.',
+    contact_label: 'Contacto',
     contact_heading: 'Hablemos',
-    contact_msg:     `Disponible para oportunidades en <strong>Data, Ingeniería de IA</strong> o
-      <strong>Ingeniería Eléctrica</strong> en España. Si crees que encajo en tu equipo, escríbeme.`,
-    contact_avail:   'Disponibilidad inmediata',
-
-    /* ── FOOTER ── */
+    contact_msg: `Disponible para oportunidades en <strong>Data, Ingeniería de IA</strong> o <strong>Ingeniería Eléctrica</strong> en España. Si crees que encajo en tu equipo, escríbeme.`,
+    contact_avail: 'Disponibilidad inmediata',
     footer_text: 'Diseñado y construido a mano ⚡',
-  },
+    tag_medium_voltage: 'Tensión media',
+    tag_lv_outdoor: 'BT exterior',
+    tag_electrical_rooms: 'Cuartos eléctricos',
+    tag_vendor_quotes: 'Cotizaciones de proveedores',
+    tag_site_supervision: 'Supervisión de obra',
+    tag_subcontractor_management: 'Gestión de subcontratas',
+    tag_microsoft_data_center: 'Centro de datos Microsoft',
+    tag_bmw_group: 'BMW Group',
+    tag_autocad: 'AutoCAD',
+    tag_opus: 'OPUS',
+    tag_excel: 'Excel',
+    tag_n8n: 'n8n',
+    tag_gemini: 'Gemini',
+    tag_react: 'React',
+    tag_supabase: 'Supabase',
+    tag_ocr: 'OCR'
+  }
 };
 
-/* ─── Language Engine ─────────────────────────────────────── */
-
 const STORAGE_KEY = 'eg_lang';
-let currentLang = localStorage.getItem(STORAGE_KEY) || 'en';
+let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem(STORAGE_KEY)) || 'en';
 
 function applyTranslations(lang) {
   const t = TRANSLATIONS[lang];
@@ -291,33 +302,65 @@ function applyTranslations(lang) {
 
   document.documentElement.lang = lang;
   currentLang = lang;
-  localStorage.setItem(STORAGE_KEY, lang);
+  if (typeof localStorage !== 'undefined') {
+    localStorage.setItem(STORAGE_KEY, lang);
+  }
 
-  // Update every element that has a data-i18n attribute
-  document.querySelectorAll('[data-i18n]').forEach((el) => {
-    const key = el.getAttribute('data-i18n');
-    if (t[key] !== undefined) {
-      el.innerHTML = t[key];
-    }
-  });
+  const descriptionTag = document.querySelector('meta[name="description"]');
+  const ogDescriptionTag = document.querySelector('meta[property="og:description"]');
+  const twitterDescriptionTag = document.querySelector('meta[name="twitter:description"]');
+  const titleTag = document.querySelector('title');
+  if (titleTag) titleTag.textContent = t.meta_title;
+  if (descriptionTag) descriptionTag.setAttribute('content', t.meta_description);
+  if (ogDescriptionTag) ogDescriptionTag.setAttribute('content', t.og_description);
+  if (twitterDescriptionTag) twitterDescriptionTag.setAttribute('content', t.twitter_description);
 
-  // Update lang toggle button appearance
   const btn = document.getElementById('lang-toggle');
   if (btn) {
     btn.setAttribute('aria-label', lang === 'en' ? 'Cambiar a Español' : 'Switch to English');
-    btn.querySelector('.lang-toggle__active').textContent = lang.toUpperCase();
-    btn.querySelector('.lang-toggle__other').textContent  = lang === 'en' ? 'ES' : 'EN';
+    const active = btn.querySelector('.lang-toggle__active');
+    const other = btn.querySelector('.lang-toggle__other');
+    if (active) active.textContent = lang.toUpperCase();
+    if (other) other.textContent = lang === 'en' ? 'ES' : 'EN';
   }
+
+  const hamburger = document.getElementById('nav-hamburger');
+  if (hamburger) {
+    hamburger.setAttribute('aria-label', t.nav_hamburger_label || 'Open menu');
+  }
+
+  document.querySelectorAll('[data-i18n]').forEach((el) => {
+    const key = el.getAttribute('data-i18n');
+    if (t[key] !== undefined && key !== 'nav_hamburger_label') {
+      el.innerHTML = t[key];
+    }
+  });
 }
 
 function toggleLanguage() {
   applyTranslations(currentLang === 'en' ? 'es' : 'en');
 }
 
-/* ─── Init ────────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
-  applyTranslations(currentLang);
-
   const btn = document.getElementById('lang-toggle');
-  if (btn) btn.addEventListener('click', toggleLanguage);
+  if (btn && !btn.dataset.bound) {
+    btn.addEventListener('click', toggleLanguage);
+    btn.dataset.bound = 'true';
+  }
+
+  if (currentLang === 'en') {
+    document.documentElement.lang = 'en';
+    if (btn) {
+      btn.setAttribute('aria-label', 'Cambiar a Español');
+      const active = btn.querySelector('.lang-toggle__active');
+      const other = btn.querySelector('.lang-toggle__other');
+      if (active) active.textContent = 'EN';
+      if (other) other.textContent = 'ES';
+    }
+    const hamburger = document.getElementById('nav-hamburger');
+    if (hamburger) hamburger.setAttribute('aria-label', 'Open menu');
+    return;
+  }
+
+  applyTranslations(currentLang);
 });
