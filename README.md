@@ -12,18 +12,18 @@ I'm an Electrical Engineer from Chihuahua, Mexico, now based in Madrid. I hold a
 
 ## Projects and real status
 
-### 🥗 [Bocado AI](https://bocado-ai.vercel.app)
+### 🥗 Bocado AI
 AI nutrition app · team project.
 - Working demo available.
 - Official launch pending.
 - MVP created from a master's thesis and reached 200 real users.
 - Running cost under €0.50/month.
 
-### ✍️ [CoverCraft](https://coverletter2.vercel.app)
+### ✍️ CoverCraft
 AI cover-letter generator · personal project.
 - In real use.
 
-### 📄 [PDF Technical Assistant](https://pdf-tech-assistant2.vercel.app)
+### 📄 PDF Technical Assistant
 RAG assistant for electrical engineering documentation.
 - In active development.
 
@@ -45,7 +45,7 @@ Technical proposal and working demo.
 
 ## Deploy
 
-This site is hosted on [GitHub Pages](https://pages.github.com/). The repository is configured for static deployment and does not use Vercel for the live domain.
+This site is deployed on GitHub Pages. Push to `main` and GitHub handles the automatic static deployment.
 
 ```bash
 git add .
