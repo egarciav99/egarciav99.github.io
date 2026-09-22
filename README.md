@@ -1,52 +1,55 @@
 # ⚡ Elier Garcia — Portfolio
 
-Personal portfolio website showcasing my hybrid profile: Electrical Engineering background + AI/Data applied projects.
+Personal portfolio for Elier Garcia, a hybrid profile combining electrical engineering with AI and automation work.
 
-**Live:** [Pagina Personal Elier Garcia](https://egarciav99.github.io)
+**Live:** [egarciav99.github.io](https://egarciav99.github.io)
 
 ---
 
 ## About
 
-I'm an Electrical Engineer from Chihuahua, México, now based in Madrid, Spain. I hold a Master's in Business Analytics & AI (INESDI, 2026) and have hands-on experience managing electrical installations for **Microsoft Data Centers** and **BMW Group** plants. During my Master's, I independently built three production-grade full-stack applications with AI.
+I'm an Electrical Engineer from Chihuahua, Mexico, now based in Madrid. I hold an M.S. in Business Analytics & AI from INESDI and have hands-on experience delivering industrial electrical works for **Microsoft** and **BMW Group**. I now build AI systems, automation flows and web platforms through **EG Solutions**.
 
-## Sections
-
-| Section | Description |
-|---------|-------------|
-| **Hero** | Name, role, profile photo, social links |
-| **About** | Personal background — from Chihuahua to Madrid |
-| **Projects** | Bocado AI · CoverCraft · PDF Technical Assistant |
-| **CV & Stack** | Downloadable CVs (3 versions) + visual tech stack |
-| **Experience** | Professional timeline at DEMEK (Microsoft, BMW) |
-| **Contact** | Email, LinkedIn, phone, location |
-
-## Projects
+## Projects and real status
 
 ### 🥗 [Bocado AI](https://bocado-ai.vercel.app)
-AI-powered nutrition app. React 19 · TypeScript · Firebase · BigQuery · Gemini AI · Looker Studio · n8n · CI/CD
+AI nutrition app · team project.
+- Working demo available.
+- Official launch pending.
+- MVP created from a master's thesis and reached 200 real users.
+- Running cost under €0.50/month.
 
 ### ✍️ [CoverCraft](https://coverletter2.vercel.app)
-SaaS AI cover letter generator. Next.js 15 · TypeScript · Supabase · n8n · TipTap · next-intl
+AI cover-letter generator · personal project.
+- In real use.
 
 ### 📄 [PDF Technical Assistant](https://pdf-tech-assistant2.vercel.app)
-RAG chatbot for technical PDFs. React 18 · Firebase Functions · Supabase pgvector · Gemini AI
+RAG assistant for electrical engineering documentation.
+- In active development.
 
-## Tech Stack (Site)
+### ⚙️ CoreIT Automatización
+Client-confidential automation hub.
+- MVP in development.
 
-- **HTML5** — Semantic structure, SEO meta tags, Open Graph
-- **CSS3** — Custom properties, glassmorphism, gradient effects, responsive mobile-first
-- **JavaScript** — Intersection Observer animations, smooth scroll, mobile nav
-- **No frameworks** — Zero dependencies, fast loading
+### 🎟️ Loyalty platform concept
+Technical proposal and working demo.
+- Demo functional and pending client response.
+
+## Site stack
+
+- HTML5
+- CSS3
+- JavaScript vanilla
+- i18n EN/ES
+- Static hosting on GitHub Pages
 
 ## Deploy
 
-Static site deployed on [Vercel](https://vercel.com). Push to `main` triggers automatic redeploy.
+This site is hosted on [GitHub Pages](https://pages.github.com/). The repository is configured for static deployment and does not use Vercel for the live domain.
 
 ```bash
 git add .
 git commit -m "your message"
-git push
 ```
 
 ## Contact
@@ -58,4 +61,4 @@ git push
 
 ---
 
-Built from scratch. No templates, no shortcuts. ⚡
+Built by hand. ⚡
