@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // ---- Scroll Progress Bar ----
+  // Progress bar is kept only as a lightweight visual, without continuous frame loops.
   const progressBar = document.createElement('div');
   progressBar.id = 'scroll-progress';
   progressBar.style.cssText = `
@@ -19,81 +19,16 @@ document.addEventListener('DOMContentLoaded', () => {
     width: 0%;
     background: var(--accent);
     z-index: 9999;
-    transition: width 0.1s linear;
+    transition: width 0.12s linear;
     pointer-events: none;
   `;
   document.body.prepend(progressBar);
-
-  // ---- Custom Cursor (desktop only) ----
-  const isTouchDevice = window.matchMedia('(hover: none)').matches;
-  let cursor = null;
-
-  if (!isTouchDevice) {
-    cursor = document.createElement('div');
-    cursor.id = 'custom-cursor';
-    cursor.style.cssText = `
-      position: fixed;
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      pointer-events: none;
-      z-index: 99999;
-      left: 0;
-      top: 0;
-      will-change: transform;
-      transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out),
-                  background 0.2s, border 0.2s, opacity 0.2s;
-      opacity: 0;
-    `;
-    document.body.appendChild(cursor);
-
-    let mouseX = 0;
-    let mouseY = 0;
-    let renderX = 0;
-    let renderY = 0;
-    const LERP = 0.35; // higher = snappier (0-1)
-
-    document.addEventListener('mousemove', (e) => {
-      mouseX = e.clientX;
-      mouseY = e.clientY;
-      cursor.style.opacity = '1';
-    });
-
-    document.addEventListener('mouseleave', () => {
-      cursor.style.opacity = '0';
-    });
-
-    function animateCursor() {
-      renderX += (mouseX - renderX) * LERP;
-      renderY += (mouseY - renderY) * LERP;
-      cursor.style.transform = `translate(${renderX - 4}px, ${renderY - 4}px)`;
-      requestAnimationFrame(animateCursor);
-    }
-    animateCursor();
-
-    // Expand cursor on interactive elements
-    const interactives = document.querySelectorAll('a, button, .card, .cv__download-card, .badge');
-    interactives.forEach((el) => {
-      el.addEventListener('mouseenter', () => {
-        cursor.style.width = '24px';
-        cursor.style.height = '24px';
-        cursor.style.background = 'transparent';
-        cursor.style.border = '1.5px solid var(--accent)';
-      });
-      el.addEventListener('mouseleave', () => {
-        cursor.style.width = '8px';
-        cursor.style.height = '8px';
-        cursor.style.background = 'var(--accent)';
-        cursor.style.border = 'none';
-      });
-    });
-  }
 
   // ---- Navbar scroll behavior ----
   const nav = document.getElementById('navbar');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__link');
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const SCROLL_THRESHOLD = 50;
 
@@ -150,22 +85,34 @@ document.addEventListener('DOMContentLoaded', () => {
   const navLinksContainer = document.getElementById('nav-links');
   const overlay = document.getElementById('nav-overlay');
 
+  function setMobileNavState(isOpen) {
+    if (!hamburger || !navLinksContainer || !overlay) return;
+
+    hamburger.classList.toggle('active', isOpen);
+    navLinksContainer.classList.toggle('open', isOpen);
+    overlay.classList.toggle('active', isOpen);
+    hamburger.setAttribute('aria-expanded', String(isOpen));
+    navLinksContainer.setAttribute('aria-hidden', String(!isOpen));
+    overlay.setAttribute('aria-hidden', String(!isOpen));
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  }
+
   function toggleMobileNav() {
-    hamburger.classList.toggle('active');
-    navLinksContainer.classList.toggle('open');
-    overlay.classList.toggle('active');
-    document.body.style.overflow = navLinksContainer.classList.contains('open') ? 'hidden' : '';
+    const willOpen = !navLinksContainer.classList.contains('open');
+    setMobileNavState(willOpen);
   }
 
   function closeMobileNav() {
-    hamburger.classList.remove('active');
-    navLinksContainer.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
+    setMobileNavState(false);
   }
 
-  hamburger.addEventListener('click', toggleMobileNav);
-  overlay.addEventListener('click', closeMobileNav);
+  if (hamburger) {
+    hamburger.addEventListener('click', toggleMobileNav);
+  }
+
+  if (overlay) {
+    overlay.addEventListener('click', closeMobileNav);
+  }
 
   navLinks.forEach((link) => {
     link.addEventListener('click', closeMobileNav);
@@ -216,40 +163,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
         window.scrollTo({
           top: targetPosition,
-          behavior: 'smooth',
+          behavior: prefersReducedMotion.matches ? 'auto' : 'smooth',
         });
       }
     });
   });
 
-  // ---- Hero mouse glow effect — más reactivo (0.06) ----
+  // ---- Hero mouse glow effect (single pointer-driven update, no continuous RAF loop) ----
   const hero = document.querySelector('.hero');
   if (hero) {
     const glow1 = hero.querySelector('.hero__glow--1');
-    let mouseX = 0;
-    let mouseY = 0;
-    let currentX = 0;
-    let currentY = 0;
 
-    hero.addEventListener('mousemove', (e) => {
-      const rect = hero.getBoundingClientRect();
-      mouseX = e.clientX - rect.left - 300;
-      mouseY = e.clientY - rect.top - 300;
-    });
+    if (glow1 && !prefersReducedMotion.matches) {
+      hero.addEventListener('pointermove', (e) => {
+        const rect = hero.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left - rect.width / 2;
+        const offsetY = e.clientY - rect.top - rect.height / 2;
+        glow1.style.transform = `translate(${offsetX * 0.12}px, ${offsetY * 0.12}px)`;
+      });
 
-    function animateGlow() {
-      currentX += (mouseX - currentX) * 0.06;
-      currentY += (mouseY - currentY) * 0.06;
-
-      if (glow1) {
-        glow1.style.left = currentX + 'px';
-        glow1.style.top = currentY + 'px';
-      }
-
-      requestAnimationFrame(animateGlow);
+      hero.addEventListener('pointerleave', () => {
+        glow1.style.transform = 'translate3d(0, 0, 0)';
+      });
     }
-
-    animateGlow();
   }
 
   // ---- Console easter egg ----
