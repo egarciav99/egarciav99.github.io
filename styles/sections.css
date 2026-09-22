@@ -412,6 +412,8 @@
 /* ---- PORTFOLIO — layout asimétrico ---- */
 .portfolio {
   position: relative;
+  /* the 600px decorative ::before must not widen the page on phones */
+  overflow-x: clip;
 }
 
 .portfolio::before {
@@ -604,6 +606,7 @@
 .contact {
   background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(201, 162, 75, 0.06) 100%);
   position: relative;
+  overflow-x: clip;
 }
 
 .contact::before {

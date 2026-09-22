@@ -550,7 +550,8 @@
   .nav__links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 75%;
     max-width: 320px;
     height: 100vh;
@@ -562,15 +563,15 @@
     padding: var(--space-3xl);
     /* visibility keeps the closed off-canvas menu out of the tab order and the a11y tree */
     visibility: hidden;
-    transition: right var(--duration-normal) var(--ease-out),
+    transition: transform var(--duration-normal) var(--ease-out),
       visibility 0s linear var(--duration-normal);
     z-index: 1000;
   }
 
   .nav__links.open {
-    right: 0;
+    transform: none;
     visibility: visible;
-    transition: right var(--duration-normal) var(--ease-out);
+    transition: transform var(--duration-normal) var(--ease-out);
   }
 
   .nav__hamburger {
