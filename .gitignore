@@ -8,3 +8,6 @@ Thumbs.db
 
 # Dependencies
 node_modules/
+
+# Local planning notes (not published)
+prompt-mejoras-web-personal.md
