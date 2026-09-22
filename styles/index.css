@@ -2,9 +2,6 @@
    DESIGN SYSTEM — Elier Garcia Portfolio
    ============================================ */
 
-/* Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600&display=swap');
-
 :root {
   /* Colors — near-black ink, royal blue structure, gold as the one accent */
   --bg-primary: #06070f;
@@ -15,7 +12,7 @@
 
   --text-primary: #f3f3ef;
   --text-secondary: #9aa0bd;
-  --text-tertiary: #5c6182;
+  --text-tertiary: #8a8fae;
 
   /* Royal blue + gold — professional, not techy-teal */
   --royal: #2542a8;
@@ -40,10 +37,10 @@
   --success: #4ade80;
   --warning: #eccf8d;
 
-  /* Typography — Fraunces (serif, editorial) para títulos, DM Sans para cuerpo */
-  --font-primary: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  --font-display: 'Fraunces', 'DM Sans', serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  /* Typography — use system stacks to avoid remote font requests and keep the interface crisp */
+  --font-primary: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-display: 'Georgia', 'Times New Roman', serif;
+  --font-mono: 'SFMono-Regular', 'Consolas', 'Liberation Mono', monospace;
 
   --fs-xs: 0.75rem;
   --fs-sm: 0.875rem;
@@ -290,20 +287,6 @@ ol {
   }
 }
 
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
 @keyframes gridPulse {
 
   0%,
@@ -356,6 +339,21 @@ ol {
 
 .reveal:not(.visible) {
   animation: revealFallback 0s 3s forwards;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* ---- Media Query Breakpoints (reference) ----
