@@ -12,6 +12,8 @@
   height: var(--nav-height);
   background: rgba(8, 8, 13, 0.85);
   border-bottom: 1px solid var(--border-color);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   transition: background var(--duration-normal) var(--ease-out), box-shadow var(--duration-normal) var(--ease-out);
 }
 
@@ -133,7 +135,8 @@
   height: 2px;
   background: var(--text-primary);
   border-radius: var(--radius-full);
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: transform var(--duration-normal) var(--ease-out),
+    opacity var(--duration-normal) var(--ease-out);
 }
 
 .nav__hamburger.active span:nth-child(1) {
@@ -337,7 +340,8 @@
   background: var(--gradient-subtle);
   color: var(--text-secondary);
   border: 1px solid var(--border-color);
-  transition: all var(--duration-fast);
+  transition: border-color var(--duration-fast), color var(--duration-fast),
+    background var(--duration-fast);
   white-space: nowrap;
 }
 
@@ -422,7 +426,8 @@
   box-shadow: 0 0 0 3px var(--bg-primary);
 }
 
-.timeline__item:nth-child(2) .timeline__dot {
+/* Current role keeps the gold dot; earlier roles use the blue one */
+.timeline__item:not(:first-child) .timeline__dot {
   background: var(--accent-secondary);
   box-shadow: 0 0 0 3px var(--bg-primary);
 }
@@ -545,7 +550,8 @@
   .nav__links {
     position: fixed;
     top: 0;
-    right: -100%;
+    right: 0;
+    transform: translateX(100%);
     width: 75%;
     max-width: 320px;
     height: 100vh;
@@ -555,12 +561,17 @@
     justify-content: center;
     gap: var(--space-2xl);
     padding: var(--space-3xl);
-    transition: right var(--duration-normal) var(--ease-out);
+    /* visibility keeps the closed off-canvas menu out of the tab order and the a11y tree */
+    visibility: hidden;
+    transition: transform var(--duration-normal) var(--ease-out),
+      visibility 0s linear var(--duration-normal);
     z-index: 1000;
   }
 
   .nav__links.open {
-    right: 0;
+    transform: none;
+    visibility: visible;
+    transition: transform var(--duration-normal) var(--ease-out);
   }
 
   .nav__hamburger {
