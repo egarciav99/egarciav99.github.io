@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // Progress bar is kept only as a lightweight visual, without continuous frame loops.
+  // ---- Scroll Progress Bar ----
   const progressBar = document.createElement('div');
   progressBar.id = 'scroll-progress';
   progressBar.style.cssText = `
@@ -24,12 +24,89 @@ document.addEventListener('DOMContentLoaded', () => {
   `;
   document.body.prepend(progressBar);
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  // ---- Custom Cursor (desktop only) ----
+  // The frame loop only runs while the dot is catching up with the pointer.
+  const isTouchDevice = window.matchMedia('(hover: none)').matches;
+
+  if (!isTouchDevice && !prefersReducedMotion.matches) {
+    const cursor = document.createElement('div');
+    cursor.id = 'custom-cursor';
+    cursor.style.cssText = `
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      pointer-events: none;
+      z-index: 99999;
+      left: 0;
+      top: 0;
+      will-change: transform;
+      transition: width 0.2s var(--ease-out), height 0.2s var(--ease-out),
+                  background 0.2s, border 0.2s, opacity 0.2s;
+      opacity: 0;
+    `;
+    document.body.appendChild(cursor);
+
+    let mouseX = 0;
+    let mouseY = 0;
+    let renderX = 0;
+    let renderY = 0;
+    let cursorFrame = null;
+    const LERP = 0.35; // higher = snappier (0-1)
+
+    function animateCursor() {
+      renderX += (mouseX - renderX) * LERP;
+      renderY += (mouseY - renderY) * LERP;
+      if (Math.abs(mouseX - renderX) < 0.5 && Math.abs(mouseY - renderY) < 0.5) {
+        renderX = mouseX;
+        renderY = mouseY;
+        cursorFrame = null;
+      } else {
+        cursorFrame = requestAnimationFrame(animateCursor);
+      }
+      cursor.style.transform = `translate(${renderX - 4}px, ${renderY - 4}px)`;
+    }
+
+    document.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      cursor.style.opacity = '1';
+      if (cursorFrame === null) cursorFrame = requestAnimationFrame(animateCursor);
+    });
+
+    document.addEventListener('mouseleave', () => {
+      cursor.style.opacity = '0';
+    });
+
+    // Expand cursor on interactive elements (event delegation)
+    const INTERACTIVE = 'a, button, .card, .cv__download-card, .badge';
+    document.addEventListener('mouseover', (e) => {
+      const el = e.target.closest(INTERACTIVE);
+      if (!el || el.contains(e.relatedTarget)) return;
+      cursor.style.width = '24px';
+      cursor.style.height = '24px';
+      cursor.style.background = 'transparent';
+      cursor.style.border = '1.5px solid var(--accent)';
+    });
+    document.addEventListener('mouseout', (e) => {
+      const el = e.target.closest(INTERACTIVE);
+      if (!el || el.contains(e.relatedTarget)) return;
+      const next = e.relatedTarget && e.relatedTarget.closest && e.relatedTarget.closest(INTERACTIVE);
+      if (next) return;
+      cursor.style.width = '8px';
+      cursor.style.height = '8px';
+      cursor.style.background = 'var(--accent)';
+      cursor.style.border = 'none';
+    });
+  }
+
   // ---- Navbar scroll behavior ----
   const nav = document.getElementById('navbar');
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav__link');
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-
   const SCROLL_THRESHOLD = 50;
 
   function handleNavScroll() {
@@ -47,24 +124,24 @@ document.addEventListener('DOMContentLoaded', () => {
     progressBar.style.width = pct + '%';
   }
 
-  // ---- Active nav link tracking ----
-  function updateActiveLink() {
-    const scrollPos = window.scrollY + 200;
-
-    sections.forEach((section) => {
-      const sectionTop = section.offsetTop;
-      const sectionHeight = section.offsetHeight;
-      const sectionId = section.getAttribute('id');
-
-      if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
-        navLinks.forEach((link) => {
-          link.classList.remove('active');
-          if (link.getAttribute('data-section') === sectionId) {
-            link.classList.add('active');
-          }
-        });
-      }
+  // ---- Active nav link tracking (IntersectionObserver, no layout reads on scroll) ----
+  function setActiveLink(sectionId) {
+    navLinks.forEach((link) => {
+      link.classList.toggle('active', link.getAttribute('data-section') === sectionId);
     });
+  }
+
+  if ('IntersectionObserver' in window) {
+    // A section is "current" when it crosses a thin band at 25% of the viewport height.
+    const activeObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) setActiveLink(entry.target.id);
+        });
+      },
+      { rootMargin: '-25% 0px -74% 0px' }
+    );
+    sections.forEach((section) => activeObserver.observe(section));
   }
 
   // Throttle scroll events
@@ -73,7 +150,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!scrollTicking) {
       requestAnimationFrame(() => {
         handleNavScroll();
-        updateActiveLink();
         scrollTicking = false;
       });
       scrollTicking = true;
@@ -167,23 +243,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- Hero mouse glow effect (single pointer-driven update, no continuous RAF loop) ----
+  // ---- Hero mouse glow effect ----
+  // Eases towards the pointer with transform; the frame loop stops once it has caught up.
+  // pointermove only fires over the hero, so nothing runs while the hero is off-screen.
   const hero = document.querySelector('.hero');
-  if (hero) {
-    const glow1 = hero.querySelector('.hero__glow--1');
+  const glow1 = hero && hero.querySelector('.hero__glow--1');
+  if (glow1 && !prefersReducedMotion.matches) {
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+    let glowFrame = null;
 
-    if (glow1 && !prefersReducedMotion.matches) {
-      hero.addEventListener('pointermove', (e) => {
-        const rect = hero.getBoundingClientRect();
-        const offsetX = e.clientX - rect.left - rect.width / 2;
-        const offsetY = e.clientY - rect.top - rect.height / 2;
-        glow1.style.transform = `translate(${offsetX * 0.12}px, ${offsetY * 0.12}px)`;
-      });
-
-      hero.addEventListener('pointerleave', () => {
-        glow1.style.transform = 'translate3d(0, 0, 0)';
-      });
+    function animateGlow() {
+      currentX += (targetX - currentX) * 0.06;
+      currentY += (targetY - currentY) * 0.06;
+      if (Math.abs(targetX - currentX) < 0.5 && Math.abs(targetY - currentY) < 0.5) {
+        currentX = targetX;
+        currentY = targetY;
+        glowFrame = null;
+      } else {
+        glowFrame = requestAnimationFrame(animateGlow);
+      }
+      glow1.style.transform = `translate3d(${currentX}px, ${currentY}px, 0)`;
     }
+
+    hero.addEventListener('pointermove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      targetX = e.clientX - rect.left - 300;
+      targetY = e.clientY - rect.top - 300;
+      if (glowFrame === null) glowFrame = requestAnimationFrame(animateGlow);
+    });
   }
 
   // ---- Console easter egg ----

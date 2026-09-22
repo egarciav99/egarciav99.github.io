@@ -35,22 +35,21 @@
   border-radius: 50%;
   opacity: 0.1;
   pointer-events: none;
-  will-change: transform;
-  transform: translate3d(0, 0, 0);
-  background: radial-gradient(circle, rgba(201, 162, 75, 0.32) 0%, rgba(201, 162, 75, 0.06) 30%, transparent 70%);
+  /* radial-gradient approximates the former filter: blur(120px) on a solid disc */
+  background: radial-gradient(circle closest-side, rgba(201, 162, 75, 1) 0%, rgba(201, 162, 75, 0.85) 30%,
+      rgba(201, 162, 75, 0.5) 65%, rgba(201, 162, 75, 0.15) 90%, transparent 100%);
 }
 
+/* Starts at the hero's top-left corner and follows the pointer (main.js sets transform) */
 .hero__glow--1 {
-  top: -200px;
-  right: -100px;
-  background: radial-gradient(circle, rgba(201, 162, 75, 0.42) 0%, rgba(201, 162, 75, 0.08) 26%, transparent 68%);
+  top: 0;
+  left: 0;
+  will-change: transform;
 }
 
+/* Never rendered before (its background used an undefined variable); kept invisible */
 .hero__glow--2 {
-  bottom: -200px;
-  left: -100px;
-  background: radial-gradient(circle, rgba(37, 66, 168, 0.28) 0%, rgba(37, 66, 168, 0.06) 24%, transparent 68%);
-  opacity: 0.08;
+  display: none;
 }
 
 .hero__content {
