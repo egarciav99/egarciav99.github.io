@@ -92,8 +92,6 @@ document.addEventListener('DOMContentLoaded', () => {
     navLinksContainer.classList.toggle('open', isOpen);
     overlay.classList.toggle('active', isOpen);
     hamburger.setAttribute('aria-expanded', String(isOpen));
-    navLinksContainer.setAttribute('aria-hidden', String(!isOpen));
-    overlay.setAttribute('aria-hidden', String(!isOpen));
     document.body.style.overflow = isOpen ? 'hidden' : '';
   }
 
