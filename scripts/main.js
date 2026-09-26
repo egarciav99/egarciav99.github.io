@@ -1,5 +1,5 @@
 /* ============================================
-   MAIN.JS — Portfolio Interactions
+   MAIN.JS · Portfolio Interactions
    ============================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -243,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     revealElements.forEach((el) => el.classList.add('visible'));
   }
 
-  // ---- Smooth scroll — offset robusto con nav.offsetHeight ----
+  // ---- Smooth scroll: offset robusto con nav.offsetHeight ----
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener('click', (e) => {
       e.preventDefault();
@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Console easter egg ----
   console.log(
-    '%c⚡ Elier Garcia — Portfolio',
+    '%c⚡ Elier Garcia · Portfolio',
     'color: #2563eb; font-size: 16px; font-weight: bold;'
   );
   console.log(
