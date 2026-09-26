@@ -445,8 +445,97 @@
   height: 100%;
 }
 
-.project-card .card__description {
-  flex: 1;
+.project-card .card__summary {
+  font-size: var(--fs-sm);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-sm);
+}
+
+/* Etiquetas y estado siempre al fondo de la tarjeta, aunque el resumen sea corto */
+.project-card .card__footer {
+  margin-top: auto;
+}
+
+/* Detalle completo (Problema / Qué construí / Resultado) plegado bajo "Ver más" */
+.project-card__details {
+  margin-bottom: var(--space-lg);
+}
+
+.project-card__details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  cursor: pointer;
+  list-style: none;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--accent);
+}
+
+.project-card__details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-card__details > summary::after {
+  content: '▾';
+  transition: transform var(--duration-fast);
+}
+
+.project-card__details[open] > summary::after {
+  transform: rotate(180deg);
+}
+
+.project-card__details > summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.project-card__details .card__description {
+  margin: var(--space-sm) 0 0;
+}
+
+/* Filtros de proyectos */
+.portfolio__filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-sm);
+  margin-bottom: var(--space-2xl);
+}
+
+.portfolio__filter {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  letter-spacing: var(--ls-wide);
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color-hover);
+  border-radius: 999px;
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  transition: color var(--duration-fast), border-color var(--duration-fast), background var(--duration-fast);
+}
+
+.portfolio__filter:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.portfolio__filter.is-active {
+  color: var(--bg-primary);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.portfolio__filter:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.project-card[hidden] {
+  display: none;
 }
 
 .project-card .card__title a {

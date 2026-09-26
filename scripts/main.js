@@ -4,6 +4,25 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // ---- Filtros de proyectos (data-categories en cada tarjeta) ----
+  const filterButtons = document.querySelectorAll('.portfolio__filter');
+  const projectCards = document.querySelectorAll('.portfolio__grid .project-card');
+  filterButtons.forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const filter = btn.dataset.filter;
+      filterButtons.forEach((b) => {
+        const active = b === btn;
+        b.classList.toggle('is-active', active);
+        b.setAttribute('aria-pressed', String(active));
+      });
+      projectCards.forEach((card) => {
+        const cats = (card.dataset.categories || '').split(' ');
+        card.hidden = filter !== 'all' && !cats.includes(filter);
+        if (!card.hidden) card.classList.add('visible');
+      });
+    });
+  });
+
   // ---- Dynamic Year ----
   const yearEl = document.getElementById('footer-year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
