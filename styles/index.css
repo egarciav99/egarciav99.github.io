@@ -145,6 +145,10 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   scroll-padding-top: var(--nav-height);
+  /* iOS Safari ignora overflow-x en body: sin esto la página se puede arrastrar de lado
+     por los fondos decorativos del hero y el menú lateral fuera de pantalla. */
+  overflow-x: hidden;
+  overflow-x: clip;
 }
 
 body {
@@ -155,6 +159,7 @@ body {
   color: var(--text-primary);
   background-color: var(--bg-primary);
   overflow-x: hidden;
+  overflow-x: clip;
 }
 
 /* Fraunces para todos los headings */
