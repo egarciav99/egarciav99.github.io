@@ -52,6 +52,17 @@ git add .
 git commit -m "your message"
 ```
 
+## CV in PDF
+
+`Elier_Garcia_CV_ES.pdf` and `Elier_Garcia_CV_EN.pdf` are generated from the site, not edited by hand:
+
+- `cv.html` + `scripts/cv.js` build a one-page A4 CV from `scripts/i18n.js`, `scripts/projects-i18n.js` and `index.html` (the first 3 projects, in site order, and the stack badges marked with `data-cv`).
+- CV-only texts (headline, profile summary, education details) are the `cvp_*` keys in `scripts/i18n.js`. Bullets per job and number of projects: `CV_BULLETS` and `CV_PROJECTS` in `scripts/cv.js`.
+- The **Generar CV en PDF** workflow runs `scripts/build-cv.mjs` (Playwright + Chromium) on every push that touches those files and commits the new PDFs. It shrinks the text if needed so the CV fits on one page.
+- The public PDF has no phone number. `Elier_Garcia_CV_EL.pdf` (electrical engineering) is still maintained by hand.
+
+Local build: `npm install --no-save playwright && npx playwright install chromium && node scripts/build-cv.mjs`. Preview in the browser: `cv.html?lang=es` or `?lang=en` (served over HTTP).
+
 ## Contact
 
 - 📧 eliergv.99@gmail.com

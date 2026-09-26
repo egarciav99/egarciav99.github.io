@@ -1,0 +1,86 @@
+/* ============================================
+   CV.CSS — CV en una hoja A4 (cv.html)
+   --s escala todo el texto; build-cv.mjs la reduce si no cabe en una página.
+   ============================================ */
+
+:root {
+  --s: 1;
+  --ink: #1d2433;
+  --muted: #5b6475;
+  --accent: #2f6f7e;
+  --rule: #c9d3d8;
+  --side: #f1f3f5;
+  --side-w: 33%;
+}
+
+@page { size: A4; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: calc(9.2pt * var(--s)); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+body {
+  background: #e6e9ec;
+  color: var(--ink);
+  font-family: 'DM Sans', 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.38;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.page {
+  display: flex;
+  width: 210mm;
+  min-height: 297mm;
+  margin: 0 auto;
+  background: linear-gradient(to right, var(--side) 0 var(--side-w), #fff var(--side-w));
+}
+
+@media screen { .page { margin: 16px auto; box-shadow: 0 2px 16px rgba(0, 0, 0, .12); } }
+@media print { body { background: #fff; } }
+
+/* Barra lateral */
+.cv-side { width: var(--side-w); padding: 12mm 6.5mm 10mm 8mm; }
+.cv-photo { display: block; width: 29mm; height: 29mm; margin: 0 auto 3.5mm; border-radius: 50%; object-fit: cover; }
+.cv-name { font-family: 'Fraunces', Georgia, serif; font-size: 2rem; line-height: 1.1; text-align: center; }
+.cv-headline { margin-top: 1.2mm; color: var(--accent); font-size: .92rem; font-weight: 600; letter-spacing: .04em; text-align: center; text-transform: uppercase; }
+
+.cv-side .cv-sec { margin-top: 4.5mm; }
+.cv-list { list-style: none; }
+.cv-list li { margin-bottom: .6mm; overflow-wrap: anywhere; }
+.cv-summary { color: #333b4a; }
+.cv-skill { margin-bottom: 1.6mm; }
+.cv-skill__label { font-weight: 600; }
+.cv-skill__items { color: #333b4a; }
+.cv-certs { list-style: none; }
+.cv-certs li { margin-bottom: 1mm; }
+.cv-certs strong { font-weight: 600; }
+.cv-certs span { color: var(--muted); }
+
+/* Columna principal */
+.cv-main { display: flex; flex-direction: column; width: calc(100% - var(--side-w)); padding: 12mm 10mm 8mm 8mm; }
+.cv-main .cv-sec + .cv-sec { margin-top: 4.5mm; }
+
+.cv-sec__title {
+  margin-bottom: 2mm;
+  padding-bottom: .8mm;
+  border-bottom: 1.2px solid var(--rule);
+  color: var(--accent);
+  font-size: 1.12rem;
+  font-weight: 700;
+}
+.cv-side .cv-sec__title { font-size: 1.05rem; }
+
+.cv-item + .cv-item { margin-top: 2.6mm; }
+.cv-item__head { display: flex; align-items: baseline; justify-content: space-between; gap: 3mm; }
+.cv-item__head h3 { font-size: 1.05rem; font-weight: 700; }
+.cv-item__date { flex-shrink: 0; color: var(--muted); font-size: .9rem; }
+.cv-item__org { color: var(--accent); font-weight: 500; }
+.cv-item ul { margin-top: .8mm; padding-left: 3.6mm; }
+.cv-item li { margin-bottom: .5mm; }
+.cv-item li::marker { color: var(--accent); }
+.cv-item p { margin-top: .6mm; }
+.cv-item__tags { margin-top: .5mm; color: var(--muted); font-size: .9rem; }
+.cv-item strong { font-weight: 600; }
+
+.cv-foot { margin-top: auto; padding-top: 3mm; color: var(--muted); font-size: .82rem; text-align: right; }
