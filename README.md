@@ -54,14 +54,20 @@ git commit -m "your message"
 
 ## CV in PDF
 
-`Elier_Garcia_CV_ES.pdf` and `Elier_Garcia_CV_EN.pdf` are generated from the site, not edited by hand:
+The CVs are generated from the site, not edited by hand:
 
-- `cv.html` + `scripts/cv.js` build a one-page A4 CV from `scripts/i18n.js`, `scripts/projects-i18n.js` and `index.html` (the first 3 projects, in site order, and the stack badges marked with `data-cv`).
-- CV-only texts (headline, profile summary, education details) are the `cvp_*` keys in `scripts/i18n.js`. Bullets per job and number of projects: `CV_BULLETS` and `CV_PROJECTS` in `scripts/cv.js`.
-- The **Generar CV en PDF** workflow runs `scripts/build-cv.mjs` (Playwright + Chromium) on every push that touches those files and commits the new PDFs. It shrinks the text if needed so the CV fits on one page.
-- The public PDF has no phone number. `Elier_Garcia_CV_EL.pdf` (electrical engineering) is still maintained by hand.
+| File | Variant | Language |
+|---|---|---|
+| `Elier_Garcia_CV_ES.pdf` / `Elier_Garcia_CV_EN.pdf` | Data & AI (`cv.html?cv=data`) | ES / EN |
+| `Elier_Garcia_CV_EL.pdf` / `Elier_Garcia_CV_EL_ES.pdf` | Electrical engineering (`cv.html?cv=el`) | EN / ES |
 
-Local build: `npm install --no-save playwright && npx playwright install chromium && node scripts/build-cv.mjs`. Preview in the browser: `cv.html?lang=es` or `?lang=en` (served over HTTP).
+- `cv.html` + `scripts/cv.js` build a one-page A4 CV from `scripts/i18n.js`, `scripts/projects-i18n.js` and `index.html`. Each variant is configured in `CV_VARIANTS` (`scripts/cv.js`): projects, bullets per job, certifications and education order.
+- CV-only texts are the `cvp_*` keys in `scripts/i18n.js` (`cvp_el_*` for the electrical CV: headline, profile, job bullets and the PDF Technical Assistant summary). The detailed source for the electrical bullets is `eg-content/perfil/experiencia.md`.
+- Stack badges shown in each CV are marked in `index.html` with `data-cv` (Data & AI) and `data-cv-el` (electrical).
+- The **Generar CV en PDF** workflow runs `scripts/build-cv.mjs` (Playwright + Chromium) on every push that touches those files and commits the new PDFs. It shrinks the text if needed so each CV fits on one page.
+- The public PDFs have no phone number. The electrical CV card on the site downloads the file in the current language (`data-i18n-href`).
+
+Local build: `npm install --no-save playwright && npx playwright install chromium && node scripts/build-cv.mjs`. Preview in the browser: `cv.html?cv=el&lang=es` (served over HTTP).
 
 ## Contact
 

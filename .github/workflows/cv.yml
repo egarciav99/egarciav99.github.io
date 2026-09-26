@@ -1,6 +1,6 @@
 name: Generar CV en PDF
 
-# Regenera Elier_Garcia_CV_ES.pdf y Elier_Garcia_CV_EN.pdf desde cv.html cada vez que
+# Regenera los CV en PDF (Elier_Garcia_CV_*.pdf) desde cv.html cada vez que
 # cambia algo de lo que sale en el CV (incluida la sincronización desde eg-content).
 on:
   push:
@@ -40,7 +40,7 @@ jobs:
         run: node scripts/build-cv.mjs
       - name: Subir los PDF
         run: |
-          git add Elier_Garcia_CV_ES.pdf Elier_Garcia_CV_EN.pdf
+          git add Elier_Garcia_CV_*.pdf
           if git diff --cached --quiet; then
             echo "Sin cambios en los PDF."
             exit 0

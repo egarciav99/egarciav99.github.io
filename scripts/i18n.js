@@ -116,6 +116,21 @@ const TRANSLATIONS = {
     cvp_edu2_place: 'Instituto Tecnológico de Chihuahua · Mexico · 2023',
     cvp_edu2_detail: 'Major in electrical installations. GPA 9.27/10. President of the Electrical Engineering student committee.',
     cvp_updated: 'Generated from egarciav99.github.io',
+    // CV eléctrico (cv.html?cv=el): fuente, eg-content/perfil/experiencia.md
+    cv_dl_el_href: 'Elier_Garcia_CV_EL.pdf',
+    cvp_el_headline: 'Electrical Engineer · Industrial installations',
+    cvp_project: 'Related project',
+    cvp_el_summary: `Electrical engineer with two years at DEMEK on large-scale industrial projects: one year estimating electrical installations and one on site, first at Microsoft's hyperscale data center in Querétaro, where I went from newest resident to sole lead of the outdoor front, and then at BMW Group's plant in San Luis Potosí. M.S. in Business Analytics & AI with the top record of my cohort: I apply data and automation to the problems I lived on site, such as materials tracking and technical documentation.`,
+    cvp_el_job1_li1: `<strong>Microsoft Azure hyperscale Data Center</strong> (Querétaro, 9 months): from newest resident to <strong>sole lead of the outdoor electrical front</strong> in 6 months, directly supervising <strong>60+ people</strong>, with daily progress meetings, weekly planning and coordination with mechanical, telecom and civil works.`,
+    cvp_el_job1_li2: 'Outdoor scope: medium voltage (conduit and cabling, coordinated with civil works), grounding systems, installation of transformers, generators and switchgear with crane coordination, pump room (MCC, lighting and power panels), outdoor pole lighting and temporary site power.',
+    cvp_el_job1_li3: 'Procurement of critical long-lead materials through requisitions, planning and follow-up with suppliers.',
+    cvp_el_job1_li4: `<strong>BMW Group plant</strong> (San Luis Potosí, 5 months, 19,847 m² body-shop expansion in 8 sections): supervised LV and grounding in 2 sections (~40 people) and handled material requisitions for nearly all 8.`,
+    cvp_el_job1_li5: 'Built my own materials tracking system (Excel + SAP): every off-budget request technically justified (take-off vs. drawings or documented design change), fewer supply stoppages, and irregularities detected that led to safety improvements.',
+    cvp_el_job1_li6: 'Compliance with NEC/IEC/NOM specifications and safety standards on both sites.',
+    cvp_el_job2_li1: 'Full estimating cycle for several projects in parallel (1–2 week deadlines): drawings and specs in AutoCAD, Excel quantity take-offs by room, system and area, and OPUS pricing by line item.',
+    cvp_el_job2_li2: 'Supplier quotes under client-defined brand and function specs, full indirect costs (security, site offices, cranes, labor, safety and documentation) and change orders during execution.',
+    cvp_el_job2_li3: `Won the <strong>Terex project in Nuevo León</strong>: the only bid that reached the final presentation, delivered in English directly to Terex through Copachisa.`,
+    cvp_el_pdf_assistant_sum: 'Built from my own site experience to query electrical specs and technical manuals: each company uploads its PDFs and gets answers only from the documents, focused on its specialty (electrical, civil, mechanical…). Multi-company with roles, delivered as SaaS or on-premise with Docker.',
     tag_medium_voltage: 'Medium Voltage',
     tag_lv_outdoor: 'LV Outdoor',
     tag_electrical_rooms: 'Electrical Rooms',
@@ -246,6 +261,21 @@ const TRANSLATIONS = {
     cvp_edu2_place: 'Instituto Tecnológico de Chihuahua · México · 2023',
     cvp_edu2_detail: 'Especialidad en instalaciones eléctricas. Promedio 9,27/10. Presidente de la Comisión de Alumnos de Ingeniería Eléctrica.',
     cvp_updated: 'Generado desde egarciav99.github.io',
+    // CV eléctrico (cv.html?cv=el): fuente, eg-content/perfil/experiencia.md
+    cv_dl_el_href: 'Elier_Garcia_CV_EL_ES.pdf',
+    cvp_el_headline: 'Ingeniero Eléctrico · Instalaciones industriales',
+    cvp_project: 'Proyecto relacionado',
+    cvp_el_summary: `Ingeniero eléctrico con dos años en DEMEK en obras industriales de gran escala: uno presupuestando instalaciones eléctricas y otro en obra, primero en el data center de hiperescala de Microsoft en Querétaro, donde pasé de residente más nuevo a encargado único del frente de exteriores, y después en la planta de BMW Group en San Luis Potosí. Máster en Business Analytics e IA con el mejor expediente de la promoción: aplico datos y automatización a los problemas que viví en obra, como el seguimiento de material y la documentación técnica.`,
+    cvp_el_job1_li1: `<strong>Data Center Azure de hiperescala de Microsoft</strong> (Querétaro, 9 meses): de residente más nuevo a <strong>encargado único del frente eléctrico de exteriores</strong> en 6 meses, supervisando a <strong>más de 60 personas</strong>, con juntas diarias de avance, planeación semanal y coordinación con mecánica, telefonía y obra civil.`,
+    cvp_el_job1_li2: 'Alcance de exteriores: media tensión (tuberías y cableado, coordinada con obra civil), sistemas de tierras, montaje de transformadores, generadores y tableros con coordinación de grúas, cuarto de bombas (CCM, tableros de alumbrado y fuerza), luminarias exteriores en postes y energía provisional de obra.',
+    cvp_el_job1_li3: 'Gestión de materiales con tiempos de entrega críticos: requisiciones, planeación y seguimiento con proveedores.',
+    cvp_el_job1_li4: `<strong>Planta de BMW Group</strong> (San Luis Potosí, 5 meses, ampliación de carrocería de 19.847 m² en 8 secciones): supervisé baja tensión y tierras en 2 secciones (~40 personas) y gestioné las requisiciones de material de casi las 8.`,
+    cvp_el_job1_li5: 'Sistema propio de seguimiento de material (Excel + SAP): cada requisición fuera de presupuesto justificada técnicamente (volumetría frente a plano o cambio de diseño documentado), menos paros de suministro e irregularidades detectadas que llevaron a mejoras de seguridad.',
+    cvp_el_job1_li6: 'Cumplimiento de especificaciones NEC/IEC/NOM y normas de seguridad en ambas obras.',
+    cvp_el_job2_li1: 'Ciclo completo de presupuestación para varias obras a la vez (entregas de 1 a 2 semanas): planos y especificaciones en AutoCAD, volumetrías en Excel por cuarto, sistema y área, y precios en OPUS por partidas.',
+    cvp_el_job2_li2: 'Cotizaciones con proveedores bajo especificaciones cerradas de marca y función, indirectos completos (vigilancia, casetas, grúas, mano de obra, seguridad y documentación) y órdenes de cambio durante la ejecución.',
+    cvp_el_job2_li3: `Adjudicación del <strong>proyecto Terex en Nuevo León</strong>: el único presupuesto que llegó a presentación final, en inglés y directamente con Terex, a través de Copachisa.`,
+    cvp_el_pdf_assistant_sum: 'Nació de mi experiencia en obra para consultar especificaciones eléctricas y manuales técnicos: cada empresa sube sus PDF y obtiene respuestas solo de sus documentos, con el enfoque de su especialidad (eléctrica, civil, mecánica…). Multiempresa con roles, se entrega como SaaS o instalado con Docker.',
     tag_medium_voltage: 'Tensión media',
     tag_lv_outdoor: 'BT exterior',
     tag_electrical_rooms: 'Cuartos eléctricos',
@@ -300,6 +330,11 @@ function applyTranslations(lang) {
   if (hamburger) {
     hamburger.setAttribute('aria-label', t.nav_hamburger_label || 'Open menu');
   }
+
+  document.querySelectorAll('[data-i18n-href]').forEach((el) => {
+    const href = t[el.getAttribute('data-i18n-href')];
+    if (href) el.setAttribute('href', href);
+  });
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
