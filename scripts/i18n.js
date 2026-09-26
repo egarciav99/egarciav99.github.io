@@ -296,7 +296,7 @@ const TRANSLATIONS = {
 };
 
 const STORAGE_KEY = 'eg_lang';
-let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem(STORAGE_KEY)) || 'en';
+let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem(STORAGE_KEY)) || 'es';
 
 function applyTranslations(lang) {
   const t = TRANSLATIONS[lang];
@@ -355,19 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.dataset.bound = 'true';
   }
 
-  if (currentLang === 'en') {
-    document.documentElement.lang = 'en';
-    if (btn) {
-      btn.setAttribute('title', 'Cambiar a Español');
-      const active = btn.querySelector('.lang-toggle__active');
-      const other = btn.querySelector('.lang-toggle__other');
-      if (active) active.textContent = 'EN';
-      if (other) other.textContent = 'ES';
-    }
-    const hamburger = document.getElementById('nav-hamburger');
-    if (hamburger) hamburger.setAttribute('aria-label', 'Open menu');
-    return;
-  }
-
-  applyTranslations(currentLang);
+  // El HTML está en español; si el visitante eligió inglés, se aplica al cargar.
+  if (currentLang !== 'es') applyTranslations(currentLang);
 });
