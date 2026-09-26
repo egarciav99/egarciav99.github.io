@@ -1,0 +1,52 @@
+name: Generar CV en PDF
+
+# Regenera los CV en PDF (Elier_Garcia_CV_*.pdf) desde cv.html cada vez que
+# cambia algo de lo que sale en el CV (incluida la sincronización desde eg-content).
+on:
+  push:
+    branches: [main]
+    paths:
+      - index.html
+      - cv.html
+      - scripts/i18n.js
+      - scripts/projects-i18n.js
+      - scripts/cv.js
+      - scripts/build-cv.mjs
+      - styles/cv.css
+      - assets/profile.*
+      - .github/workflows/cv.yml
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: cv-pdf
+  cancel-in-progress: true
+
+jobs:
+  cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Instalar Playwright y Chromium
+        run: |
+          npm install --no-save --no-package-lock playwright@1.58.2
+          npx playwright install --with-deps chromium
+      - name: Generar los PDF
+        run: node scripts/build-cv.mjs
+      - name: Subir los PDF
+        run: |
+          git add Elier_Garcia_CV_*.pdf
+          if git diff --cached --quiet; then
+            echo "Sin cambios en los PDF."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "CV en PDF regenerado desde la web (${GITHUB_SHA::7})"
+          git pull --rebase origin main
+          git push origin HEAD:main

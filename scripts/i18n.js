@@ -1,10 +1,10 @@
 /* ============================================
-   I18N.JS — Bilingual EN / ES Support
+   I18N.JS · Bilingual EN / ES Support
    ============================================ */
 
 const TRANSLATIONS = {
   en: {
-    meta_title: 'Elier Garcia — Electrical Engineer · AI & Automation · Madrid',
+    meta_title: 'Elier Garcia · Electrical Engineer · AI & Automation · Madrid',
     meta_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
     og_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
     twitter_description: 'Electrical Engineer with an M.S. in Business Analytics & AI. Industrial projects for Microsoft and BMW Group. Founder of EG Solutions, building AI and automation systems. Based in Madrid.',
@@ -30,9 +30,9 @@ const TRANSLATIONS = {
     about_loc_label: 'Location',
     about_loc_value: 'Madrid, Spain',
     about_edu_label: 'Education',
-    about_edu_value: 'M.S. Business Analytics &amp; AI — INESDI (2026)',
+    about_edu_value: 'M.S. Business Analytics &amp; AI · INESDI (2026)',
     about_bg_label: 'Background',
-    about_bg_value: 'B.S. Electrical Engineering — TECNM Chihuahua (9.27/10)',
+    about_bg_value: 'B.S. Electrical Engineering · TECNM Chihuahua (9.27/10)',
     about_lang_label: 'Languages',
     about_lang_value: 'Spanish (native) · English B2 · German (basic)',
     about_avail_label: 'Availability',
@@ -43,9 +43,9 @@ const TRANSLATIONS = {
     cv_label: 'CV & tech stack',
     cv_heading: 'Tools & Résumé',
     cv_subtitle: 'Download my CV in the profile you need and explore my technical stack.',
-    cv_dl_es_title: 'CV Data & AI — Spanish',
+    cv_dl_es_title: 'CV Data & AI · Spanish',
     cv_dl_es_sub: 'PDF · Business Analytics & IA',
-    cv_dl_en_title: 'CV Data & AI — English',
+    cv_dl_en_title: 'CV Data & AI · English',
     cv_dl_en_sub: 'PDF · Business Analytics & AI',
     cv_dl_el_title: 'CV Electrical Engineering',
     cv_dl_el_sub: 'PDF · Industrial installations',
@@ -56,17 +56,17 @@ const TRANSLATIONS = {
     stack_electrical: 'Electrical Engineering',
     certs_label: 'Certifications',
     certs_heading: 'Awards & Certifications',
-    cert1_title: 'Top Academic Record — M.S. Business Analytics & AI',
+    cert1_title: 'Top Academic Record · M.S. Business Analytics & AI',
     cert1_issuer: 'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date: 'March 2026',
     cert2_title: 'Digital Leadership Programme',
     cert2_issuer: 'INESDI Business TechSchool',
     cert2_date: 'April 2025',
-    cert3_title: 'Artificial Intelligence — Principles & Applications',
+    cert3_title: 'Artificial Intelligence: Principles & Applications',
     cert3_issuer: 'Universidad del Valle de México',
     cert3_date: 'August 2026',
     cert4_title: 'Electric Power Systems',
-    cert4_issuer: 'University at Buffalo — SUNY',
+    cert4_issuer: 'University at Buffalo (SUNY)',
     cert4_date: 'February 2023',
     cert5_title: 'PVC-Coated Conduit Installer',
     cert5_issuer: 'Plasti-Bond',
@@ -82,13 +82,13 @@ const TRANSLATIONS = {
     job1_date: 'Jan 2024 — Feb 2025',
     job1_title: 'Electrical Construction Resident',
     job1_company: 'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, Mexico',
-    job1_li1: `Led the outdoor electrical front at <strong>Microsoft's Azure hyperscale Data Center</strong> in Querétaro — from newest hire to sole front lead in 6 months, directly supervising <strong>60+ people</strong>: medium voltage, grounding, transformers, generators and switchgear.`,
-    job1_li2: `At <strong>BMW Group's plant</strong> (San Luis Potosí, 19,847 m² body-shop expansion): supervised LV and grounding in 2 sections (~40 people) and handled material requisitions for nearly all 8 — built my own tracking system (Excel + SAP) that cut supply stoppages, with every off-budget request technically justified.`,
+    job1_li1: `Led the outdoor electrical front at <strong>Microsoft's Azure hyperscale Data Center</strong> in Querétaro: from newest hire to sole front lead in 6 months, directly supervising <strong>60+ people</strong>: medium voltage, grounding, transformers, generators and switchgear.`,
+    job1_li2: `At <strong>BMW Group's plant</strong> (San Luis Potosí, 19,847 m² body-shop expansion): supervised LV and grounding in 2 sections (~40 people) and handled material requisitions for nearly all 8. Built my own tracking system (Excel + SAP) that cut supply stoppages, with every off-budget request technically justified.`,
     job1_li3: 'Verified compliance with NEC/IEC/NOM technical specs and safety standards on-site throughout the full project lifecycle for both sites.',
     job2_date: 'Jan 2023 — Jan 2024',
     job2_title: 'Electrical Budget Analyst',
     job2_company: 'DEMEK S.A. de C.V. · Chihuahua, Mexico',
-    job2_li1: `Ran the full estimating cycle — AutoCAD takeoffs, OPUS pricing, vendor quotes, and client delivery. Won the <strong>Terex project in Nuevo León</strong>, presenting directly to the client in English through Copachisa.`,
+    job2_li1: `Ran the full estimating cycle (AutoCAD takeoffs, OPUS pricing, vendor quotes and client delivery) for <strong>30+ bids up to USD 500K</strong>. Won the <strong>Terex project in Nuevo León</strong>, presenting directly to the client in English through Copachisa.`,
     job2_li2: 'Built and presented financial proposals in PowerPoint to non-technical clients, covering scope, line items, and post-review adjustments.',
     job2_li3: 'Managed vendor relationships to secure best material pricing, integrated directly into OPUS for budget close-out.',
     contact_label: 'Contact',
@@ -97,6 +97,40 @@ const TRANSLATIONS = {
     contact_avail: 'Immediate availability',
     contact_location: 'Madrid, Spain',
     footer_text: 'Designed and built by hand ⚡',
+    // CV en PDF (cv.html): textos que solo usa el CV; el resto sale de la web
+    cvp_title: 'Elier Garcia · CV',
+    cvp_headline: 'Electrical Engineer · AI & Automation',
+    cvp_summary: `I didn't start my career writing code. I started reading drawings and negotiating with suppliers. After two years running large-scale electrical infrastructure for Microsoft and BMW Group, I completed an M.S. in Business Analytics & AI with the top record of my cohort, and it clicked: the operational problems I had seen on site can be solved systematically with data, AI and automation. So I started building.`,
+    cvp_contact: 'Contact',
+    cvp_profile: 'Profile',
+    cvp_skills: 'Skills',
+    cvp_languages: 'Languages',
+    cvp_certs: 'Awards & certifications',
+    cvp_experience: 'Work experience',
+    cvp_projects: 'Selected projects',
+    cvp_education: 'Education',
+    cvp_edu1_title: 'M.S. in Business Analytics & Artificial Intelligence',
+    cvp_edu1_place: 'INESDI Business TechSchool · Madrid, Spain · 2026',
+    cvp_edu1_detail: 'Top academic record of the cohort (8.94/10). ETL/ELT, RAG architectures, applied machine learning and Power BI.',
+    cvp_edu2_title: 'B.S. in Electrical Engineering',
+    cvp_edu2_place: 'Instituto Tecnológico de Chihuahua · Mexico · 2023',
+    cvp_edu2_detail: 'Major in electrical installations. GPA 9.27/10. President of the Electrical Engineering student committee.',
+    cvp_updated: 'Generated from egarciav99.github.io',
+    // CV eléctrico (cv.html?cv=el): fuente, eg-content/perfil/experiencia.md
+    cv_dl_el_href: 'Elier_Garcia_CV_EL.pdf',
+    cvp_el_headline: 'Electrical Engineer · Industrial installations',
+    cvp_project: 'Related project',
+    cvp_el_summary: `Electrical engineer with two years at DEMEK on large-scale industrial projects: one year estimating electrical installations and one on site, first at Microsoft's hyperscale data center in Querétaro, where I went from newest resident to sole lead of the outdoor front, and then at BMW Group's plant in San Luis Potosí. M.S. in Business Analytics & AI with the top record of my cohort: I apply data and automation to the problems I lived on site, such as materials tracking and technical documentation.`,
+    cvp_el_job1_li1: `<strong>Microsoft Azure hyperscale Data Center</strong> (Querétaro, 9 months): from newest resident to <strong>sole lead of the outdoor electrical front</strong> in 6 months, directly supervising <strong>60+ people</strong>, with daily progress meetings, weekly planning and coordination with mechanical, telecom and civil works.`,
+    cvp_el_job1_li2: 'Outdoor scope: medium voltage (conduit and cabling, coordinated with civil works), grounding systems, pump room (MCC, lighting and power panels), outdoor pole lighting and temporary site power.',
+    cvp_el_job1_li3: 'Installation, interconnection and quality verification of critical power equipment: diesel generators, modular UPS, dry-type and oil-filled outdoor transformers, MCCs, switchboards and PDUs, with crane coordination and redundant A/B power cabling.',
+    cvp_el_job1_li4: `<strong>BMW Group plant</strong> (San Luis Potosí, 5 months, 19,847 m² body-shop expansion in 8 sections): supervised LV and grounding in 2 sections (~40 people) and handled material requisitions for nearly all 8.`,
+    cvp_el_job1_li5: 'Built my own materials tracking system (Excel + SAP): every off-budget request technically justified (take-off vs. drawings or documented design change), fewer supply stoppages, and irregularities detected that led to safety improvements.',
+    cvp_el_job1_li6: 'Compliance with NEC/IEC/NOM specifications and safety standards on both sites.',
+    cvp_el_job2_li1: '<strong>30+ bids delivered, up to USD 500K</strong>, several in parallel (1-2 week deadlines): drawings and specs in AutoCAD, Excel quantity take-offs by room, system and area, and OPUS pricing by line item.',
+    cvp_el_job2_li2: 'Supplier quotes under client-defined brand and function specs, full indirect costs (security, site offices, cranes, labor, safety and documentation) and change orders during execution.',
+    cvp_el_job2_li3: `Won the <strong>Terex project in Nuevo León</strong>: the only bid that reached the final presentation, delivered in English directly to Terex through Copachisa.`,
+    cvp_el_pdf_assistant_sum: 'Built from my own site experience to query electrical specs and technical manuals: each company uploads its PDFs and gets answers only from the documents, focused on its specialty (electrical, civil, mechanical…). Multi-company with roles, delivered as SaaS or on-premise with Docker.',
     tag_medium_voltage: 'Medium Voltage',
     tag_lv_outdoor: 'LV Outdoor',
     tag_electrical_rooms: 'Electrical Rooms',
@@ -115,7 +149,7 @@ const TRANSLATIONS = {
     tag_ocr: 'OCR'
   },
   es: {
-    meta_title: 'Elier Garcia — Ingeniero Eléctrico · IA & Automatización · Madrid',
+    meta_title: 'Elier Garcia · Ingeniero Eléctrico · IA & Automatización · Madrid',
     meta_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
     og_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
     twitter_description: 'Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.',
@@ -141,9 +175,9 @@ const TRANSLATIONS = {
     about_loc_label: 'Ubicación',
     about_loc_value: 'Madrid, España',
     about_edu_label: 'Educación',
-    about_edu_value: 'Máster en Business Analytics &amp; AI — INESDI (2026)',
+    about_edu_value: 'Máster en Business Analytics &amp; AI · INESDI (2026)',
     about_bg_label: 'Formación',
-    about_bg_value: 'Ingeniería Eléctrica — TECNM Chihuahua (9,27/10)',
+    about_bg_value: 'Ingeniería Eléctrica · TECNM Chihuahua (9,27/10)',
     about_lang_label: 'Idiomas',
     about_lang_value: 'Español (nativo) · Inglés B2 · Alemán (básico)',
     about_avail_label: 'Disponibilidad',
@@ -154,9 +188,9 @@ const TRANSLATIONS = {
     cv_label: 'CV y stack técnico',
     cv_heading: 'Herramientas & Currículum',
     cv_subtitle: 'Descarga mi CV según el perfil que necesites y explora mi stack técnico.',
-    cv_dl_es_title: 'CV Data & AI — Español',
+    cv_dl_es_title: 'CV Data & AI · Español',
     cv_dl_es_sub: 'PDF · Business Analytics & IA',
-    cv_dl_en_title: 'CV Data & AI — Inglés',
+    cv_dl_en_title: 'CV Data & AI · Inglés',
     cv_dl_en_sub: 'PDF · Business Analytics & AI',
     cv_dl_el_title: 'CV Ingeniería Eléctrica',
     cv_dl_el_sub: 'PDF · Instalaciones industriales',
@@ -167,17 +201,17 @@ const TRANSLATIONS = {
     stack_electrical: 'Ingeniería Eléctrica',
     certs_label: 'Certificaciones',
     certs_heading: 'Premios y Certificaciones',
-    cert1_title: 'Mejor expediente académico — Máster en Business Analytics & IA',
+    cert1_title: 'Mejor expediente académico · Máster en Business Analytics & IA',
     cert1_issuer: 'INESDI Business TechSchool · Madrid (UNIE)',
     cert1_date: 'Marzo 2026',
     cert2_title: 'Digital Leadership Programme',
     cert2_issuer: 'INESDI Business TechSchool',
     cert2_date: 'Abril 2025',
-    cert3_title: 'Inteligencia Artificial — Principios y Aplicaciones',
+    cert3_title: 'Inteligencia Artificial: Principios y Aplicaciones',
     cert3_issuer: 'Universidad del Valle de México',
     cert3_date: 'Agosto 2026',
     cert4_title: 'Electric Power Systems',
-    cert4_issuer: 'University at Buffalo — SUNY',
+    cert4_issuer: 'University at Buffalo (SUNY)',
     cert4_date: 'Febrero 2023',
     cert5_title: 'Instalador Certificado de Tubería Recubierta (PVC)',
     cert5_issuer: 'Plasti-Bond',
@@ -193,13 +227,13 @@ const TRANSLATIONS = {
     job1_date: 'Ene 2024 — Feb 2025',
     job1_title: 'Residente de Construcción Eléctrica',
     job1_company: 'DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, México',
-    job1_li1: `Lideré el frente eléctrico de exteriores del <strong>Data Center Azure de hiperescala de Microsoft</strong> en Querétaro — de ser el más nuevo del equipo a encargado único del frente en 6 meses, supervisando a <strong>más de 60 personas</strong>: media tensión, tierras, transformadores, generadores y tableros.`,
-    job1_li2: `En la <strong>planta de BMW Group</strong> (San Luis Potosí, ampliación de carrocería de 19.847 m²): supervisé baja tensión y tierras en 2 secciones (~40 personas) y gestioné las requisiciones de material de casi las 8 — con un sistema de seguimiento propio (Excel + SAP) que redujo los paros de suministro, justificando técnicamente cada requisición fuera de presupuesto.`,
+    job1_li1: `Lideré el frente eléctrico de exteriores del <strong>Data Center Azure de hiperescala de Microsoft</strong> en Querétaro: de ser el más nuevo del equipo a encargado único del frente en 6 meses, supervisando a <strong>más de 60 personas</strong>: media tensión, tierras, transformadores, generadores y tableros.`,
+    job1_li2: `En la <strong>planta de BMW Group</strong> (San Luis Potosí, ampliación de carrocería de 19.847 m²): supervisé baja tensión y tierras en 2 secciones (~40 personas) y gestioné las requisiciones de material de casi las 8, con un sistema de seguimiento propio (Excel + SAP) que redujo los paros de suministro, justificando técnicamente cada requisición fuera de presupuesto.`,
     job1_li3: 'Verifiqué el cumplimiento de especificaciones técnicas NEC/IEC/NOM y estándares de seguridad en obra durante todo el ciclo de vida del proyecto en ambas obras.',
     job2_date: 'Ene 2023 — Ene 2024',
     job2_title: 'Analista de Presupuestos Eléctricos',
     job2_company: 'DEMEK S.A. de C.V. · Chihuahua, México',
-    job2_li1: `Ejecuté el ciclo completo de presupuestación — mediciones en AutoCAD, precios en OPUS, cotizaciones con proveedores y entrega al cliente. Gané el <strong>proyecto Terex en Nuevo León</strong>, presentando directamente al cliente en inglés a través de Copachisa.`,
+    job2_li1: `Ejecuté el ciclo completo de presupuestación (mediciones en AutoCAD, precios en OPUS, cotizaciones con proveedores y entrega al cliente) en <strong>más de 30 presupuestos de hasta 500.000 USD</strong>. Gané el <strong>proyecto Terex en Nuevo León</strong>, presentando directamente al cliente en inglés a través de Copachisa.`,
     job2_li2: 'Elaboré y presenté propuestas económicas en PowerPoint a clientes no técnicos, cubriendo alcance, partidas y ajustes post-revisión.',
     job2_li3: 'Gestioné relaciones con proveedores para obtener los mejores precios de materiales, integrados directamente en OPUS para el cierre de presupuesto.',
     contact_label: 'Contacto',
@@ -208,6 +242,40 @@ const TRANSLATIONS = {
     contact_avail: 'Disponibilidad inmediata',
     contact_location: 'Madrid, España',
     footer_text: 'Diseñado y construido a mano ⚡',
+    // CV en PDF (cv.html): textos que solo usa el CV; el resto sale de la web
+    cvp_title: 'Elier Garcia · CV',
+    cvp_headline: 'Ingeniero Eléctrico · IA y Automatización',
+    cvp_summary: `No empecé mi carrera programando. Empecé leyendo planos y negociando con proveedores. Tras dos años gestionando infraestructura eléctrica de gran escala para Microsoft y BMW Group, cursé un Máster en Business Analytics e IA con el mejor expediente de la promoción, y algo encajó: los problemas operativos que había visto en obra pueden resolverse sistemáticamente con datos, IA y automatización. Así que empecé a construir soluciones.`,
+    cvp_contact: 'Contacto',
+    cvp_profile: 'Perfil',
+    cvp_skills: 'Habilidades',
+    cvp_languages: 'Idiomas',
+    cvp_certs: 'Reconocimientos y certificaciones',
+    cvp_experience: 'Experiencia laboral',
+    cvp_projects: 'Proyectos destacados',
+    cvp_education: 'Educación',
+    cvp_edu1_title: 'Máster en Business Analytics e Inteligencia Artificial',
+    cvp_edu1_place: 'INESDI Business TechSchool · Madrid, España · 2026',
+    cvp_edu1_detail: 'Mejor expediente de la promoción (8,94/10). ETL/ELT, arquitecturas RAG, machine learning aplicado y Power BI.',
+    cvp_edu2_title: 'Ingeniería Eléctrica',
+    cvp_edu2_place: 'Instituto Tecnológico de Chihuahua · México · 2023',
+    cvp_edu2_detail: 'Especialidad en instalaciones eléctricas. Promedio 9,27/10. Presidente de la Comisión de Alumnos de Ingeniería Eléctrica.',
+    cvp_updated: 'Generado desde egarciav99.github.io',
+    // CV eléctrico (cv.html?cv=el): fuente, eg-content/perfil/experiencia.md
+    cv_dl_el_href: 'Elier_Garcia_CV_EL_ES.pdf',
+    cvp_el_headline: 'Ingeniero Eléctrico · Instalaciones industriales',
+    cvp_project: 'Proyecto relacionado',
+    cvp_el_summary: `Ingeniero eléctrico con dos años en DEMEK en obras industriales de gran escala: uno presupuestando instalaciones eléctricas y otro en obra, primero en el data center de hiperescala de Microsoft en Querétaro, donde pasé de residente más nuevo a encargado único del frente de exteriores, y después en la planta de BMW Group en San Luis Potosí. Máster en Business Analytics e IA con el mejor expediente de la promoción: aplico datos y automatización a los problemas que viví en obra, como el seguimiento de material y la documentación técnica.`,
+    cvp_el_job1_li1: `<strong>Data Center Azure de hiperescala de Microsoft</strong> (Querétaro, 9 meses): de residente más nuevo a <strong>encargado único del frente eléctrico de exteriores</strong> en 6 meses, supervisando a <strong>más de 60 personas</strong>, con juntas diarias de avance, planeación semanal y coordinación con mecánica, telefonía y obra civil.`,
+    cvp_el_job1_li2: 'Alcance de exteriores: media tensión (tuberías y cableado, coordinada con obra civil), sistemas de tierras, cuarto de bombas (CCM, tableros de alumbrado y fuerza), luminarias exteriores en postes y energía provisional de obra.',
+    cvp_el_job1_li3: 'Instalación, interconexión y verificación de calidad de equipo crítico de potencia: generadores diésel, UPS modulares, transformadores exteriores secos y en aceite, CCM, tableros de distribución y PDU, con coordinación de grúas y cableado de potencia redundante A/B.',
+    cvp_el_job1_li4: `<strong>Planta de BMW Group</strong> (San Luis Potosí, 5 meses, ampliación de carrocería de 19.847 m² en 8 secciones): supervisé baja tensión y tierras en 2 secciones (~40 personas) y gestioné las requisiciones de material de casi las 8.`,
+    cvp_el_job1_li5: 'Sistema propio de seguimiento de material (Excel + SAP): cada requisición fuera de presupuesto justificada técnicamente (volumetría frente a plano o cambio de diseño documentado), menos paros de suministro e irregularidades detectadas que llevaron a mejoras de seguridad.',
+    cvp_el_job1_li6: 'Cumplimiento de especificaciones NEC/IEC/NOM y normas de seguridad en ambas obras.',
+    cvp_el_job2_li1: '<strong>Más de 30 presupuestos entregados, de hasta 500.000 USD</strong>, varios a la vez (entregas de 1 a 2 semanas): planos y especificaciones en AutoCAD, volumetrías en Excel por cuarto, sistema y área, y precios en OPUS por partidas.',
+    cvp_el_job2_li2: 'Cotizaciones con proveedores bajo especificaciones cerradas de marca y función, indirectos completos (vigilancia, casetas, grúas, mano de obra, seguridad y documentación) y órdenes de cambio durante la ejecución.',
+    cvp_el_job2_li3: `Adjudicación del <strong>proyecto Terex en Nuevo León</strong>: el único presupuesto que llegó a presentación final, en inglés y directamente con Terex, a través de Copachisa.`,
+    cvp_el_pdf_assistant_sum: 'Nació de mi experiencia en obra para consultar especificaciones eléctricas y manuales técnicos: cada empresa sube sus PDF y obtiene respuestas solo de sus documentos, con el enfoque de su especialidad (eléctrica, civil, mecánica…). Multiempresa con roles, se entrega como SaaS o instalado con Docker.',
     tag_medium_voltage: 'Tensión media',
     tag_lv_outdoor: 'BT exterior',
     tag_electrical_rooms: 'Cuartos eléctricos',
@@ -228,7 +296,7 @@ const TRANSLATIONS = {
 };
 
 const STORAGE_KEY = 'eg_lang';
-let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem(STORAGE_KEY)) || 'en';
+let currentLang = (typeof localStorage !== 'undefined' && localStorage.getItem(STORAGE_KEY)) || 'es';
 
 function applyTranslations(lang) {
   const t = TRANSLATIONS[lang];
@@ -263,6 +331,11 @@ function applyTranslations(lang) {
     hamburger.setAttribute('aria-label', t.nav_hamburger_label || 'Open menu');
   }
 
+  document.querySelectorAll('[data-i18n-href]').forEach((el) => {
+    const href = t[el.getAttribute('data-i18n-href')];
+    if (href) el.setAttribute('href', href);
+  });
+
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const key = el.getAttribute('data-i18n');
     if (t[key] !== undefined && key !== 'nav_hamburger_label') {
@@ -282,19 +355,6 @@ document.addEventListener('DOMContentLoaded', () => {
     btn.dataset.bound = 'true';
   }
 
-  if (currentLang === 'en') {
-    document.documentElement.lang = 'en';
-    if (btn) {
-      btn.setAttribute('title', 'Cambiar a Español');
-      const active = btn.querySelector('.lang-toggle__active');
-      const other = btn.querySelector('.lang-toggle__other');
-      if (active) active.textContent = 'EN';
-      if (other) other.textContent = 'ES';
-    }
-    const hamburger = document.getElementById('nav-hamburger');
-    if (hamburger) hamburger.setAttribute('aria-label', 'Open menu');
-    return;
-  }
-
-  applyTranslations(currentLang);
+  // El HTML está en español; si el visitante eligió inglés, se aplica al cargar.
+  if (currentLang !== 'es') applyTranslations(currentLang);
 });
