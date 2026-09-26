@@ -234,11 +234,11 @@
         <div class="card project-card reveal reveal-delay-3" id="project-pdf-assistant" data-categories="ai">
           <div class="card__icon" aria-hidden="true">📄</div>
           <h3 class="card__title"><a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" data-i18n="p_pdf_assistant_title">PDF Technical Assistant</a></h3>
-          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">RAG assistant for technical documentation</span>
-          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Upload a technical PDF and chat with it: answers come only from the document, and personal data is anonymised before indexing. RAG with pgvector and an agent that searches via function calling.</p>
+          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">Multi-company RAG assistant for technical documentation</span>
+          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Each company uploads its technical PDFs and chats with them: answers come only from the documents, tailored to the company's specialty, and personal data is anonymised before indexing. Multi-company with roles, delivered as SaaS or on-premise with Docker.</p>
           <details class="project-card__details">
             <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problem:</strong> technical documentation lives in long PDFs and it is hard to find the exact answer quickly.<br><strong>What I built:</strong> upload a PDF, get a summary and chat with it; answers come only from what the document says.<br><strong>Technical decisions:</strong> personal data is redacted before indexing, section-aware chunking, Gemini embeddings in pgvector with per-user isolation (RLS), and an agent that searches the document through function calling. Migrated from a multi-provider n8n workflow (Gemini, Azure OpenAI and a FastAPI microservice) to Supabase Edge Functions.<br><strong>Result:</strong> working; in active development to adapt it to any company's documents.</p>
+            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problem:</strong> technical documentation lives in long PDFs and it is hard to find the exact answer quickly.<br><strong>What I built:</strong> a multi-company assistant: each company uploads its PDFs, gets summaries and chats with them; answers come only from what the documents say, focused on its specialty (electrical, civil, mechanical, plumbing, architecture or general). Superadmin, company admin and user roles, invitation-only access, private chats and a Spanish/English interface.<br><strong>Technical decisions:</strong> per-company isolation with RLS in tables, Storage and vector search; personal data redacted before indexing; section-aware chunking and Gemini embeddings in pgvector; an agent that searches via function calling. Delivered as SaaS or installed at the company with Docker and a runtime <code>config.json</code>. Tested with RLS integration tests and a Chromium E2E flow against local Supabase and a Gemini mock. Migrated from a multi-provider n8n workflow to Supabase Edge Functions.<br><strong>Result:</strong> working; in active development.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -248,7 +248,7 @@
               <span class="badge badge--violet">pgvector</span>
               <span class="badge badge--accent">Gemini</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Working · In active development</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Working · Multi-company, in active development</span></div>
             <a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
               <span data-i18n="p_pdf_assistant_link">View demo</span>
             </a>
