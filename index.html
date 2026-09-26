@@ -191,11 +191,11 @@
         <div class="card project-card reveal reveal-delay-1" id="project-coreit" data-categories="ai">
           <div class="card__icon" aria-hidden="true">⚙️</div>
           <h3 class="card__title" data-i18n="p_coreit_title">CoreIT</h3>
-          <span class="card__subtitle" data-i18n="p_coreit_sub">Automation hub for companies · Own product</span>
-          <p class="card__summary" data-i18n="p_coreit_sum">One-tap, POS-style hub where each team launches its own automations. First case: turning a lab's PDF procedures into Excel capture sheets, with two AI extractions audited by a second model and human review.</p>
+          <span class="card__subtitle" data-i18n="p_coreit_sub">Hub de automatizaciones para empresas · Producto propio</span>
+          <p class="card__summary" data-i18n="p_coreit_sum">Hub de un toque, estilo punto de venta, donde cada equipo lanza sus automatizaciones. Primer caso: convertir los procedimientos en PDF de un laboratorio en hojas Excel, con dos extracciones con IA auditadas por un segundo modelo y revisión humana.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_coreit_desc"><strong>Problem:</strong> repetitive tasks, like turning technical PDF procedures into Excel capture sheets, eat hours and cause omissions.<br><strong>What I built:</strong> a one-tap, POS-style hub where each team triggers its own automations. First case, for a quality-control lab: a pipeline that extracts the procedure twice in parallel (regex rules and an LLM), audits both against the original text with a second model, lets the user review and edit the result, and generates a protected Excel sheet with automatic completeness checks. I also prototyped a Python ETL that deduplicates the lab's reagent inventory into golden records with fuzzy matching.<br><strong>Result:</strong> prototype presented to the client; next step, a multi-company SaaS with per-company branding.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_coreit_desc"><strong>Problema:</strong> las tareas repetitivas, como pasar procedimientos técnicos en PDF a hojas de captura en Excel, consumen horas y provocan omisiones.<br><strong>Qué construí:</strong> un hub de un toque, estilo punto de venta, donde cada equipo lanza sus propias automatizaciones. Primer caso, para un laboratorio de control de calidad: un pipeline que extrae el procedimiento dos veces en paralelo (reglas regex y un LLM), audita ambas extracciones contra el texto original con un segundo modelo, deja revisar y editar el resultado y genera un Excel protegido con control automático de completitud. También prototipé un ETL en Python que deduplica el inventario de reactivos del laboratorio en golden records con fuzzy matching.<br><strong>Resultado:</strong> prototipo presentado al cliente; siguiente paso, un SaaS multiempresa con la marca de cada empresa.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -205,17 +205,17 @@
               <span class="badge badge--accent">Gemini</span>
               <span class="badge">Python</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_coreit_status">Prototype · Presented to first client</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_coreit_status">Prototipo · Presentado al primer cliente</span></div>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-2" id="project-covercraft" data-categories="ai web">
           <div class="card__icon" aria-hidden="true">✍️</div>
           <h3 class="card__title"><a href="https://coverletter2.vercel.app" target="_blank" rel="noopener" data-i18n="p_covercraft_title">CoverCraft</a></h3>
-          <span class="card__subtitle" data-i18n="p_covercraft_sub">AI cover letter generator · Personal SaaS</span>
-          <p class="card__summary" data-i18n="p_covercraft_sum">Upload your CV, paste the job offer and get an editable cover letter you can export to PDF. Asynchronous n8n pipeline with Gemini. In real use and ready to launch as freemium.</p>
+          <span class="card__subtitle" data-i18n="p_covercraft_sub">Generador de cartas de presentación con IA · SaaS personal</span>
+          <p class="card__summary" data-i18n="p_covercraft_sum">Subes tu CV, pegas la oferta y obtienes una carta de presentación editable y exportable a PDF. Pipeline asíncrono en n8n con Gemini. En uso real y preparado para lanzarse como freemium.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_covercraft_desc"><strong>Problem:</strong> tailoring a cover letter to every job posting takes time.<br><strong>What I built:</strong> upload your CV, paste the job posting and get an editable letter you can export to PDF.<br><strong>Technical decisions:</strong> Next.js with Supabase (Auth, Storage and Row Level Security) and an asynchronous n8n pipeline: a parser that detects CV sections in 4 languages, Gemini with a fallback model and prompt rules that mirror the job's keywords for ATS filters, and a secret-protected callback.<br><strong>Result:</strong> in real use; next step, a freemium launch.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_covercraft_desc"><strong>Problema:</strong> adaptar una carta de presentación a cada oferta lleva tiempo.<br><strong>Qué construí:</strong> subes tu CV, pegas la oferta y obtienes una carta editable que puedes exportar a PDF.<br><strong>Decisiones técnicas:</strong> Next.js con Supabase (Auth, Storage y Row Level Security) y un pipeline asíncrono en n8n: un parser que detecta las secciones del CV en 4 idiomas, Gemini con modelo de respaldo y reglas de prompt que reflejan las palabras clave de la oferta para los filtros ATS, y un callback protegido con secreto.<br><strong>Resultado:</strong> en uso real; siguiente paso, lanzarlo con modelo freemium.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -225,20 +225,20 @@
               <span class="badge">n8n</span>
               <span class="badge badge--accent">Gemini</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_covercraft_status">In real use · Personal project</span></div>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_covercraft_status">En uso real · Proyecto personal</span></div>
             <a href="https://coverletter2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_covercraft_link">View demo</span>
+              <span data-i18n="p_covercraft_link">Ver demo</span>
             </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-3" id="project-pdf-assistant" data-categories="ai">
           <div class="card__icon" aria-hidden="true">📄</div>
           <h3 class="card__title"><a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" data-i18n="p_pdf_assistant_title">PDF Technical Assistant</a></h3>
-          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">Multi-company RAG assistant for technical documentation</span>
-          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Each company uploads its technical PDFs and chats with them: answers come only from the documents, tailored to the company's specialty, and personal data is anonymised before indexing. Multi-company with roles, delivered as SaaS or on-premise with Docker.</p>
+          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">Asistente RAG multiempresa para documentación técnica</span>
+          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Cada empresa sube sus PDF técnicos y conversa con ellos: las respuestas salen solo de los documentos, con el enfoque de su especialidad, y los datos personales se anonimizan antes de indexar. Multiempresa con roles, se entrega como SaaS o instalado con Docker.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problem:</strong> technical documentation lives in long PDFs and it is hard to find the exact answer quickly.<br><strong>What I built:</strong> a multi-company assistant: each company uploads its PDFs, gets summaries and chats with them; answers come only from what the documents say, focused on its specialty (electrical, civil, mechanical, plumbing, architecture or general). Superadmin, company admin and user roles, invitation-only access, private chats and a Spanish/English interface.<br><strong>Technical decisions:</strong> per-company isolation with RLS in tables, Storage and vector search; personal data redacted before indexing; section-aware chunking and Gemini embeddings in pgvector; an agent that searches via function calling. Delivered as SaaS or installed at the company with Docker and a runtime <code>config.json</code>. Tested with RLS integration tests and a Chromium E2E flow against local Supabase and a Gemini mock. Migrated from a multi-provider n8n workflow to Supabase Edge Functions.<br><strong>Result:</strong> working; in active development.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problema:</strong> la documentación técnica vive en PDFs largos y cuesta encontrar la respuesta exacta rápido.<br><strong>Qué construí:</strong> un asistente multiempresa: cada empresa sube sus PDF, obtiene resúmenes y conversa con ellos; las respuestas salen solo de los documentos, con el enfoque de su especialidad (eléctrica, civil, mecánica, hidrosanitaria, arquitectura o general). Roles de superadmin, admin de empresa y usuario, acceso solo por invitación, chats privados e interfaz en español e inglés.<br><strong>Decisiones técnicas:</strong> aislamiento por empresa con RLS en tablas, Storage y búsqueda vectorial; anonimización de datos personales antes de indexar; troceado por secciones y embeddings de Gemini en pgvector; un agente que busca mediante function calling. Se entrega como SaaS o instalado en la empresa con Docker y un <code>config.json</code> en tiempo de ejecución. Probado con tests de integración de RLS y un flujo E2E en Chromium contra Supabase local y un simulador de Gemini. Migrado de un workflow de n8n multiproveedor a Supabase Edge Functions.<br><strong>Resultado:</strong> funcional; en desarrollo activo.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -248,20 +248,20 @@
               <span class="badge badge--violet">pgvector</span>
               <span class="badge badge--accent">Gemini</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Working · Multi-company, in active development</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Funcional · Multiempresa, en desarrollo activo</span></div>
             <a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_pdf_assistant_link">View demo</span>
+              <span data-i18n="p_pdf_assistant_link">Ver demo</span>
             </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-1" id="project-bocado" data-categories="ai data">
           <div class="card__icon" aria-hidden="true">🥗</div>
           <h3 class="card__title"><a href="https://bocado-ai.vercel.app" target="_blank" rel="noopener" data-i18n="p_bocado_title">Bocado AI</a></h3>
-          <span class="card__subtitle" data-i18n="p_bocado_sub">AI nutrition app · Collaboration (I led all the tech)</span>
-          <p class="card__summary" data-i18n="p_bocado_sum">Nutrition PWA that generates recipes from what you have at home and recommends real restaurants. I built the whole technical side, including an ETL of 1,076 ingredients. MVP with 200+ real users.</p>
+          <span class="card__subtitle" data-i18n="p_bocado_sub">App de nutrición con IA · En colaboración (toda la parte técnica)</span>
+          <p class="card__summary" data-i18n="p_bocado_sum">PWA de nutrición que genera recetas con lo que tienes en casa y recomienda restaurantes reales. Hice toda la parte técnica, incluido un ETL de 1.076 ingredientes. MVP con más de 200 usuarios reales.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_bocado_desc"><strong>Problem:</strong> planning meals that fit your goals, allergies and pantry, and knowing where to eat out.<br><strong>What I built:</strong> all the technology: a Next.js PWA that generates recipes from what you have at home and recommends real restaurants verified with Google Places, plus the ingredient database behind it (a Python/pandas ETL that consolidated 1,076 ingredients and their dietary restrictions into PostgreSQL).<br><strong>Technical decisions:</strong> Gemini with forced JSON output, Firebase Auth and Firestore, per-user rate limiting, scheduled Cloud Functions with push notifications, Sentry and Vitest/Playwright tests. It evolved from an n8n + Airtable prototype.<br><strong>Result:</strong> MVP born from a master's thesis with 200+ real users.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_bocado_desc"><strong>Problema:</strong> planificar comidas acordes a tus objetivos, alergias y despensa, y saber dónde comer fuera.<br><strong>Qué construí:</strong> toda la parte tecnológica: una PWA en Next.js que genera recetas con lo que tienes en casa y recomienda restaurantes reales verificados con Google Places, y la base de ingredientes que hay detrás (un ETL en Python/pandas que consolidó 1.076 ingredientes y sus restricciones alimentarias en PostgreSQL).<br><strong>Decisiones técnicas:</strong> Gemini con salida JSON forzada, Firebase Auth y Firestore, límites de uso por usuario, Cloud Functions programadas con notificaciones push, Sentry y tests con Vitest y Playwright. Evolucionó desde un prototipo en n8n + Airtable.<br><strong>Resultado:</strong> MVP nacido de un TFM con más de 200 usuarios reales.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -271,20 +271,20 @@
               <span class="badge badge--accent">Gemini 2.5 Flash</span>
               <span class="badge badge--violet">Python ETL</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_bocado_status">Working demo · Official launch pending</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_bocado_status">Demo funcional · Lanzamiento oficial pendiente</span></div>
             <a href="https://bocado-ai.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_bocado_link">View demo</span>
+              <span data-i18n="p_bocado_link">Ver demo</span>
             </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-2" id="project-linkedin-engine" data-categories="ai">
           <div class="card__icon" aria-hidden="true">💼</div>
-          <h3 class="card__title" data-i18n="p_linkedin_engine_title">LinkedIn content engine</h3>
-          <span class="card__subtitle" data-i18n="p_linkedin_engine_sub">n8n automation with human approval</span>
-          <p class="card__summary" data-i18n="p_linkedin_engine_sum">Watches tech and AI news, suggests topics every week and drafts the post in my voice; nothing is published on LinkedIn until I approve it by email.</p>
+          <h3 class="card__title" data-i18n="p_linkedin_engine_title">Motor de contenido para LinkedIn</h3>
+          <span class="card__subtitle" data-i18n="p_linkedin_engine_sub">Automatización en n8n con aprobación humana</span>
+          <p class="card__summary" data-i18n="p_linkedin_engine_sum">Vigila noticias de tecnología e IA, me propone temas cada semana y redacta el post con mi voz; nada se publica en LinkedIn hasta que lo apruebo por correo.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_linkedin_engine_desc"><strong>Problem:</strong> posting consistently on LinkedIn takes time I would rather spend building.<br><strong>What I built:</strong> an n8n system that monitors five tech and AI news sources three times a week and sends me a newsletter; every Friday it proposes three post topics from the week's news, drafts the chosen one in my voice with Gemini and publishes it through the LinkedIn API only after I approve it by email.<br><strong>Result:</strong> in use, with two human checkpoints before anything is published.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_linkedin_engine_desc"><strong>Problema:</strong> publicar con constancia en LinkedIn lleva un tiempo que prefiero dedicar a construir.<br><strong>Qué construí:</strong> un sistema en n8n que vigila cinco fuentes de noticias de tecnología e IA tres veces por semana y me envía un boletín; cada viernes me propone tres temas a partir de las noticias de la semana, redacta el elegido con mi voz usando Gemini y lo publica mediante la API de LinkedIn solo después de que lo apruebe por correo.<br><strong>Resultado:</strong> en uso, con dos puntos de revisión humana antes de publicar nada.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -294,22 +294,22 @@
               <span class="badge">Gmail</span>
               <span class="badge badge--violet">LinkedIn API (OAuth2)</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_linkedin_engine_status">In use</span></div>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_linkedin_engine_status">En uso</span></div>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-3" id="project-bi-dashboards" data-categories="data">
           <div class="card__icon" aria-hidden="true">📊</div>
-          <h3 class="card__title"><a href="https://github.com/egarciav99/data-analytics-portfolio" target="_blank" rel="noopener" data-i18n="p_bi_dashboards_title">Data Analytics · BI dashboards, Python &amp; SQL</a></h3>
-          <span class="card__subtitle" data-i18n="p_bi_dashboards_sub">Master's projects · Dashboards as a team of 4 · Notebooks individual</span>
-          <p class="card__summary" data-i18n="p_bi_dashboards_sum">Team dashboards in Looker Studio (234 real Bocado users) and Power BI (Titanic), plus my individual Python and SQL notebooks: Madrid open-data cleaning, an ETL into a data warehouse and advanced SQL.</p>
+          <h3 class="card__title"><a href="https://github.com/egarciav99/data-analytics-portfolio" target="_blank" rel="noopener" data-i18n="p_bi_dashboards_title">Análisis de datos · Dashboards de BI, Python y SQL</a></h3>
+          <span class="card__subtitle" data-i18n="p_bi_dashboards_sub">Proyectos del máster · Dashboards en equipo de 4 · Notebooks individuales</span>
+          <p class="card__summary" data-i18n="p_bi_dashboards_sum">Dashboards en equipo con Looker Studio (234 usuarios reales de Bocado) y Power BI (Titanic), y mis notebooks individuales de Python y SQL: limpieza de datos abiertos de Madrid, un ETL a un data warehouse y SQL avanzado.</p>
           <div class="project-card__shots">
-            <a href="assets/projects/bi-bocado-salud.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-bocado-salud.webp" alt="Looker Studio: Bocado health and goals dashboard" width="1200" height="901" loading="lazy" decoding="async"></a>
-            <a href="assets/projects/bi-bocado-comunidad.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-bocado-comunidad.webp" alt="Looker Studio: Bocado community dashboard" width="1200" height="901" loading="lazy" decoding="async"></a>
-            <a href="assets/projects/bi-titanic-resumen.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-titanic-resumen.webp" alt="Power BI: Titanic passengers and crew overview" width="1200" height="685" loading="lazy" decoding="async"></a>
+            <a href="assets/projects/bi-bocado-salud.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-bocado-salud.webp" alt="Looker Studio: panel de salud y objetivos de Bocado" width="1200" height="901" loading="lazy" decoding="async"></a>
+            <a href="assets/projects/bi-bocado-comunidad.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-bocado-comunidad.webp" alt="Looker Studio: panel de la comunidad de Bocado" width="1200" height="901" loading="lazy" decoding="async"></a>
+            <a href="assets/projects/bi-titanic-resumen.webp" target="_blank" rel="noopener" class="project-card__shot"><img src="assets/projects/bi-titanic-resumen.webp" alt="Power BI: resumen de pasajeros y tripulación del Titanic" width="1200" height="685" loading="lazy" decoding="async"></a>
           </div>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_bi_dashboards_desc"><strong>Problem:</strong> turn raw data into dashboards that answer concrete questions at a glance, with filters so anyone can explore them.<br><strong>What we built:</strong> <em>Looker Studio</em>: a three-page report on Bocado's real user base (234 users in Firestore): community (country, city, age, gender and daily use), health and goals (nutritional balance vs. activity, disease and allergy risk by age) and eating habits. <em>Power BI</em>: an analysis of the 2,207 people aboard the Titanic (passengers and crew) with KPIs, survival by class, gender and age, country of origin and fare bands, using DAX measures with ALL/ALLSELECTED for relative weights and navigation between pages.<br><strong>Result:</strong> academic projects of the Master's in Business Analytics &amp; AI, built as a team of 4. My individual Python and SQL work (cleaning and classifying Madrid's municipal energy data, an ETL into a PostgreSQL data warehouse with integrity checks, and SQL with CTEs and window functions) is on GitHub.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_bi_dashboards_desc"><strong>Problema:</strong> convertir datos en bruto en dashboards que respondan preguntas concretas de un vistazo, con filtros para que cualquiera pueda explorarlos.<br><strong>Qué construimos:</strong> <em>Looker Studio</em>: un informe de tres páginas sobre la base real de usuarios de Bocado (234 usuarios en Firestore): comunidad (país, ciudad, edad, género y uso diario), salud y objetivos (balance nutricional frente a actividad, riesgo por enfermedades y alergias según la edad) y hábitos de alimentación. <em>Power BI</em>: un análisis de las 2.207 personas a bordo del Titanic (pasajeros y tripulación) con KPIs, supervivencia por clase, género y edad, país de procedencia y tramos de tarifa, con medidas DAX (ALL/ALLSELECTED) para los pesos relativos y navegación entre páginas.<br><strong>Resultado:</strong> proyectos académicos del Máster en Business Analytics &amp; IA, hechos en equipo de 4. Mis trabajos individuales en Python y SQL (limpieza y clasificación del consumo energético municipal de Madrid, un ETL a un data warehouse en PostgreSQL con validación de integridad y SQL con CTE y funciones de ventana) están en GitHub.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -319,20 +319,20 @@
               <span class="badge">pandas</span>
               <span class="badge">SQL</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_bi_dashboards_status">Academic · Master's projects</span></div>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_bi_dashboards_status">Académico · Proyectos del máster</span></div>
             <a href="https://github.com/egarciav99/data-analytics-portfolio" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_bi_dashboards_link">Python &amp; SQL notebooks on GitHub</span>
+              <span data-i18n="p_bi_dashboards_link">Notebooks de Python y SQL en GitHub</span>
             </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-1" id="project-carolina-guijarro" data-categories="web">
           <div class="card__icon" aria-hidden="true">🧭</div>
-          <h3 class="card__title"><a href="https://carolinaguijarro.es" target="_blank" rel="noopener" data-i18n="p_carolina_guijarro_title">Carolina Guijarro · Professional website</a></h3>
-          <span class="card__subtitle" data-i18n="p_carolina_guijarro_sub">Website + automated contact form · Team-engineering consultant</span>
-          <p class="card__summary" data-i18n="p_carolina_guijarro_sum">Four-page website for a team-engineering consultant, with a contact form that saves every lead to Google Sheets and emails her a branded notification. Live.</p>
+          <h3 class="card__title"><a href="https://carolinaguijarro.es" target="_blank" rel="noopener" data-i18n="p_carolina_guijarro_title">Carolina Guijarro · Web profesional</a></h3>
+          <span class="card__subtitle" data-i18n="p_carolina_guijarro_sub">Web + formulario de contacto automatizado · Consultora de ingeniería de equipos</span>
+          <p class="card__summary" data-i18n="p_carolina_guijarro_sum">Web de cuatro páginas para una consultora de ingeniería de equipos, con un formulario que guarda cada contacto en Google Sheets y le avisa por email con su marca. En producción.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_carolina_guijarro_desc"><strong>Problem:</strong> an independent consultant who helps growing SMEs build better teams needed a website that explains her method and turns visits into organised leads, without her having to watch an inbox.<br><strong>What I built:</strong> a four-page site (home, about, services, contact) with conversion-focused copy, a legal/privacy notice and analytics. The contact form validates the data and asks for consent, then an n8n workflow saves each lead to a Google Sheet and sends her a branded email (Resend) with the details and a link to the sheet.<br><strong>Result:</strong> live at carolinaguijarro.es; every enquiry lands in her sheet and inbox automatically.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_carolina_guijarro_desc"><strong>Problema:</strong> una consultora independiente que ayuda a pymes en crecimiento a construir mejores equipos necesitaba una web que explicara su método y convirtiera las visitas en contactos ordenados, sin tener que vigilar una bandeja de entrada.<br><strong>Qué construí:</strong> una web de cuatro páginas (inicio, sobre mí, servicios y contacto) con textos orientados a conversión, aviso legal y privacidad, y analítica. El formulario valida los datos y pide el consentimiento; después, un workflow de n8n guarda cada contacto en una hoja de Google Sheets y le envía un email con su marca (Resend) con los datos y un enlace a la hoja.<br><strong>Resultado:</strong> en producción en carolinaguijarro.es; cada consulta llega sola a su hoja y a su correo.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -342,20 +342,20 @@
               <span class="badge">n8n</span>
               <span class="badge">Resend</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_carolina_guijarro_status">Live · Client project</span></div>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_carolina_guijarro_status">En producción · Proyecto para cliente</span></div>
             <a href="https://carolinaguijarro.es" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_carolina_guijarro_link">View website</span>
+              <span data-i18n="p_carolina_guijarro_link">Ver web</span>
             </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-2" id="project-fidelizacion" data-categories="web">
           <div class="card__icon" aria-hidden="true">🎟️</div>
-          <h3 class="card__title" data-i18n="p_fidelizacion_title">Digital Loyalty & Gamification Platform</h3>
-          <span class="card__subtitle" data-i18n="p_fidelizacion_sub">Working UI demo + technical proposal · Beverage brand campaign</span>
-          <p class="card__summary" data-i18n="p_fidelizacion_sum">Navigable demo of an app-free loyalty campaign (customer, point-of-sale staff and admin) plus the proposed anti-fraud architecture with Apple and Google Wallet passes. Awaiting the brand's decision.</p>
+          <h3 class="card__title" data-i18n="p_fidelizacion_title">Plataforma de Fidelización & Gamificación Digital</h3>
+          <span class="card__subtitle" data-i18n="p_fidelizacion_sub">Demo de interfaz + propuesta técnica · Campaña de una marca de bebidas</span>
+          <p class="card__summary" data-i18n="p_fidelizacion_sum">Demo navegable de una campaña de fidelización sin app (cliente, personal del punto de venta y administración) y la arquitectura antifraude propuesta con pases de Apple y Google Wallet. Pendiente de la marca.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_fidelizacion_desc"><strong>Problem:</strong> validating real purchases in a loyalty campaign without opening the door to fraud or forcing people to download an app.<br><strong>What I built:</strong> a navigable web demo of the three roles (customer, point-of-sale staff and admin) with two-step receipt validation, a rewards catalog and wallet passes (simulated in the demo), plus the production architecture proposal: server-signed Apple and Google Wallet passes, one-time QR codes and atomic redemptions.<br><strong>Result:</strong> presented through an agency; awaiting the brand's decision.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_fidelizacion_desc"><strong>Problema:</strong> validar compras reales en una campaña de fidelización sin abrir la puerta al fraude ni obligar a descargar una app.<br><strong>Qué construí:</strong> una demo web navegable de los tres roles (cliente, personal del punto de venta y administración) con validación del ticket en dos pasos, catálogo de recompensas y pases de wallet (simulados en la demo), y la propuesta de arquitectura para producción: pases de Apple y Google Wallet firmados en servidor, códigos QR de un solo uso y canjes atómicos.<br><strong>Resultado:</strong> presentada a través de una agencia; pendiente de la decisión de la marca.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -365,17 +365,17 @@
               <span class="badge">Tailwind CSS</span>
               <span class="badge badge--violet">Proposal: Apple &amp; Google Wallet</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_fidelizacion_status">UI demo + proposal · Pending approval</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_fidelizacion_status">Demo de interfaz + propuesta · Pendiente de aprobación</span></div>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-3" id="project-eg-solutions" data-categories="web ai">
           <div class="card__icon" aria-hidden="true">📨</div>
-          <h3 class="card__title"><a href="https://www.egsolutions.tech" target="_blank" rel="noopener" data-i18n="p_eg_solutions_title">EG Solutions · web & lead automation</a></h3>
-          <span class="card__subtitle" data-i18n="p_eg_solutions_sub">My company's site with AI lead triage</span>
-          <p class="card__summary" data-i18n="p_eg_solutions_sum">My company's website: every contact request and incoming email is classified with Gemini, stored as a lead, and I get an alert if one goes 48 hours unanswered.</p>
+          <h3 class="card__title"><a href="https://www.egsolutions.tech" target="_blank" rel="noopener" data-i18n="p_eg_solutions_title">EG Solutions · web y automatización de leads</a></h3>
+          <span class="card__subtitle" data-i18n="p_eg_solutions_sub">La web de mi empresa con triaje de leads por IA</span>
+          <p class="card__summary" data-i18n="p_eg_solutions_sum">La web de mi empresa: cada solicitud y cada correo entrante se clasifican con Gemini, se guardan como lead y me avisa si alguno lleva 48 horas sin respuesta.</p>
           <details class="project-card__details">
-            <summary data-i18n="projects_more">More details</summary>
-            <p class="card__description" data-i18n="p_eg_solutions_desc"><strong>What I built:</strong> the EG Solutions website and its lead pipeline. The contact form classifies each request with Gemini (urgency and summary), stores it in Firestore and sends two emails; a daily cron reminds me of any lead without a reply after 48 hours. An n8n workflow triages incoming email the same way (quote, question, follow-up or spam), answers with branded templates and feeds the same lead database.<br><strong>Result:</strong> live; the email triage runs on every incoming message.</p>
+            <summary data-i18n="projects_more">Ver más</summary>
+            <p class="card__description" data-i18n="p_eg_solutions_desc"><strong>Qué construí:</strong> la web de EG Solutions y su pipeline de leads. El formulario de contacto clasifica cada solicitud con Gemini (urgencia y resumen), la guarda en Firestore y envía dos correos; un cron diario me avisa de cualquier lead sin respuesta tras 48 horas. Un workflow de n8n clasifica igual el correo entrante (cotización, duda, seguimiento o spam), responde con plantillas de la marca y alimenta la misma base de leads.<br><strong>Resultado:</strong> en producción; el triaje se ejecuta con cada correo entrante.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
@@ -385,9 +385,9 @@
               <span class="badge badge--accent">Gemini</span>
               <span class="badge">n8n</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_eg_solutions_status">Live</span></div>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_eg_solutions_status">En producción</span></div>
             <a href="https://www.egsolutions.tech" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_eg_solutions_link">Visit site</span>
+              <span data-i18n="p_eg_solutions_link">Visitar web</span>
             </a>
           </div>
         </div>
