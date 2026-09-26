@@ -1,5 +1,5 @@
 /* ============================================
-   COMPONENTS — Reusable UI Components
+   COMPONENTS · Reusable UI Components
    ============================================ */
 
 /* ---- Navigation ---- */
@@ -249,7 +249,7 @@
   flex-shrink: 0;
 }
 
-/* ---- Cards — removed translateY lift, cleaner border glow ---- */
+/* ---- Cards: removed translateY lift, cleaner border glow ---- */
 .card {
   background: var(--bg-card);
   border: 1px solid var(--border-color);
@@ -327,7 +327,7 @@
   gap: var(--space-lg);
 }
 
-/* ---- Badges / Chips — border-radius 4px, more technical feel ---- */
+/* ---- Badges / Chips: border-radius 4px, more technical feel ---- */
 .badge {
   display: inline-flex;
   align-items: center;
@@ -389,7 +389,7 @@
   gap: var(--space-sm);
 }
 
-/* ---- Timeline — removed glow noise from dots ---- */
+/* ---- Timeline: removed glow noise from dots ---- */
 .timeline {
   position: relative;
   padding-left: var(--space-3xl);

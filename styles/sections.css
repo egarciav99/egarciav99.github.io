@@ -1,5 +1,5 @@
 /* ============================================
-   SECTIONS — Page-specific layouts
+   SECTIONS · Page-specific layouts
    ============================================ */
 
 /* ---- HERO ---- */
@@ -19,7 +19,7 @@
   overflow: hidden;
 }
 
-/* Dot grid — técnico y sutil */
+/* Dot grid: técnico y sutil */
 .hero__grid {
   position: absolute;
   inset: -50%;
@@ -409,7 +409,7 @@
   color: var(--text-primary);
 }
 
-/* ---- PORTFOLIO — layout asimétrico ---- */
+/* ---- PORTFOLIO: layout asimétrico ---- */
 .portfolio {
   position: relative;
   /* the 600px decorative ::before must not widen the page on phones */
@@ -722,7 +722,7 @@
   margin: 0 auto;
 }
 
-/* ---- CONTACT — fondo con toque de acento ---- */
+/* ---- CONTACT: fondo con toque de acento ---- */
 .contact {
   background: linear-gradient(180deg, var(--bg-secondary) 0%, rgba(201, 162, 75, 0.06) 100%);
   position: relative;
