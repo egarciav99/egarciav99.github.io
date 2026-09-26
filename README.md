@@ -1,4 +1,4 @@
-# ⚡ Elier Garcia — Portfolio
+# ⚡ Elier Garcia · Portfolio
 
 Personal portfolio for Elier Garcia, a hybrid profile combining electrical engineering with AI and automation work.
 

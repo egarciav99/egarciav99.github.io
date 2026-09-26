@@ -1,5 +1,5 @@
 /* ============================================
-   CV.JS — Monta el CV a partir de la web
+   CV.JS · Monta el CV a partir de la web
    Textos: TRANSLATIONS (i18n.js + projects-i18n.js).
    Orden de proyectos, etiquetas y stack: index.html.
    ============================================ */
@@ -72,7 +72,7 @@ const CV_VARIANTS = {
   const languages = t.about_lang_value.split('·').map((l) => `<li>${l.trim()}</li>`).join('');
 
   const certs = variant.certs.filter((k) => t[`${k}_title`])
-    .map((k) => `<li><strong>${t[`${k}_title`]}</strong> — ${t[`${k}_issuer`]} <span>· ${t[`${k}_date`]}</span></li>`);
+    .map((k) => `<li><strong>${t[`${k}_title`]}</strong>, ${t[`${k}_issuer`]} <span>· ${t[`${k}_date`]}</span></li>`);
 
   // Experiencia: job0, job1, ... de i18n.js (o las viñetas propias de la variante, si las tiene)
   const jobs = [];
