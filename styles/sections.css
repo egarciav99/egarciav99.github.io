@@ -487,6 +487,37 @@
   height: 16px;
 }
 
+/* Capturas dentro de una tarjeta de proyecto (miniaturas que abren la imagen completa) */
+.project-card__shots {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-sm);
+  margin: var(--space-md) 0;
+}
+
+.project-card__shot {
+  display: block;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  aspect-ratio: 4 / 3;
+  background: var(--bg-tertiary);
+  transition: border-color var(--duration-fast);
+}
+
+.project-card__shot:hover,
+.project-card__shot:focus-visible {
+  border-color: var(--accent);
+}
+
+.project-card__shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+  display: block;
+}
+
 /* ---- CV / STACK ---- */
 .cv {
   background: var(--bg-secondary);
