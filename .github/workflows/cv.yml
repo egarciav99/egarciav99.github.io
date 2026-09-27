@@ -22,7 +22,7 @@ permissions:
 
 concurrency:
   group: cv-pdf
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   cv:
@@ -36,17 +36,25 @@ jobs:
         run: |
           npm install --no-save --no-package-lock playwright@1.58.2
           npx playwright install --with-deps chromium
-      - name: Generar los PDF
-        run: node scripts/build-cv.mjs
-      - name: Subir los PDF
+      - name: Generar y subir los PDF
+        # Si main cambia mientras se generan (p. ej. otra sincronización), se vuelve a partir
+        # del último main y se regeneran, en vez de rebasar PDF binarios.
         run: |
-          git add Elier_Garcia_CV_*.pdf
-          if git diff --cached --quiet; then
-            echo "Sin cambios en los PDF."
-            exit 0
-          fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "CV en PDF regenerado desde la web (${GITHUB_SHA::7})"
-          git pull --rebase origin main
-          git push origin HEAD:main
+          for intento in 1 2 3; do
+            git fetch origin main
+            git reset --hard origin/main
+            node scripts/build-cv.mjs
+            git add Elier_Garcia_CV_*.pdf
+            if git diff --cached --quiet; then
+              echo "Sin cambios en los PDF."
+              exit 0
+            fi
+            git commit -m "CV en PDF regenerado desde la web ($(git rev-parse --short HEAD))"
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "main cambió mientras se generaban los PDF; reintento $intento."
+          done
+          exit 1
