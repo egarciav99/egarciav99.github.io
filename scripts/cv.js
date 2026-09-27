@@ -12,7 +12,7 @@ const CV_VARIANTS = {
     projects: 3,               // los N primeros proyectos de la web
     bullets: [1, 3, 1],        // viñetas por puesto (job0, job1, ...) para que quepa en una hoja
     skillAttr: 'data-cv',      // etiquetas del stack que salen en el CV
-    certs: ['cert2', 'cert3', 'cert4', 'cert5'], // el mejor expediente ya sale en Educación
+    certs: ['cert3', 'cert2'], // solo lo relevante para datos e IA; el mejor expediente ya sale en Educación
     education: [1, 2],
   },
   el: {
@@ -21,7 +21,7 @@ const CV_VARIANTS = {
     bullets: [1, 6, 3],
     skillAttr: 'data-cv-el',
     skillFirst: 'stack_electrical',
-    certs: ['cert4', 'cert5', 'cert3', 'cert2'],
+    certs: ['cert4', 'cert5', 'cert3'],
     education: [2, 1],
   },
 };
@@ -76,6 +76,7 @@ const CV_VARIANTS = {
 
   // Experiencia: job0, job1, ... de i18n.js (o las viñetas propias de la variante, si las tiene)
   const jobs = [];
+  let demekShown = false; // la línea de contexto de DEMEK solo va en su primer puesto
   for (let i = 0; t[`job${i}_title`]; i++) {
     const own = t[`${variant.prefix}job${i}_li1`] !== undefined && variant.prefix !== 'cvp_';
     const li = (j) => (own ? t[`${variant.prefix}job${i}_li${j}`] : t[`job${i}_li${j}`]);
@@ -84,6 +85,7 @@ const CV_VARIANTS = {
     jobs.push(`<article class="cv-item">
       <div class="cv-item__head"><h3>${t[`job${i}_title`]}</h3><span class="cv-item__date">${t[`job${i}_date`]}</span></div>
       <div class="cv-item__org">${t[`job${i}_company`]}</div>
+      ${!demekShown && /DEMEK/.test(t[`job${i}_company`]) && (demekShown = true) ? `<div class="cv-item__ctx">${t.cvp_demek}</div>` : ''}
       <ul>${lis.join('')}</ul>
     </article>`);
   }
