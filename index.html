@@ -189,24 +189,27 @@
       </div>
       <div class="portfolio__grid">
         <!-- eg-content:projects:start -->
-        <div class="card project-card reveal reveal-delay-1" id="project-coreit" data-categories="ai">
-          <div class="card__icon" aria-hidden="true">⚙️</div>
-          <h3 class="card__title" data-i18n="p_coreit_title">CoreIT</h3>
-          <span class="card__subtitle" data-i18n="p_coreit_sub">Hub de automatizaciones para empresas · Producto propio</span>
-          <p class="card__summary" data-i18n="p_coreit_sum">Hub de un toque, estilo punto de venta, donde cada equipo lanza sus automatizaciones. Primer caso: convertir los procedimientos en PDF de un laboratorio en hojas Excel, con dos extracciones con IA auditadas por un segundo modelo y revisión humana.</p>
+        <div class="card project-card reveal reveal-delay-1" id="project-pdf-assistant" data-categories="ai">
+          <div class="card__icon" aria-hidden="true">📄</div>
+          <h3 class="card__title"><a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" data-i18n="p_pdf_assistant_title">PDF Technical Assistant</a></h3>
+          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">Asistente RAG multiempresa para documentación técnica</span>
+          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Cada empresa sube sus PDF técnicos y conversa con ellos: las respuestas salen solo de los documentos, con el enfoque de su especialidad, y los datos personales se anonimizan antes de indexar. Multiempresa con roles, se entrega como SaaS o instalado con Docker.</p>
           <details class="project-card__details">
             <summary data-i18n="projects_more">Ver más</summary>
-            <p class="card__description" data-i18n="p_coreit_desc"><strong>Problema:</strong> las tareas repetitivas, como pasar procedimientos técnicos en PDF a hojas de captura en Excel, consumen horas y provocan omisiones.<br><strong>Qué construí:</strong> un hub de un toque, estilo punto de venta, donde cada equipo lanza sus propias automatizaciones. Primer caso, para un laboratorio de control de calidad: un pipeline que extrae el procedimiento dos veces en paralelo (reglas regex y un LLM), audita ambas extracciones contra el texto original con un segundo modelo, deja revisar y editar el resultado y genera un Excel protegido con control automático de completitud. También prototipé un ETL en Python que deduplica el inventario de reactivos del laboratorio en golden records con fuzzy matching.<br><strong>Resultado:</strong> prototipo presentado al cliente; siguiente paso, un SaaS multiempresa con la marca de cada empresa.</p>
+            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problema:</strong> la documentación técnica vive en PDFs largos y cuesta encontrar la respuesta exacta rápido.<br><strong>Qué construí:</strong> un asistente multiempresa: cada empresa sube sus PDF, obtiene resúmenes y conversa con ellos; las respuestas salen solo de los documentos, con el enfoque de su especialidad (eléctrica, civil, mecánica, hidrosanitaria, arquitectura o general). Roles de superadmin, admin de empresa y usuario, acceso solo por invitación, chats privados e interfaz en español e inglés.<br><strong>Decisiones técnicas:</strong> aislamiento por empresa con RLS en tablas, Storage y búsqueda vectorial; anonimización de datos personales antes de indexar; troceado por secciones y embeddings de Gemini en pgvector; un agente que busca mediante function calling. Se entrega como SaaS o instalado en la empresa con Docker y un <code>config.json</code> en tiempo de ejecución. Probado con tests de integración de RLS y un flujo E2E en Chromium contra Supabase local y un simulador de Gemini. Migrado de un workflow de n8n multiproveedor a Supabase Edge Functions.<br><strong>Resultado:</strong> funcional; en desarrollo activo.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
-              <span class="badge badge--accent">React</span>
-              <span class="badge badge--accent">TypeScript</span>
-              <span class="badge">n8n</span>
+              <span class="badge">React 18</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">Supabase Edge Functions</span>
+              <span class="badge badge--violet">pgvector</span>
               <span class="badge badge--accent">Gemini</span>
-              <span class="badge">Python</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_coreit_status">Prototipo · Presentado al primer cliente</span></div>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Funcional · Multiempresa, en desarrollo activo</span></div>
+            <a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
+              <span data-i18n="p_pdf_assistant_link">Ver demo</span>
+            </a>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-2" id="project-covercraft" data-categories="ai web">
@@ -232,26 +235,26 @@
             </a>
           </div>
         </div>
-        <div class="card project-card reveal reveal-delay-3" id="project-pdf-assistant" data-categories="ai">
-          <div class="card__icon" aria-hidden="true">📄</div>
-          <h3 class="card__title"><a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" data-i18n="p_pdf_assistant_title">PDF Technical Assistant</a></h3>
-          <span class="card__subtitle" data-i18n="p_pdf_assistant_sub">Asistente RAG multiempresa para documentación técnica</span>
-          <p class="card__summary" data-i18n="p_pdf_assistant_sum">Cada empresa sube sus PDF técnicos y conversa con ellos: las respuestas salen solo de los documentos, con el enfoque de su especialidad, y los datos personales se anonimizan antes de indexar. Multiempresa con roles, se entrega como SaaS o instalado con Docker.</p>
+        <div class="card project-card reveal reveal-delay-3" id="project-carolina-guijarro" data-categories="web">
+          <div class="card__icon" aria-hidden="true">🧭</div>
+          <h3 class="card__title"><a href="https://carolinaguijarro.es" target="_blank" rel="noopener" data-i18n="p_carolina_guijarro_title">Carolina Guijarro · Web profesional</a></h3>
+          <span class="card__subtitle" data-i18n="p_carolina_guijarro_sub">Web + formulario de contacto automatizado · Consultora de ingeniería de equipos</span>
+          <p class="card__summary" data-i18n="p_carolina_guijarro_sum">Web de cuatro páginas para una consultora de ingeniería de equipos, con un formulario que guarda cada contacto en Google Sheets y le avisa por email con su marca. En producción.</p>
           <details class="project-card__details">
             <summary data-i18n="projects_more">Ver más</summary>
-            <p class="card__description" data-i18n="p_pdf_assistant_desc"><strong>Problema:</strong> la documentación técnica vive en PDFs largos y cuesta encontrar la respuesta exacta rápido.<br><strong>Qué construí:</strong> un asistente multiempresa: cada empresa sube sus PDF, obtiene resúmenes y conversa con ellos; las respuestas salen solo de los documentos, con el enfoque de su especialidad (eléctrica, civil, mecánica, hidrosanitaria, arquitectura o general). Roles de superadmin, admin de empresa y usuario, acceso solo por invitación, chats privados e interfaz en español e inglés.<br><strong>Decisiones técnicas:</strong> aislamiento por empresa con RLS en tablas, Storage y búsqueda vectorial; anonimización de datos personales antes de indexar; troceado por secciones y embeddings de Gemini en pgvector; un agente que busca mediante function calling. Se entrega como SaaS o instalado en la empresa con Docker y un <code>config.json</code> en tiempo de ejecución. Probado con tests de integración de RLS y un flujo E2E en Chromium contra Supabase local y un simulador de Gemini. Migrado de un workflow de n8n multiproveedor a Supabase Edge Functions.<br><strong>Resultado:</strong> funcional; en desarrollo activo.</p>
+            <p class="card__description" data-i18n="p_carolina_guijarro_desc"><strong>Problema:</strong> una consultora independiente que ayuda a pymes en crecimiento a construir mejores equipos necesitaba una web que explicara su método y convirtiera las visitas en contactos ordenados, sin tener que vigilar una bandeja de entrada.<br><strong>Qué construí:</strong> una web de cuatro páginas (inicio, sobre mí, servicios y contacto) con textos orientados a conversión, aviso legal y privacidad, y analítica. El formulario valida los datos y pide el consentimiento; después, un workflow de n8n guarda cada contacto en una hoja de Google Sheets y le envía un email con su marca (Resend) con los datos y un enlace a la hoja.<br><strong>Resultado:</strong> en producción en carolinaguijarro.es; cada consulta llega sola a su hoja y a su correo.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
-              <span class="badge">React 18</span>
-              <span class="badge">TypeScript</span>
-              <span class="badge">Supabase Edge Functions</span>
-              <span class="badge badge--violet">pgvector</span>
-              <span class="badge badge--accent">Gemini</span>
+              <span class="badge badge--accent">React</span>
+              <span class="badge badge--accent">TypeScript</span>
+              <span class="badge">Tailwind CSS</span>
+              <span class="badge">n8n</span>
+              <span class="badge">Resend</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_pdf_assistant_status">Funcional · Multiempresa, en desarrollo activo</span></div>
-            <a href="https://pdf-tech-assistant2.vercel.app" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_pdf_assistant_link">Ver demo</span>
+            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_carolina_guijarro_status">En producción · Proyecto para cliente</span></div>
+            <a href="https://carolinaguijarro.es" target="_blank" rel="noopener" class="project-card__link">
+              <span data-i18n="p_carolina_guijarro_link">Ver web</span>
             </a>
           </div>
         </div>
@@ -326,27 +329,24 @@
             </a>
           </div>
         </div>
-        <div class="card project-card reveal reveal-delay-1" id="project-carolina-guijarro" data-categories="web">
-          <div class="card__icon" aria-hidden="true">🧭</div>
-          <h3 class="card__title"><a href="https://carolinaguijarro.es" target="_blank" rel="noopener" data-i18n="p_carolina_guijarro_title">Carolina Guijarro · Web profesional</a></h3>
-          <span class="card__subtitle" data-i18n="p_carolina_guijarro_sub">Web + formulario de contacto automatizado · Consultora de ingeniería de equipos</span>
-          <p class="card__summary" data-i18n="p_carolina_guijarro_sum">Web de cuatro páginas para una consultora de ingeniería de equipos, con un formulario que guarda cada contacto en Google Sheets y le avisa por email con su marca. En producción.</p>
+        <div class="card project-card reveal reveal-delay-1" id="project-coreit" data-categories="ai">
+          <div class="card__icon" aria-hidden="true">⚙️</div>
+          <h3 class="card__title" data-i18n="p_coreit_title">CoreIT</h3>
+          <span class="card__subtitle" data-i18n="p_coreit_sub">Hub de automatizaciones para empresas · Producto propio</span>
+          <p class="card__summary" data-i18n="p_coreit_sum">Hub de un toque, estilo punto de venta, donde cada equipo lanza sus automatizaciones. Primer caso: convertir los procedimientos en PDF de un laboratorio en hojas Excel, con dos extracciones con IA auditadas por un segundo modelo y revisión humana.</p>
           <details class="project-card__details">
             <summary data-i18n="projects_more">Ver más</summary>
-            <p class="card__description" data-i18n="p_carolina_guijarro_desc"><strong>Problema:</strong> una consultora independiente que ayuda a pymes en crecimiento a construir mejores equipos necesitaba una web que explicara su método y convirtiera las visitas en contactos ordenados, sin tener que vigilar una bandeja de entrada.<br><strong>Qué construí:</strong> una web de cuatro páginas (inicio, sobre mí, servicios y contacto) con textos orientados a conversión, aviso legal y privacidad, y analítica. El formulario valida los datos y pide el consentimiento; después, un workflow de n8n guarda cada contacto en una hoja de Google Sheets y le envía un email con su marca (Resend) con los datos y un enlace a la hoja.<br><strong>Resultado:</strong> en producción en carolinaguijarro.es; cada consulta llega sola a su hoja y a su correo.</p>
+            <p class="card__description" data-i18n="p_coreit_desc"><strong>Problema:</strong> las tareas repetitivas, como pasar procedimientos técnicos en PDF a hojas de captura en Excel, consumen horas y provocan omisiones.<br><strong>Qué construí:</strong> un hub de un toque, estilo punto de venta, donde cada equipo lanza sus propias automatizaciones. Primer caso, para un laboratorio de control de calidad: un pipeline que extrae el procedimiento dos veces en paralelo (reglas regex y un LLM), audita ambas extracciones contra el texto original con un segundo modelo, deja revisar y editar el resultado y genera un Excel protegido con control automático de completitud. También prototipé un ETL en Python que deduplica el inventario de reactivos del laboratorio en golden records con fuzzy matching.<br><strong>Resultado:</strong> prototipo presentado al cliente; siguiente paso, un SaaS multiempresa con la marca de cada empresa.</p>
           </details>
           <div class="card__footer">
             <div class="badges-wrap">
               <span class="badge badge--accent">React</span>
               <span class="badge badge--accent">TypeScript</span>
-              <span class="badge">Tailwind CSS</span>
               <span class="badge">n8n</span>
-              <span class="badge">Resend</span>
+              <span class="badge badge--accent">Gemini</span>
+              <span class="badge">Python</span>
             </div>
-            <div class="project-card__status"><span class="badge badge--success" data-i18n="p_carolina_guijarro_status">En producción · Proyecto para cliente</span></div>
-            <a href="https://carolinaguijarro.es" target="_blank" rel="noopener" class="project-card__link">
-              <span data-i18n="p_carolina_guijarro_link">Ver web</span>
-            </a>
+            <div class="project-card__status"><span class="badge badge--warning" data-i18n="p_coreit_status">Prototipo · Presentado al primer cliente</span></div>
           </div>
         </div>
         <div class="card project-card reveal reveal-delay-2" id="project-fidelizacion" data-categories="web">
