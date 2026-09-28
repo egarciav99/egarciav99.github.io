@@ -16,8 +16,7 @@ I'm an Electrical Engineer from Chihuahua, Mexico, now based in Madrid. I hold a
 AI nutrition app · team project.
 - Working demo available.
 - Official launch pending.
-- MVP created from a master's thesis and reached 200 real users.
-- Running cost under €0.50/month.
+- MVP created from a master's thesis and reached 234 real users.
 
 ### ✍️ CoverCraft
 AI cover-letter generator · personal project.
