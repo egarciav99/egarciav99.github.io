@@ -1,0 +1,66 @@
+name: Comprobar webs
+
+# Cada 30 minutos comprueba que las webs y demos responden. Si una falla tres veces seguidas,
+# abre un issue en este repo (GitHub te avisa por correo) y la ejecución sale en rojo.
+# Cuando vuelve a funcionar, cierra el issue solo. Para añadir o quitar webs, edita SITES.
+
+on:
+  schedule:
+    - cron: "*/30 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  issues: write
+
+concurrency:
+  group: comprobar-webs
+  cancel-in-progress: false
+
+jobs:
+  comprobar:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+      SITES: |
+        Web personal|https://egarciav99.github.io
+        EG Solutions|https://www.egsolutions.tech
+        CoverCraft|https://coverletter2.vercel.app
+        Demo PDF Technical Assistant|https://pdf-tech-assistant2.vercel.app/demo
+        Bocado AI|https://bocado-ai.vercel.app
+        Carolina Guijarro|https://carolinaguijarro.es
+    steps:
+      - name: Comprobar
+        run: |
+          gh label create caida --color B60205 --description "Web caída (aviso automático)" 2>/dev/null || true
+          failed=0
+          while IFS='|' read -r name url; do
+            [ -z "$url" ] && continue
+            code=000
+            for attempt in 1 2 3; do
+              code=$(curl -s -o /dev/null -L --max-time 30 -A "Mozilla/5.0 (comprobacion de webs)" -w '%{http_code}' "$url" || true)
+              code=${code:-000}
+              if [ "$code" -ge 200 ] && [ "$code" -lt 400 ]; then break; fi
+              sleep 20
+            done
+            title="Caída: $name"
+            issue=$(gh issue list --state open --label caida --search "\"$title\" in:title" --json number,title --jq ".[] | select(.title == \"$title\") | .number" 2>/dev/null | head -1 || true)
+            if [ "$code" -ge 200 ] && [ "$code" -lt 400 ]; then
+              echo "OK   $name ($code)"
+              if [ -n "$issue" ]; then
+                gh issue comment "$issue" --body "Vuelve a funcionar ($(date -u '+%Y-%m-%d %H:%M') UTC, código $code)." || true
+                gh issue close "$issue" || true
+              fi
+            else
+              echo "FALLA $name ($code) $url"
+              failed=1
+              if [ -z "$issue" ]; then
+                gh issue create --title "$title" --label caida --body "La web **$name** no responde: $url
+
+          Código: \`$code\` (000 = no conecta o tarda más de 30 s). Comprobado 3 veces seguidas a las $(date -u '+%Y-%m-%d %H:%M') UTC.
+
+          Qué mirar: el último despliegue en Vercel o GitHub Pages, el dominio y, si es una app, Supabase. Este issue se cierra solo cuando la web vuelva a responder." || echo "No se pudo crear el issue"
+              fi
+            fi
+          done <<< "$SITES"
+          exit $failed
