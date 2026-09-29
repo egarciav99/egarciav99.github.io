@@ -68,6 +68,10 @@ The CVs are generated from the site, not edited by hand:
 
 Local build: `npm install --no-save playwright && npx playwright install chromium && node scripts/build-cv.mjs`. Preview in the browser: `cv.html?cv=el&lang=es` (served over HTTP).
 
+## Uptime check
+
+The **Comprobar webs** workflow (`.github/workflows/webs.yml`) checks every 30 minutes that the personal site, EG Solutions, CoverCraft, the PDF Technical Assistant demo, Bocado AI and the Carolina Guijarro site respond. If one fails three times in a row it opens an issue labelled `caida` (GitHub emails the owner) and closes it when the site is back. Edit `SITES` to add or remove sites.
+
 ## Contact
 
 - 📧 eliergv.99@gmail.com
