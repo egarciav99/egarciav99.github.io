@@ -4,7 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script>try{if(localStorage.getItem('eg_lang')==='en')document.documentElement.lang='en'}catch(e){}</script>
+  <!-- GitHub Pages no permite cabeceras: la CSP va como meta. El hash permite solo el onload que activa las fuentes (this.media='all'). -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-hashes' 'sha256-MhtPZXr7+LpJUY5qtMutB+qWfQtMaPccfe7QXtCcEYc='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <script src="scripts/lang-init.js"></script>
   <meta name="description" content="Ingeniero eléctrico con Máster en Business Analytics & IA. Proyectos industriales para Microsoft y BMW Group. Fundador de EG Solutions, desarrollando sistemas de IA y automatización. Base en Madrid.">
   <meta name="author" content="Elier Garcia">
   <meta name="keywords" content="Elier Garcia, Electrical Engineer, AI Engineer, Data Analyst, Madrid, Portfolio, RAG, GCP, Python">
