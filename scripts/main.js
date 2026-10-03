@@ -295,6 +295,25 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---- Story chapters: palette follows the section crossing the middle of the viewport ----
+  // Sections carry data-chapter ("field" or "code"); CSS transitions the accent colours.
+  // No attribute equals "field" (the CSS defaults), and <html> is only touched on a real
+  // change because every change restyles the whole page.
+  if ('IntersectionObserver' in window) {
+    const root = document.documentElement;
+    const chapterObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const chapter = entry.target.dataset.chapter;
+        if ((root.dataset.chapter || 'field') === chapter) return;
+        root.dataset.chapter = chapter;
+        // let the CSS transition finish before the WebGL field reads the colours
+        setTimeout(() => document.dispatchEvent(new Event('palettechange')), 820);
+      });
+    }, { rootMargin: '-50% 0px -50% 0px' });
+    document.querySelectorAll('[data-chapter]').forEach((section) => chapterObserver.observe(section));
+  }
+
   // ---- Console easter egg ----
   console.log(
     '%c⚡ Elier Garcia · Portfolio',

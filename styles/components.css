@@ -277,8 +277,8 @@
 
 .card:hover {
   background: var(--bg-card-hover);
-  border-color: rgba(201, 162, 75, 0.3);
-  box-shadow: 0 0 0 1px rgba(201, 162, 75, 0.08), var(--shadow-lg);
+  border-color: color-mix(in srgb, var(--accent) 30%, transparent);
+  box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 8%, transparent), var(--shadow-lg);
   transform: translateY(-3px);
 }
 
@@ -353,8 +353,8 @@
 
 .badge--accent {
   color: var(--accent);
-  border-color: rgba(201, 162, 75, 0.25);
-  background: rgba(201, 162, 75, 0.08);
+  border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+  background: color-mix(in srgb, var(--accent) 8%, transparent);
   border-radius: 4px;
 }
 
