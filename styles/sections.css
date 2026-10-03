@@ -735,6 +735,8 @@
 /* ---- EXPERIENCE ---- */
 .experience {
   background: var(--bg-secondary);
+  /* breakers mask the bus with the section background */
+  --timeline-bg: var(--bg-secondary);
 }
 
 .experience__content {

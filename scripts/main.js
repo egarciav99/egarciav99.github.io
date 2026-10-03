@@ -297,6 +297,68 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ---- Experience timeline as a single-line diagram ----
+  // The busbar energizes as the section scrolls in (never backwards) and each
+  // breaker closes once the current reaches it. Scroll work stops when done.
+  const timeline = document.querySelector('.timeline');
+  const current = timeline && timeline.querySelector('.timeline__current');
+  if (current && !prefersReducedMotion.matches && 'IntersectionObserver' in window) {
+    const items = [...timeline.querySelectorAll('.timeline__item')];
+    let stops = null; // measured lazily: reading layout on load would force it before first paint
+    let progress = 0;
+    let ticking = false;
+    let listening = false;
+
+    const measure = () => {
+      const height = timeline.offsetHeight || 1;
+      stops = items.map((item) => (item.offsetTop + 14) / height);
+    };
+
+    const stopListening = () => {
+      if (!listening) return;
+      listening = false;
+      window.removeEventListener('scroll', onScroll);
+    };
+
+    function update() {
+      ticking = false;
+      if (!stops) measure();
+      const rect = timeline.getBoundingClientRect();
+      const p = Math.min(1, Math.max(0, (window.innerHeight * 0.65 - rect.top) / rect.height));
+      if (p <= progress) return;
+      progress = p;
+      current.style.transform = `scaleY(${progress})`;
+      items.forEach((item, i) => {
+        if (progress >= stops[i]) item.classList.add('is-closed');
+      });
+      if (progress >= 1) {
+        stopListening();
+        observer.disconnect();
+      }
+    }
+
+    function onScroll() {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting && !listening) {
+        listening = true;
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+      } else if (!entry.isIntersecting) {
+        stopListening();
+      }
+    });
+
+    timeline.classList.add('timeline--live');
+    window.addEventListener('resize', () => { stops = null; });
+    observer.observe(timeline);
+  }
+
   // ---- Story chapters: palette follows the section crossing the middle of the viewport ----
   // Sections carry data-chapter ("field" or "code"); CSS transitions the accent colours.
   // No attribute equals "field" (the CSS defaults), and <html> is only touched on a real
