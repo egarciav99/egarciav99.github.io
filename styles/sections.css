@@ -47,6 +47,26 @@
   will-change: transform;
 }
 
+/* WebGL electric field (scripts/field.js), desktop with a mouse only */
+.field-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1.2s var(--ease-out);
+  pointer-events: none;
+}
+
+.field-canvas.is-on {
+  opacity: 1;
+}
+
+/* The shader draws its own glow around the cursor */
+.hero.has-field .hero__glow--1 {
+  display: none;
+}
+
 /* Never rendered before (its background used an undefined variable); kept invisible */
 .hero__glow--2 {
   display: none;

@@ -288,6 +288,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     hero.addEventListener('pointermove', (e) => {
+      // field.js draws its own glow around the cursor when the WebGL field is running
+      if (hero.classList.contains('has-field')) return;
       const rect = hero.getBoundingClientRect();
       targetX = e.clientX - rect.left - 300;
       targetY = e.clientY - rect.top - 300;
@@ -312,6 +314,18 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }, { rootMargin: '-50% 0px -50% 0px' });
     document.querySelectorAll('[data-chapter]').forEach((section) => chapterObserver.observe(section));
+  }
+
+  // ---- Electric field in the hero (scripts/field.js) ----
+  // Desktop with a mouse only, never with reduced motion or Save-Data, and loaded
+  // after the load event so it never competes with the first paint.
+  const wantsField = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+    && !prefersReducedMotion.matches
+    && !(navigator.connection && navigator.connection.saveData);
+  if (wantsField) {
+    const loadField = () => import('./field.js').catch(() => {});
+    if (document.readyState === 'complete') loadField();
+    else window.addEventListener('load', loadField, { once: true });
   }
 
   // ---- Console easter egg ----
