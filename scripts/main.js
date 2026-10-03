@@ -360,6 +360,51 @@ document.addEventListener('DOMContentLoaded', () => {
     observer.observe(timeline);
   }
 
+  // ---- Light / dark theme ----
+  // Dark by default (the site's identity); lang-init.js applies a saved choice
+  // before the first paint and the switch saves the new one.
+  const themeToggle = document.getElementById('theme-toggle');
+  const rootEl = document.documentElement;
+
+  function setTheme(theme, save) {
+    // The accent snaps to the new theme (its 0,8 s fade is only for chapter changes)
+    rootEl.classList.add('theme-switching');
+    rootEl.dataset.theme = theme;
+    requestAnimationFrame(() => requestAnimationFrame(() => rootEl.classList.remove('theme-switching')));
+    if (themeToggle) themeToggle.setAttribute('aria-pressed', String(theme === 'light'));
+    if (save) {
+      try { localStorage.setItem('eg_theme', theme); } catch (e) { /* private mode */ }
+    }
+    // the WebGL field re-reads the colours once the accent transition has finished
+    setTimeout(() => document.dispatchEvent(new Event('palettechange')), 820);
+  }
+
+  // On load only the switch state needs syncing: touching <html> here would
+  // restyle the whole page for nothing
+  if (themeToggle) themeToggle.setAttribute('aria-pressed', String(rootEl.dataset.theme === 'light'));
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+      const next = rootEl.dataset.theme === 'light' ? 'dark' : 'light';
+      if (!document.startViewTransition || prefersReducedMotion.matches) {
+        setTheme(next, true);
+        return;
+      }
+      // Circle that grows from the switch to the farthest corner
+      const r = themeToggle.getBoundingClientRect();
+      const x = r.left + r.width / 2;
+      const y = r.top + r.height / 2;
+      const radius = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y));
+      const transition = document.startViewTransition(() => setTheme(next, true));
+      transition.ready.then(() => {
+        rootEl.animate(
+          { clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${radius}px at ${x}px ${y}px)`] },
+          { duration: 650, easing: 'cubic-bezier(0.16, 1, 0.3, 1)', pseudoElement: '::view-transition-new(root)' }
+        );
+      }).catch(() => {});
+    });
+  }
+
   // ---- Story chapters: palette follows the section crossing the middle of the viewport ----
   // Sections carry data-chapter ("field" or "code"); CSS transitions the accent colours.
   // No attribute equals "field" (the CSS defaults), and <html> is only touched on a real
