@@ -66,7 +66,7 @@
   </nav>
 
   <main id="main">
-  <section class="hero section-padding" id="hero">
+  <section class="hero section-padding" id="hero" data-chapter="field">
     <div class="hero__bg">
       <div class="hero__grid"></div>
       <div class="hero__glow hero__glow--1"></div>
@@ -124,7 +124,7 @@
     </div>
   </section>
 
-  <section class="about section-padding" id="about">
+  <section class="about section-padding" id="about" data-chapter="field">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="about_label">Perfil</span>
@@ -177,7 +177,7 @@
     </div>
   </section>
 
-  <section class="portfolio section-padding" id="portfolio">
+  <section class="portfolio section-padding" id="portfolio" data-chapter="code">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="port_label">Proyectos</span>
@@ -380,7 +380,7 @@
     </div>
   </section>
 
-  <section class="cv section-padding" id="cv">
+  <section class="cv section-padding" id="cv" data-chapter="code">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="cv_label">CV y stack técnico</span>
@@ -492,7 +492,7 @@
     </div>
   </section>
 
-  <section class="certs section-padding" id="certs">
+  <section class="certs section-padding" id="certs" data-chapter="code">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="certs_label">Certificaciones</span>
@@ -543,7 +543,7 @@
     </div>
   </section>
 
-  <section class="experience section-padding" id="experience">
+  <section class="experience section-padding" id="experience" data-chapter="field">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="exp_label">Experiencia</span>
@@ -551,8 +551,15 @@
       </div>
       <div class="experience__content">
         <div class="timeline">
+          <div class="timeline__current" aria-hidden="true"></div>
           <div class="timeline__item reveal">
-            <div class="timeline__dot"></div>
+            <svg class="timeline__breaker" viewBox="0 0 20 28" aria-hidden="true" focusable="false">
+              <rect class="breaker__gap" x="4" y="4" width="12" height="20" />
+              <circle class="breaker__spark" cx="10" cy="5" r="7" />
+              <line class="breaker__blade" x1="10" y1="23" x2="10" y2="5" />
+              <circle class="breaker__node" cx="10" cy="5" r="2.2" />
+              <circle class="breaker__node" cx="10" cy="23" r="2.2" />
+            </svg>
             <span class="timeline__date" data-i18n="job0_date">2026 — hoy</span>
             <h3 class="timeline__title" data-i18n="job0_title">Fundador · Ingeniero de IA y Automatización</h3>
             <p class="timeline__company" data-i18n="job0_company">EG Solutions · Madrid (remoto)</p>
@@ -569,7 +576,13 @@
             </ul>
           </div>
           <div class="timeline__item reveal reveal-delay-2">
-            <div class="timeline__dot"></div>
+            <svg class="timeline__breaker" viewBox="0 0 20 28" aria-hidden="true" focusable="false">
+              <rect class="breaker__gap" x="4" y="4" width="12" height="20" />
+              <circle class="breaker__spark" cx="10" cy="5" r="7" />
+              <line class="breaker__blade" x1="10" y1="23" x2="10" y2="5" />
+              <circle class="breaker__node" cx="10" cy="5" r="2.2" />
+              <circle class="breaker__node" cx="10" cy="23" r="2.2" />
+            </svg>
             <span class="timeline__date" data-i18n="job1_date">Ene 2024 — Feb 2025</span>
             <h3 class="timeline__title" data-i18n="job1_title">Coordinador de instalaciones eléctricas</h3>
             <p class="timeline__company" data-i18n="job1_company">DEMEK S.A. de C.V. · Querétaro / San Luis Potosí, México</p>
@@ -587,7 +600,13 @@
             </ul>
           </div>
           <div class="timeline__item reveal reveal-delay-3">
-            <div class="timeline__dot"></div>
+            <svg class="timeline__breaker" viewBox="0 0 20 28" aria-hidden="true" focusable="false">
+              <rect class="breaker__gap" x="4" y="4" width="12" height="20" />
+              <circle class="breaker__spark" cx="10" cy="5" r="7" />
+              <line class="breaker__blade" x1="10" y1="23" x2="10" y2="5" />
+              <circle class="breaker__node" cx="10" cy="5" r="2.2" />
+              <circle class="breaker__node" cx="10" cy="23" r="2.2" />
+            </svg>
             <span class="timeline__date" data-i18n="job2_date">Ene 2023 — Ene 2024</span>
             <h3 class="timeline__title" data-i18n="job2_title">Técnico de presupuestos eléctricos</h3>
             <p class="timeline__company" data-i18n="job2_company">DEMEK S.A. de C.V. · Chihuahua, México</p>
@@ -608,7 +627,7 @@
     </div>
   </section>
 
-  <section class="contact section-padding" id="contact">
+  <section class="contact section-padding" id="contact" data-chapter="field">
     <div class="container">
       <div class="section-header reveal">
         <span class="section-label" data-i18n="contact_label">Contacto</span>
