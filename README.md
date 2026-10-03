@@ -30,10 +30,6 @@ RAG assistant for electrical engineering documentation.
 Client-confidential automation hub.
 - MVP in development.
 
-### 🎟️ Loyalty platform concept
-Technical proposal and working demo.
-- Demo functional and pending client response.
-
 ## Site stack
 
 - HTML5
