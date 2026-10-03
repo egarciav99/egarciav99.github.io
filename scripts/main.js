@@ -47,9 +47,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- Custom Cursor (desktop only) ----
   // The frame loop only runs while the dot is catching up with the pointer.
+  // With reduced motion it sticks to the pointer with no easing (no trailing motion).
   const isTouchDevice = window.matchMedia('(hover: none)').matches;
 
-  if (!isTouchDevice && !prefersReducedMotion.matches) {
+  if (!isTouchDevice) {
     const cursor = document.createElement('div');
     cursor.id = 'custom-cursor';
     cursor.style.cssText = `
@@ -74,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let renderX = 0;
     let renderY = 0;
     let cursorFrame = null;
-    const LERP = 0.35; // higher = snappier (0-1)
+    const LERP = prefersReducedMotion.matches ? 1 : 0.35; // higher = snappier (0-1)
 
     function animateCursor() {
       renderX += (mouseX - renderX) * LERP;
@@ -379,10 +380,10 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ---- Electric field in the hero (scripts/field.js) ----
-  // Desktop with a mouse only, never with reduced motion or Save-Data, and loaded
-  // after the load event so it never competes with the first paint.
+  // Desktop with a mouse only, never with Save-Data, and loaded after the load
+  // event so it never competes with the first paint. With reduced motion,
+  // field.js draws a still image instead of the animated field.
   const wantsField = window.matchMedia('(hover: hover) and (pointer: fine)').matches
-    && !prefersReducedMotion.matches
     && !(navigator.connection && navigator.connection.saveData);
   if (wantsField) {
     const loadField = () => import('./field.js').catch(() => {});

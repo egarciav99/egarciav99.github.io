@@ -380,10 +380,10 @@ ol {
     scroll-behavior: auto !important;
   }
 
-  .reveal,
-  .reveal.visible {
-    opacity: 1;
+  /* Sections still appear, with a fade instead of sliding up */
+  .reveal {
     transform: none;
+    transition: opacity 0.6s ease !important;
   }
 }
 
@@ -406,8 +406,9 @@ ol {
   --accent-light: #d3dbff;
 }
 
+/* A colour fade is not motion: keep it even with reduced motion */
 @media (prefers-reduced-motion: reduce) {
   :root {
-    transition: none;
+    transition-duration: 0.8s !important;
   }
 }

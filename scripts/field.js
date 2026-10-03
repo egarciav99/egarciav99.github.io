@@ -56,7 +56,9 @@ function initField(host) {
   const mq = (q) => window.matchMedia(q).matches;
   // Solo escritorio con ratón: en táctil no hay cursor que siga el campo y el
   // coste de compilar el shader en un móvil modesto no compensa (TBT).
-  if (!host || mq('(prefers-reduced-motion: reduce)') || !mq('(hover: hover) and (pointer: fine)')) return null;
+  if (!host || !mq('(hover: hover) and (pointer: fine)')) return null;
+  // Con movimiento reducido se dibuja una imagen fija: sin bucle ni seguimiento del cursor
+  const still = mq('(prefers-reduced-motion: reduce)');
   if (navigator.connection && navigator.connection.saveData) return null;
 
   const canvas = document.createElement('canvas');
@@ -115,6 +117,26 @@ function initField(host) {
   new ResizeObserver(resize).observe(host);
   resize();
 
+  const render = (time, x, y) => {
+    gl.uniform1f(u.u_time, time);
+    gl.uniform2f(u.u_mouse, x, y);
+    gl.clearColor(0, 0, 0, 0);
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLES, 0, 3);
+  };
+
+  if (still) {
+    // Instante elegido para que las cargas queden repartidas por el hero
+    const drawStill = () => render(9, w * 0.72, h * 0.62);
+    new ResizeObserver(drawStill).observe(host);
+    document.addEventListener('palettechange', drawStill);
+    host.prepend(canvas);
+    (host.closest('section') || host).classList.add('has-field');
+    drawStill();
+    canvas.classList.add('is-on');
+    return canvas;
+  }
+
   // Ratón con inercia (en px del canvas, eje Y invertido para GL)
   let tx = w * 0.7, ty = h * 0.6, mx = tx, my = ty;
   // Se escucha en la sección: el contenido del hero tapa al fondo y no le llegan eventos
@@ -135,11 +157,7 @@ function initField(host) {
     last = now;
     mx += (tx - mx) * 0.08;
     my += (ty - my) * 0.08;
-    gl.uniform1f(u.u_time, (now - start) / 1000);
-    gl.uniform2f(u.u_mouse, mx, my);
-    gl.clearColor(0, 0, 0, 0);
-    gl.clear(gl.COLOR_BUFFER_BIT);
-    gl.drawArrays(gl.TRIANGLES, 0, 3);
+    render((now - start) / 1000, mx, my);
   };
   const kick = () => { if (frame === null && visible && !document.hidden) frame = requestAnimationFrame(draw); };
   new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; kick(); }).observe(host);
