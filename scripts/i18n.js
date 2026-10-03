@@ -14,6 +14,7 @@ const TRANSLATIONS = {
     nav_experience: 'Experience',
     nav_contact: 'Contact',
     nav_hamburger_label: 'Open menu',
+    theme_toggle_label: 'Light theme',
     hero_label: 'Electrical engineer, AI builder',
     hero_title: 'Electrical Engineer · AI & Automation · Madrid',
     hero_tagline: '"From industrial field engineering to building AI systems."',
@@ -160,6 +161,7 @@ const TRANSLATIONS = {
     nav_experience: 'Experiencia',
     nav_contact: 'Contacto',
     nav_hamburger_label: 'Abrir menú',
+    theme_toggle_label: 'Tema claro',
     hero_label: 'Ingeniero eléctrico, constructor de IA',
     hero_title: 'Ingeniero Eléctrico · IA & Automatización · Madrid',
     hero_tagline: '"Del rigor técnico en obra industrial a construir sistemas de IA."',
@@ -331,6 +333,13 @@ function applyTranslations(lang) {
   const hamburger = document.getElementById('nav-hamburger');
   if (hamburger) {
     hamburger.setAttribute('aria-label', t.nav_hamburger_label || 'Open menu');
+  }
+
+  // Theme switch: fixed name, its state is aria-pressed (set by main.js)
+  const themeBtn = document.getElementById('theme-toggle');
+  if (themeBtn && t.theme_toggle_label) {
+    themeBtn.setAttribute('aria-label', t.theme_toggle_label);
+    themeBtn.setAttribute('title', t.theme_toggle_label);
   }
 
   document.querySelectorAll('[data-i18n-href]').forEach((el) => {

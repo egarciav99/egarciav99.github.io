@@ -10,7 +10,7 @@
   right: 0;
   z-index: 1000;
   height: var(--nav-height);
-  background: rgba(8, 8, 13, 0.85);
+  background: var(--nav-bg);
   border-bottom: 1px solid var(--border-color);
   backdrop-filter: var(--glass-blur);
   -webkit-backdrop-filter: var(--glass-blur);
@@ -18,7 +18,7 @@
 }
 
 .nav.scrolled {
-  background: rgba(8, 8, 13, 0.95);
+  background: var(--nav-bg-scrolled);
   box-shadow: var(--shadow-md);
 }
 
@@ -97,6 +97,50 @@
     color var(--duration-fast) var(--ease-out),
     background var(--duration-fast) var(--ease-out);
   white-space: nowrap;
+}
+
+/* Light/dark switch: shows the sun in dark mode and the moon in light mode */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 30px;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: border-color var(--duration-fast) var(--ease-out),
+    color var(--duration-fast) var(--ease-out),
+    background var(--duration-fast) var(--ease-out);
+}
+
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.theme-toggle svg {
+  width: 16px;
+  height: 16px;
+}
+
+.theme-toggle__moon,
+:root[data-theme="light"] .theme-toggle__sun {
+  display: none;
+}
+
+:root[data-theme="light"] .theme-toggle__moon {
+  display: block;
+}
+
+/* Theme change: the new theme grows as a circle from the switch (main.js) */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
 }
 
 .lang-toggle:hover {
@@ -359,7 +403,7 @@
 }
 
 .badge--violet {
-  color: #7f9bf0;
+  color: var(--violet-text);
   border-color: rgba(37, 66, 168, 0.35);
   background: rgba(37, 66, 168, 0.14);
   border-radius: 4px;
@@ -374,8 +418,8 @@
 
 .badge--warning {
   color: var(--warning);
-  border-color: rgba(236, 207, 141, 0.3);
-  background: rgba(236, 207, 141, 0.1);
+  border-color: color-mix(in srgb, var(--warning) 30%, transparent);
+  background: color-mix(in srgb, var(--warning) 10%, transparent);
   border-radius: 4px;
 }
 
@@ -410,7 +454,7 @@
 
 /* Dead conductor */
 .timeline::before {
-  background: rgba(255, 255, 255, 0.09);
+  background: var(--line-muted);
 }
 
 /* Current flowing down the bus (scaleY set by main.js) */
@@ -654,7 +698,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6);
+  background: var(--overlay-bg);
   z-index: 999;
   opacity: 0;
   transition: opacity var(--duration-normal);
